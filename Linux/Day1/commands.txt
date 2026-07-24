@@ -1,0 +1,8 @@
+=====> COMMANDS LEARNED <======
+
+-pwd
+-ls
+-cd folder_name
+-cd ..
+-cd ~
+-mkdir folder_name

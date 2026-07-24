@@ -1,0 +1,13 @@
+=======>Linux Bootcamp<========
+
+   Day 1
+
+Topics Learned:
+
+-What is Linux
+-Terminal
+-Directory
+-pwd
+-ls
+-cd
+-mkdir

@@ -1,0 +1,6 @@
+
+-Created folders
+-Practiced pwd
+-Practiced ls
+-Practiced cd
+-Practiced mkdir
