@@ -1,0 +1,22 @@
+========== Linux Bootcamp ==========
+Day 2
+
+Topics Learned:
+- mkdir
+- touch
+- cp
+- mv
+- rm
+- rmdir
+
+Summary:
+- Created directories
+- Created files
+- Copied files
+- Moved files
+- Renamed files
+- Deleted files
+- Removed empty directories
+
+Status:
+Completed Day 2 successfully.

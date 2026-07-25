@@ -1,0 +1,10 @@
+========== PRACTICE ==========
+
+✔ Created folders
+✔ Created files
+✔ Copied files
+✔ Moved files
+✔ Renamed files
+✔ Deleted files
+✔ Removed empty directory
+✔ Completed challenge

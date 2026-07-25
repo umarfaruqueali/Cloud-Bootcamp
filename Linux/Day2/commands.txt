@@ -1,0 +1,11 @@
+========== COMMANDS LEARNED ==========
+
+mkdir folder_name
+touch file_name
+cp source destination
+mv source destination
+rm file_name
+rmdir folder_name
+pwd
+ls
+cd
