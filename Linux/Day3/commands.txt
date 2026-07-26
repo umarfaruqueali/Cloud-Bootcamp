@@ -1,0 +1,9 @@
+
+Commands learned on day 3:
+
+- cat
+- less
+- head
+- tail
+- grep
+- find

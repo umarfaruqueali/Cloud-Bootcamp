@@ -1,0 +1,12 @@
+======= Cloud Bootcamp ======
+
+Day 3
+
+Today I learned:
+
+- cat
+- less
+- head
+- tail
+- grep
+- find
