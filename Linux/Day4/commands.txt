@@ -1,0 +1,34 @@
+========== Commands Learned ==========
+
+ls -l
+Lists files with detailed permissions.
+
+chmod +x file
+Add execute permission.
+
+chmod -x file
+Remove execute permission.
+
+chmod u+x file
+Add execute permission for owner.
+
+chmod g-w file
+Remove write permission for group.
+
+chmod o+r file
+Add read permission for others.
+
+chmod a+w file
+Add write permission for everyone.
+
+chmod 755 file
+Set permission to rwxr-xr-x.
+
+chmod 644 file
+Set permission to rw-r--r--.
+
+chmod 700 file
+Set permission to rwx------.
+
+chown owner file
+Changes the owner of a file.

@@ -1,0 +1,15 @@
+========== Practice ==========
+
+✔ Created Day4 folder
+✔ Created notes.txt
+✔ Created script.sh
+✔ Used ls -l
+✔ Read file permissions
+✔ Used chmod +x
+✔ Used chmod -x 
+✔ Used chmod a+w
+✔ Used chmod 755
+✔ Used chmod 644
+✔ Used chmod 700
+✔ Learned chown
+✔ Completed Day 4

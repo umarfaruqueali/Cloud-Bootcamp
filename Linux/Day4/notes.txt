@@ -1,0 +1,29 @@
+========== Cloud Bootcamp ==========
+
+Day 4
+
+Today I Learned:
+
+-Linux file permissions
+-Read(r), Write(w), Execute(x)
+-ls -l
+-chmod (symbolic)
+-chmod (numeric)
+-chmod (theory)
+
+KEY POINTS:
+- r = Read
+- w = Write
+- x = Execute
+
+PERMISSION VALUES:
+r = 4
+w = 2
+x = 1
+
+COMMON PERMISSIONS:
+755 = rwxr-xr-x
+644 = rw-r--r--
+700 = rwx------
+
+Today I succcescfully changed file permissions using chmod.
