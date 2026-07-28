@@ -1,0 +1,29 @@
+========== Cloud Bootcamp ==========
+
+Day 5
+
+Today I learned:
+
+- whoami
+- id
+- groups
+- /etc/passwd
+- echo $HOME
+- echo $SHELL
+- who
+- users
+- sudo useradd
+- sudo userdel
+
+SUMMARY:
+
+- Identified current user.
+- Viewed user and group IDs.
+- Listed user groups.
+- Learned about the /etc/passwd file.
+- Displayed home directory.
+- Displayed current shell.
+- Checked loged in users.
+- Created and deleted a practice user.
+
+ 

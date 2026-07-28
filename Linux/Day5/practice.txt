@@ -1,0 +1,14 @@
+
+========== PRACTICE ==========
+
+- Checked current username.
+- Viewed UID and GID.
+- Listed user groups.
+- Read /etc/passwd.
+- Displayed HOME directory.
+- Displayed current shell.
+- Checked logged in users.
+- Created user:student1
+- Verified user using id.
+- Deleted user: student1.
+_ Verified user deletion.

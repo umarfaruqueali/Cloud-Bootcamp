@@ -1,0 +1,13 @@
+========== COMMANDS LEARNED ==========
+
+- whoami
+- id
+- groups
+- cat /etc/passwd
+- echo $HOME
+- echo $SHELL
+- who
+- users
+- sudo useradd username
+- sudo userdel username
+
