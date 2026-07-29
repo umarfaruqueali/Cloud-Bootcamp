@@ -1,0 +1,75 @@
+============ Today i answered all these questions for my revision ===========
+
+Linux Revision Test (Days 1–5)
+
+Part A – Commands (1 mark each)
+
+Which command shows your current directory?
+Which command lists all files in long format?
+Which command creates an empty file?
+Which command creates a directory?
+Which command changes the current directory?
+Which command copies a file?
+Which command moves or renames a file?
+Which command removes a file?
+Which command removes an empty directory?
+Which command prints the whole contents of a file?
+Which command opens a file page by page?
+Which command shows the first 5 lines of a file?
+Which command shows the last 8 lines of a file?
+Which command searches for the word Linux in notes.txt (case-insensitive)?
+Which command finds all .txt files from the current directory?
+Which command tells you the logged-in username?
+Which command displays UID, GID and groups?
+Which command displays all groups of the current user?
+Which command shows your home directory?
+Which command shows your current shell?
+
+Part B – Theory
+
+What is the difference between grep and find?
+What is the difference between cat and less?
+What is the difference between cp and mv?
+What is UID?
+What is GID?
+What is /etc/passwd used for?
+Why do we use sudo?
+Part C – Permissions
+What do these letters mean?
+r
+w
+x
+Decode this permission:
+-rwxr-x---
+
+Tell me the permissions for:
+
+Owner:
+Group:
+Others:
+Which command makes script.sh executable?
+Which command sets permission to 644?
+Which permission number gives:
+rwx------
+
+Part D – Git
+
+What does this command do?
+git add .
+What does -m mean in:
+git commit -m "Completed Day 5"
+Which command uploads your local commits to GitHub?
+
+🏆 Boss Challenge (No Notes)
+
+Write the complete sequence of commands to:
+
+Create a folder named Revision
+Go inside it
+Create notes.txt
+Write something into it using nano
+Save and exit
+Display the file
+Stage it
+Commit it with the message "Added Revision notes"
+Push it to GitHub
