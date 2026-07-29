@@ -1,0 +1,25 @@
+========== Linux Bootcamp ==========
+
+Day 6
+
+Nano and Vim Text Editors
+
+Nano:
+- Beginner-friendly terminal text editor.
+- Ctrl + O = Save
+- Ctrl + X = Exit
+- Ctrl + K = Cut line
+- Ctrl + U = Paste line
+- Ctrl + W = Search
+
+Vim:
+- i = Insert Mode
+- Esc = Normal Mode
+- :w = Save
+- :wq = Save and Exit
+- :q! = Quit without Saving
+
+Important:
+- Nano and Vim are editors.
+- Both can edit the same file.
+- Linux cannot have two files with the same name in one directory.

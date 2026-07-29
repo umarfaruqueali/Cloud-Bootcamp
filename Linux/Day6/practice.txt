@@ -1,0 +1,15 @@
+========== Day 6 Practice ==========
+
+Created and edited files using Nano.
+
+Created and edited files using Vim.
+
+Practiced:
+- Saving files
+- Exiting editors
+- Searching text
+- Insert Mode
+- Normal Mode
+- Save & Quit
+
+Nano and Vim can edit the same file.

@@ -1,0 +1,8 @@
+ ========== Commands Practiced Today ==========
+
+- nano notes.txt
+- vim practice.txt
+- cat notes.txt
+- cat practice.txt
+- ls
+- pwd
