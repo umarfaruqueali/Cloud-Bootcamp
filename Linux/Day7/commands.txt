@@ -1,0 +1,14 @@
+========== Commands Practiced Today ==========
+
+pwd
+ls
+ls -a
+ls -l
+cd
+find .
+find . -type f
+find . -size 1033c
+find . -exec file {} \;
+file
+cat
+ssh
