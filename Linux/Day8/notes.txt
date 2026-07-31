@@ -1,0 +1,34 @@
+DAY 8 - PROCESS MANAGEMENT
+
+A process is a running program.
+
+Important Commands
+
+ps
+Shows running processes.
+
+ps aux
+Shows all running processes with detailed information.
+
+top
+Shows live CPU and memory usage.
+
+htop
+Interactive process viewer.
+
+kill PID
+Stops a process using its Process ID.
+
+kill -9 PID
+Forcefully kills a process.
+
+pkill process_name
+Kills processes by name.
+
+Today's Learning
+
+• Every running application has a PID.
+• Linux manages all running programs as processes.
+• top and htop are useful for monitoring the system.
+• kill stops one process.
+• pkill stops all processes with the same name.

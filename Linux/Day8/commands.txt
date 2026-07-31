@@ -1,0 +1,13 @@
+========= DAY 8 COMMANDS ===========
+
+Commands Learned Today
+
+- ps 
+- ps aux
+- top
+- htop
+- kill PID
+- kill -9 PID
+- pkill process_name
+
+

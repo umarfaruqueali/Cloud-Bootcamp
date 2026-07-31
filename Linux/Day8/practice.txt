@@ -1,0 +1,11 @@
+========== Day 8 Practice =========
+
+- Used ps
+- Used ps aux
+- Used top
+- Installed and used htop
+- Started ping process
+- Killed process using kill
+- Killed process using pkill
+
+
