@@ -1,0 +1,9 @@
+========= Day 9 Practice ============
+
+✓ Listed running services
+✓ Checked cron service status
+✓ Checked active state
+✓ Checked enabled state
+✓ Listed installed service files
+✓ Checked SSH service
+✓ Checked system time synchronization service

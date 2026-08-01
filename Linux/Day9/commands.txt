@@ -1,0 +1,9 @@
+============= Day 9 ===============
+
+-systemctl list-units --type=service
+-systemctl status cron
+-systemctl is-active cron
+-systemctl is-enabled cron
+-systemctl list-unit-files --type=service
+-systemctl status ssh
+-systemctl status systemd-timesyncd
