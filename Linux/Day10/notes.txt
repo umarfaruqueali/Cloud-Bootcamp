@@ -1,0 +1,35 @@
+======= Day 10 : Package Management ========
+
+PACKAGE :
+- A package is a software that can be installed on Linux.
+
+PACKAGE MANAGER :
+- Ubuntu uses apt to install, update and remove packages.
+
+=========  COMMMANDS ==========
+1. apt update
+   - Refreshes the package database.
+
+2. apt upgrade
+   - installs available updates.
+
+3. apt install <package>
+   - Installs a package.
+
+4. apt remove <package>
+   - Removes a package but may keep configuration files.
+
+5. apt purge <package>
+   - Removes a package and it's configuration files.
+
+6. apt search <package>
+   - Searches repositories for mathing packages.
+
+7. apt show <package>
+   - Displays the detailed information about a package.
+
+8. which <command>
+   - Shows the location of an executable.
+
+Summary:
+-Today I learned how software is managed in Ubuntu using apt.

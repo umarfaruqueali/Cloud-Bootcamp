@@ -1,0 +1,17 @@
+==========  Day 10 Practice   ===========
+
+
+✔ Updated package list.
+✔ Viewed upgradable packages.
+✔ Installed cowsay.
+✔ Viewed package information.
+✔ Searched for packages.
+✔ Removed cowsay.
+✔ Purged cowsay.
+✔ Installed tree.
+✔ Displayed directory tree.
+✔ Removed tree.
+✔ Purged tree.
+
+Result:
+Learned complete package management workflow using apt.

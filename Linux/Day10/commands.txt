@@ -1,0 +1,22 @@
+========== Day 10 - Commands ===============
+
+Commands Learned Today !!
+
+- sudo apt update
+- apt list --upgradable
+- sudo apt install cowsay
+- apt show cowsay
+- apt search cowsay
+- sudo apt remove cowsay
+- sudo apt purge cowsay
+- which cowsay
+- apt search git
+- apt show git
+- apt search tree
+- sudo apt install tree
+- which tree
+- tree ~/Cloud-Bootcamp/Linux
+- sudo apt remove tree
+- sudo apt purge tree
+- which tree
+
