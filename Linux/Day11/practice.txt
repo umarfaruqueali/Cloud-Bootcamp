@@ -1,0 +1,12 @@
+============ Day 11 Practice ===========
+
+1. Checked SSH version.
+2. Verified SSH executable location.
+3. Generated/verified SSH key pair.
+4. Listed files inside ~/.ssh
+5. Displayed public SSH key.
+6. Added/verified SSH key on GitHub.
+7. Tested GitHub SSH authentication.
+8. Verified Git remote is using SSH.
+
+

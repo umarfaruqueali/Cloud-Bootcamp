@@ -1,0 +1,14 @@
+======== Day 11, Commands =========
+
+Commands Learned Today:
+
+- ssh
+- ssh -v
+- which ssh
+- ssh-keygen
+- ls -la ~/.ssh
+- cat ~/.ssh/id_ed25519.pub
+- ssh -T git@github.com
+- git remote -v
+
+
