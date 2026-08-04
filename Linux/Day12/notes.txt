@@ -1,0 +1,38 @@
+========== Day 12 : Bash Scripting ==========
+
+SCRIPT
+- A script is a file containing a series of commands.
+- Bash executes commands written inside a .sh file.
+
+VARIABLE
+- Stores data.
+Example:
+name="Umar"
+
+echo
+- Displays text or variable values.
+
+read
+- Takes input from the user.
+
+SHEBANG
+#!/bin/bash
+- Tells Linux to execute the script using Bash.
+
+chmod +x
+- Gives execute permission to a script.
+
+./script.sh
+- Runs a script from the current directory.
+
+bash script.sh
+- Executes a script without execute permission.
+
+IF STATEMENT
+- Used to make decisions.
+
+Syntax:
+if [ condition ]
+then
+    commands
+fi

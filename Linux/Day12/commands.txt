@@ -1,0 +1,12 @@
+Commands learned today.
+
+echo $variable
+read variable
+chmod +x hello.sh
+chmod -x hello.sh
+./hello.sh
+bash hello.sh
+./input.sh
+./profile.sh
+./check.sh
+./backup.sh

@@ -1,0 +1,10 @@
+Today's Practice:
+
+1. Created hello.sh script.
+2. Used variables and echo.
+3. Took user input using read.
+4. Learned execute permission using chmod +x.
+5. Executed scripts using ./script.sh.
+6. Executed scripts using bash script.sh.
+7. Created an if statement.
+8. Created backup.sh script.
