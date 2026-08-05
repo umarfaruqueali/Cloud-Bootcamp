@@ -1,0 +1,28 @@
+Day 13 Practice
+
+✔ Learned Cron and Cron Jobs.
+
+✔ Learned Crontab.
+
+✔ Opened Crontab using:
+crontab -e
+
+✔ Listed Cron Jobs using:
+crontab -l
+
+✔ Created cron_test.sh.
+
+✔ Made script executable.
+
+✔ Scheduled first Cron Job.
+
+✔ Learned Cron syntax:
+Minute Hour Day Month Weekday Command
+
+✔ Learned:
+* = Every
+
+✔ Redirected output using:
+>>
+
+✔ Verified automatic execution using cron.log.

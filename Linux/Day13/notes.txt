@@ -1,0 +1,35 @@
+========== Day 13 : Cron Jobs ==========
+
+CRON
+- Cron is a Linux service used to execute commands or scripts automatically at scheduled times.
+
+CRON JOB
+- A Cron Job is a scheduled task executed automatically by the Cron service.
+
+CRONTAB
+- Crontab (Cron Table) stores all scheduled Cron Jobs of a user.
+
+CRON SYNTAX
+
+Minute Hour Day-of-Month Month Day-of-Week Command
+
+Example:
+0 2 * * * /home/umar/Cloud-Bootcamp/Linux/Day13/cron_test.sh
+
+Meaning:
+0  → Minute
+2  → Hour
+*  → Every Day of Month
+*  → Every Month
+*  → Every Day of Week
+
+* means "Every"
+
+OUTPUT REDIRECTION
+
+>   → Overwrites the file.
+
+>>  → Appends output to the end of the file.
+
+Cron executes jobs in the background.
+Output is usually redirected to a log file.

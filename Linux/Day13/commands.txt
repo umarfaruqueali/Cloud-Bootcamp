@@ -1,0 +1,10 @@
+
+Commands Learned Today:
+
+
+crontab -e
+crontab -l
+chmod +x cron_test.sh
+./cron_test.sh
+date
+cat cron.log
