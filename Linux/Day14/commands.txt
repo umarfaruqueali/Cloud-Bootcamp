@@ -1,0 +1,24 @@
+======== Commands Learned Today =========
+
+- cd /var/log
+- ls
+- cat dpkg.log
+- tail dpkg.log
+- tail -f dpkg.log
+- less dpgk.log
+
+- echo $HOME
+- echo $USER
+- echo $PWD
+- echo $SHELL
+
+- printenv
+- which ls
+- which nano
+- which git
+
+- export CITY="Patna"
+- echo $CITY
+- export COURSE="Cloud Computing"
+- echo $COURSE
+- exit

@@ -1,0 +1,52 @@
+========== Day 14 : Logs & Environment Variables ==========
+
+LOGS
+
+- A log is a file that records system events and activities.
+- Logs help in monitoring, troubleshooting and auditing a Linux system.
+
+LOG DIRECTORY
+
+- Most Linux log files are stored in:
+/var/log
+
+Examples:
+- dpkg.log
+- auth.log
+- syslog
+- kern.log
+
+tail
+
+- Displays the last 10 lines of a file by default.
+- Useful for viewing recent log entries.
+
+tail -f
+
+- Displays the last 10 lines and continuously monitors the file for new entries.
+
+ENVIRONMENT VARIABLES
+
+- Environment variables are named variables that store information used by the shell and programs.
+
+Important Environment Variables
+
+PATH
+- Stores directories where Linux searches for executable commands.
+
+HOME
+- Stores the current user's home directory.
+
+USER
+- Stores the current logged-in username.
+
+PWD
+- Stores the current working directory.
+
+SHELL
+- Stores the path of the current shell.
+
+export
+
+- Creates an environment variable for the current shell session.
+- Variables created using export are temporary and disappear after the shell is closed.

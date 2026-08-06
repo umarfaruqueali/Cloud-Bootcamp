@@ -1,0 +1,34 @@
+Day 14 Practice
+
+✔ Explored the /var/log directory.
+
+✔ Viewed dpkg.log.
+
+✔ Compared:
+- cat
+- less
+- tail
+- tail -f
+
+✔ Learned the purpose of Linux logs.
+
+✔ Learned Environment Variables.
+
+✔ Viewed:
+- PATH
+- HOME
+- USER
+- PWD
+- SHELL
+
+✔ Displayed all environment variables using:
+printenv
+
+✔ Used which command to locate executables.
+
+✔ Created custom environment variables using export.
+
+✔ Displayed custom variables using echo.
+
+✔ Learned that exported variables are temporary and exist only for the current shell session.
+
