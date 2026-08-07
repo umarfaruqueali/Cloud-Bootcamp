@@ -1,0 +1,25 @@
+# Execute a script
+chmod +x script.sh
+./script.sh
+
+# Read user input
+read variable
+
+# Print variable
+echo $variable
+
+# Tail logs
+tail cron.log
+
+# Live log monitoring
+tail -f cron.log
+
+# Show environment variables
+printenv
+
+# Display common environment variables
+echo $HOME
+echo $USER
+echo $PATH
+echo $PWD
+echo $SHELL

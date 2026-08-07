@@ -1,0 +1,15 @@
+1. Create a greeting script using variables.
+
+2. Create an eligibility checker using if-else.
+
+3. Create a backup script using read.
+
+4. Explain the difference between > and >>.
+
+5. Write a cron job that runs every day at 9:30 AM.
+
+6. Explain why absolute paths are preferred in cron jobs.
+
+7. Explain the difference between tail and tail -f.
+
+8. Explain why environment variables created with export disappear after closing the terminal.

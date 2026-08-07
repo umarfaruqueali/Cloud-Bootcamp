@@ -1,0 +1,12 @@
+Day 15 - Revision
+
+1. Bash variables store values.
+2. User input is taken using the read command.
+3. Variables are accessed using the $ symbol.
+4. if-else is used for decision making.
+5. Cron schedules tasks using five time fields.
+6. tail displays recent log entries.
+7. tail -f monitors logs in real time.
+8. Environment variables make scripts reusable.
+9. Temporary environment variables disappear when the shell exits.
+10. Absolute paths are preferred in cron jobs.
