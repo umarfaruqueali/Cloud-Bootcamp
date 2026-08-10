@@ -1,0 +1,147 @@
+========================================
+        NETWORKING — DAY 16
+========================================
+
+OSI MODEL
+---------
+
+OSI = Open Systems Interconnection
+
+The OSI model is a 7-layer conceptual model
+used to understand how network communication
+takes place between systems.
+
+7. Application
+6. Presentation
+5. Session
+4. Transport
+3. Network
+2. Data Link
+1. Physical
+
+
+LAYER 7 — APPLICATION
+---------------------
+
+Purpose:
+Provides network services directly to applications.
+
+Examples:
+HTTP, HTTPS, DNS, FTP, SSH
+
+Examples in real life:
+Web browser → HTTP/HTTPS
+Domain lookup → DNS
+Remote login → SSH
+
+
+LAYER 6 — PRESENTATION
+----------------------
+
+Purpose:
+Handles how data is represented.
+
+Main functions:
+- Data translation/formatting
+- Encryption/decryption
+- Compression/decompression
+
+Simple idea:
+Makes data understandable between systems.
+
+
+LAYER 5 — SESSION
+-----------------
+
+Purpose:
+Establishes, manages and terminates communication sessions.
+
+Simple idea:
+Manages the conversation between two systems.
+
+
+LAYER 4 — TRANSPORT
+-------------------
+
+Purpose:
+Provides end-to-end communication between applications.
+
+Main protocols:
+TCP — reliable, connection-oriented
+UDP — faster, connectionless
+
+Data unit:
+TCP → Segment
+UDP → Datagram
+
+
+LAYER 3 — NETWORK
+-----------------
+
+Purpose:
+Provides logical addressing and routing.
+
+Main protocol:
+IP
+
+Device:
+Router
+
+Data unit:
+Packet
+
+
+LAYER 2 — DATA LINK
+-------------------
+
+Purpose:
+Handles communication within the local network.
+
+Main concepts:
+MAC address
+Ethernet
+ARP
+
+Device:
+Switch
+
+Data unit:
+Frame
+
+
+LAYER 1 — PHYSICAL
+------------------
+
+Purpose:
+Transmits raw bits over the physical medium.
+
+Examples:
+Ethernet cable
+Fiber
+Radio signals
+
+Data unit:
+Bits
+
+OSI DATA FLOW
+-------------
+
+Application
+     ↓
+   Data
+     ↓
+Transport
+     ↓
+ Segment
+     ↓
+Network
+     ↓
+ Packet
+     ↓
+Data Link
+     ↓
+ Frame
+     ↓
+Physical
+     ↓
+  Bits
