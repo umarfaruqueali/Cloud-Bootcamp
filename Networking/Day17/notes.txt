@@ -1,0 +1,63 @@
+========================================
+        NETWORKING — DAY 17
+========================================
+
+TCP/IP MODEL
+------------
+
+TCP/IP = Transmission Control Protocol /
+         Internet Protocol
+
+The TCP/IP model is a practical networking
+model used to describe how devices communicate
+over networks.
+
+It has 4 main layers:
+
+4. Application
+3. Transport
+2. Internet
+1. Network Access / Link
+
+
+OSI → TCP/IP MAPPING
+--------------------
+
+OSI Layer 7 ┐
+OSI Layer 6 ├──→ TCP/IP Application
+OSI Layer 5 ┘
+
+OSI Layer 4 ───→ TCP/IP Transport
+
+OSI Layer 3 ───→ TCP/IP Internet
+
+OSI Layer 2 ┐
+OSI Layer 1 ┘──→ TCP/IP Network Access / Link
+
+
+COMMON PROTOCOL MAPPING
+-----------------------
+
+HTTPS        → Application
+TCP / UDP    → Transport
+IP           → Internet
+Ethernet     → Network Access / Link
+Wi-Fi        → Network Access / Link
+
+
+KEY IDEA
+--------
+
+OSI = 7-layer conceptual model
+
+TCP/IP = 4-layer practical model
+
+TCP/IP combines related OSI layers:
+
+Application + Presentation + Session
+                ↓
+          TCP/IP Application
+
+Data Link + Physical
+                ↓
+       TCP/IP Network Access / Link

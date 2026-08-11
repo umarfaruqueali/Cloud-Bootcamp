@@ -1,0 +1,13 @@
+========================================
+        DAY 17 — COMMANDS
+========================================
+
+mkdir Day17
+cd Day17
+touch notes.txt commands.txt
+mkdir practice
+tree
+
+cd practice
+nano osi_tcpip_mapping.txt
+cat osi_tcpip_mapping.txt

@@ -1,0 +1,26 @@
+====================================
+      OSI-->TCP/IP MAPPING
+====================================
+
+OSI Layer 7 → TCP/IP Application Layer
+OSI Layer 6 → TCP/IP Application Layer
+OSI Layer 5 → TCP/IP Application Layer
+OSI Layer 4 → TCP/IP Transport Layer
+OSI Layer 3 → TCP/IP Internet Layer
+OSI Layer 2 → TCP/IP Network Access / LinK
+OSI Layer 1 → TCP/IP Network Access / Link
+
+
+TCP/IP:
+1. Applictaion Layer
+2. Transport Layer
+3. Internet Layer
+4. Network Access / Link Layer
+
+
+HTTPS     → Application Layer
+TCP       → Transport Layer
+IP        → Internet Layer
+Ethernet  → Network Access / Link Layer
+
+
