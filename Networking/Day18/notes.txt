@@ -1,0 +1,113 @@
+========================================
+        NETWORKING — DAY 18
+========================================
+
+IP ADDRESS
+----------
+
+An IP address is a logical address used to
+identify a network interface and enable
+communication over an IP network.
+
+IP ADDRESSING VERSIONS
+----------------------
+
+IPv4 → 32-bit address
+IPv6 → 128-bit address
+
+IPv4 uses decimal numbers separated by dots.
+IPv6 uses hexadecimal groups separated by colons.
+
+
+IPv4 ADDRESS
+------------
+
+IPv4 is a 32-bit address divided into
+four 8-bit groups called octets.
+
+Example:
+
+192.168.1.25
+
+192   .   168   .   1   .   25
+ 8        8          8       8 bits
+
+Total = 32 bits
+
+
+OCTET
+------
+
+Each octet contains 8 bits.
+
+Minimum:
+00000000 = 0
+
+Maximum:
+11111111 = 255
+
+Therefore, each IPv4 octet can range from
+0 to 255.
+
+
+NETWORK AND HOST PORTION
+------------------------
+
+An IPv4 address consists of:
+
+Network Portion + Host Portion
+
+The network portion identifies the network.
+The host portion identifies the device/interface
+within that network.
+
+
+PREFIX LENGTH
+-------------
+
+The prefix length tells us how many bits
+belong to the network portion.
+
+Example:
+
+192.168.1.25/24
+
+/24 = first 24 bits are network bits.
+
+Network → 192.168.1
+Host    → 25
+
+Network address → 192.168.1.0
+
+
+Example:
+
+172.16.5.100/16
+
+/16 = first 16 bits are network bits.
+
+Network → 172.16
+Host    → 5.100
+
+Network address → 172.16.0.0
+
+
+IMPORTANT DISTINCTION
+---------------------
+
+IP address:
+192.168.1.25
+
+Network address:
+192.168.1.0
+
+Host portion:
+25
+
+
+KEY IDEA
+--------
+
+The prefix length determines where the
+Network portion ends and the Host portion begins.
+

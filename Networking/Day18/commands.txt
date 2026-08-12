@@ -1,0 +1,39 @@
+========================================
+        DAY 18 — COMMANDS
+========================================
+
+# Create Day 18 directory
+mkdir Day18
+
+# Enter Day 18
+cd Day18
+
+# Create notes and commands files
+touch notes.txt commands.txt
+
+# Create practice directory
+mkdir practice
+
+# Check directory structure
+tree
+
+
+# Open notes
+nano notes.txt
+
+# Open practice file
+cd practice
+nano ipv4_practice.txt
+
+# Display practice file
+cat ipv4_practice.txt
+
+
+# Return to Day 18
+cd ..
+
+# Open commands file
+nano commands.txt
+
+# Display commands file
+cat commands.txt

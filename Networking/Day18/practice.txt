@@ -1,0 +1,45 @@
+========================================
+        DAY 18 — IPv4 PRACTICE
+========================================
+
+1. 192.168.10.50/24
+
+Network portion  → 192.168.10
+Host portion     → 50
+Network address  → 192.168.10.0
+
+
+2. 172.16.25.100/16
+
+Network portion  → 172.16
+Host portion     → 25.100
+Network address  → 172.16.0.0
+
+
+3. 10.20.30.40/8
+
+Network portion  → 10
+Host portion     → 20.30.40
+Network address  → 10.0.0.0
+
+
+4. 192.168.10.70/26
+
+Fourth octet:
+
+70 = 01000110
+
+/26 = 26 network bits + 6 host bits
+
+01000110
+01 | 000110
+↑       ↑
+Net     Host
+
+Network address:
+
+01 | 000000
+= 01000000
+= 64
+
+Network address → 192.168.10.64
