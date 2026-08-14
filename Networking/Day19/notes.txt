@@ -1,0 +1,282 @@
+========================================
+DAY 19 — CIDR
+========================================
+
+OBJECTIVE:
+CIDR (Classless Inter-Domain Routing)
+
+----------------------------------------
+1. WHAT IS CIDR?
+----------------------------------------
+
+CIDR = Classless Inter-Domain Routing.
+
+CIDR notation represents an IPv4 network using:
+
+IP address / prefix length
+
+Example:
+
+192.168.10.70/26
+
+
+----------------------------------------
+2. IPv4 AND BITS
+----------------------------------------
+
+An IPv4 address contains 32 bits.
+
+It is divided into 4 octets.
+
+Each octet contains 8 bits.
+
+Example:
+
+192.168.10.70
+
+192 → 8 bits
+168 → 8 bits
+10  → 8 bits
+70  → 8 bits
+
+Total = 32 bits
+
+
+----------------------------------------
+3. PREFIX LENGTH
+----------------------------------------
+
+The number after "/" tells us how many bits
+belong to the network portion.
+
+Example:
+
+192.168.10.70/26
+
+Network bits = 26
+Host bits = 32 - 26 = 6
+
+
+----------------------------------------
+4. HOST BITS
+----------------------------------------
+
+Formula:
+
+Host bits = 32 - prefix length
+
+Examples:
+
+/24 → 8 host bits
+/25 → 7 host bits
+/26 → 6 host bits
+/27 → 5 host bits
+
+
+----------------------------------------
+5. TOTAL ADDRESSES
+----------------------------------------
+
+Formula:
+
+Total addresses = 2^(host bits)
+
+Examples:
+
+/24:
+2^8 = 256 addresses
+
+/25:
+2^7 = 128 addresses
+
+/26:
+2^6 = 64 addresses
+
+/27:
+2^5 = 32 addresses
+
+
+----------------------------------------
+6. USABLE HOST ADDRESSES
+----------------------------------------
+
+Traditionally:
+
+Usable hosts = Total addresses - 2
+
+One address is used as the network address.
+One address is used as the broadcast address.
+
+Examples:
+
+/24:
+256 - 2 = 254 usable hosts
+
+/25:
+128 - 2 = 126 usable hosts
+
+/26:
+64 - 2 = 62 usable hosts
+
+/27:
+32 - 2 = 30 usable hosts
+
+
+----------------------------------------
+7. BLOCK SIZE
+----------------------------------------
+
+Block size is the number of addresses
+contained in each subnet.
+
+For the prefixes we practiced:
+
+/24 → 256
+/25 → 128
+/26 → 64
+/27 → 32
+
+
+----------------------------------------
+8. /26 BLOCKS
+----------------------------------------
+
+A /26 has 64 addresses per block.
+
+For 192.168.10.0/24:
+
+0–63
+64–127
+128–191
+192–255
+
+Therefore:
+
+192.168.10.70/26
+
+70 belongs to the 64–127 block.
+
+Network address:
+192.168.10.64
+
+
+----------------------------------------
+9. NETWORK ADDRESS
+----------------------------------------
+
+The network address identifies the subnet.
+
+All host bits are 0.
+
+Example:
+
+192.168.10.70/26
+
+Network:
+192.168.10.64
+
+
+----------------------------------------
+10. BROADCAST ADDRESS
+----------------------------------------
+
+The broadcast address is the last address
+in the subnet.
+
+All host bits are 1.
+
+Example:
+
+192.168.10.70/26
+
+Subnet range:
+
+192.168.10.64 – 192.168.10.127
+
+Network:
+192.168.10.64
+
+Broadcast:
+192.168.10.127
+
+
+----------------------------------------
+11. USABLE HOST RANGE
+----------------------------------------
+
+For:
+
+192.168.10.70/26
+
+Network:
+192.168.10.64
+
+First usable host:
+192.168.10.65
+
+Last usable host:
+192.168.10.126
+
+Broadcast:
+192.168.10.127
+
+
+----------------------------------------
+12. /27 EXAMPLE
+----------------------------------------
+
+192.168.20.145/27
+
+/27 → 32 addresses per block.
+
+Blocks:
+
+0–31
+32–63
+64–95
+96–127
+128–159
+160–191
+192–223
+224–255
+
+145 belongs to:
+
+128–159
+
+Therefore:
+
+Network:
+192.168.20.128
+
+First host:
+192.168.20.129
+
+Last host:
+192.168.20.158
+
+Broadcast:
+192.168.20.159
+
+
+----------------------------------------
+13. QUICK CIDR TABLE
+----------------------------------------
+
+Prefix | Host Bits | Total | Usable
+
+/24    | 8         | 256   | 254
+/25    | 7         | 128   | 126
+/26    | 6         | 64    | 62
+/27    | 5         | 32    | 30
+
+
+----------------------------------------
+KEY FORMULAS
+----------------------------------------
+
+Host bits = 32 - prefix
+
+Total addresses = 2^(host bits)
+
+Usable hosts = Total addresses - 2

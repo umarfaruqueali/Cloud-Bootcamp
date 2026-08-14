@@ -1,0 +1,61 @@
+========================================
+DAY 19 — CIDR COMMANDS
+========================================
+
+1. SHOW IP ADDRESSES
+
+ip addr
+
+Short form:
+
+ip a
+
+
+2. SHOW NETWORK INTERFACES
+
+ip link
+
+
+3. SHOW ROUTING TABLE
+
+ip route
+
+
+4. SHOW ROUTE TO A SPECIFIC IP
+
+ip route get 8.8.8.8
+
+
+5. SHOW IP INFORMATION
+
+ip addr show
+
+
+6. CHECK CONNECTIVITY
+
+ping <IP-address>
+
+Example:
+
+ping 192.168.1.1
+
+
+----------------------------------------
+USEFUL COMMANDS TO REMEMBER
+----------------------------------------
+
+ip addr
+→ Shows IP addresses and network interfaces.
+
+ip route
+→ Shows routing information.
+
+ip link
+→ Shows network interfaces.
+
+ping
+→ Tests connectivity.
+
+ip route get <IP>
+→ Shows how Linux would route traffic
+  to a specific destination.

@@ -1,0 +1,199 @@
+========================================
+DAY 19 — CIDR PRACTICE
+========================================
+
+Q1. How many bits are in an IPv4 address?
+
+Answer:
+32 bits
+
+
+Q2. How many bits are in each IPv4 octet?
+
+Answer:
+8 bits
+
+
+Q3. For /26, how many host bits are there?
+
+32 - 26 = 6
+
+Answer:
+6 host bits
+
+
+Q4. How many total addresses are in a /26?
+
+2^6 = 64
+
+Answer:
+64 addresses
+
+
+Q5. How many usable hosts are in a /26?
+
+64 - 2 = 62
+
+Answer:
+62 usable hosts
+
+
+Q6. How many total addresses are in a /27?
+
+2^5 = 32
+
+Answer:
+32 addresses
+
+
+Q7. How many usable hosts are in a /27?
+
+32 - 2 = 30
+
+Answer:
+30 usable hosts
+
+
+----------------------------------------
+IP: 192.168.10.70/26
+----------------------------------------
+
+Network portion:
+192.168.10
+
+Host portion:
+70
+
+Block size:
+64
+
+Blocks:
+
+0–63
+64–127
+128–191
+192–255
+
+70 belongs to:
+64–127
+
+Network address:
+192.168.10.64
+
+First usable host:
+192.168.10.65
+
+Last usable host:
+192.168.10.126
+
+Broadcast:
+192.168.10.127
+
+
+----------------------------------------
+IP: 192.168.20.128/27
+----------------------------------------
+
+Block size:
+32
+
+Network address:
+192.168.20.128
+
+Broadcast:
+192.168.20.159
+
+First usable host:
+192.168.20.129
+
+Last usable host:
+192.168.20.158
+
+Usable hosts:
+30
+
+
+----------------------------------------
+IP: 192.168.1.100/27
+----------------------------------------
+
+Block size:
+32
+
+Blocks around the IP:
+
+64–95
+96–127
+128–159
+
+100 belongs to:
+96–127
+
+Network address:
+192.168.1.96
+
+First usable host:
+192.168.1.97
+
+Last usable host:
+192.168.1.126
+
+Broadcast:
+192.168.1.127
+
+
+----------------------------------------
+IP: 192.168.50.130/26
+----------------------------------------
+
+Block size:
+64
+
+Blocks:
+
+0–63
+64–127
+128–191
+192–255
+
+130 belongs to:
+128–191
+
+Network address:
+192.168.50.128
+
+First usable host:
+192.168.50.129
+
+Last usable host:
+192.168.50.190
+
+Broadcast:
+192.168.50.191
+
+
+----------------------------------------
+IMPORTANT CONCEPT
+----------------------------------------
+
+An IP such as:
+
+192.168.50.130/26
+
+does NOT mean that 130 becomes 128.
+
+130 is the actual host IP.
+
+128 is the NETWORK ADDRESS of the subnet
+that contains 130.
+
+So:
+
+Network:
+192.168.50.128
+
+Host:
+192.168.50.130
+
+Broadcast:
+192.168.50.191
