@@ -1,0 +1,56 @@
+DAY 20 — SUBNETTING PRACTICE
+============================
+
+Q1.
+How many total addresses are present in a /26 subnet?
+
+Q2.
+How many usable host addresses are present in a /26 subnet?
+
+Q3.
+What is the subnet mask of /26?
+
+Q4.
+What is the block size of /26?
+
+Q5.
+How many /26 subnets can be created from a /24 network?
+
+Q6.
+List the four /26 subnet ranges of:
+
+192.168.50.0/24
+
+
+Q7.
+Find the following for:
+
+192.168.50.70/26
+
+a) Network address
+b) First usable host
+c) Last usable host
+d) Broadcast address
+
+
+Q8.
+Find the following for:
+
+192.168.50.130/26
+
+a) Network address
+b) First usable host
+c) Last usable host
+d) Broadcast address
+
+
+Q9.
+How many bits are borrowed when converting:
+
+/24 → /26
+
+
+Q10.
+Explain in your own words:
+
+Why does borrowing 2 host bits create 4 smaller subnets?

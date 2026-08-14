@@ -1,0 +1,125 @@
+DAY 20 — SUBNETTING
+===================
+
+1. What is Subnetting?
+----------------------
+Subnetting is the process of dividing one large network into smaller networks called subnets.
+
+Example:
+192.168.50.0/24
+        ↓
+Can be divided into smaller /26 subnets.
+
+
+2. Why Subnetting?
+------------------
+• Divide a large network into smaller networks
+• Organize hosts into different networks
+• Reduce unnecessary broadcast traffic
+• Use IP addresses more efficiently
+
+
+3. /24 → /26
+------------
+A /24 network has:
+
+Network bits = 24
+Host bits = 8
+Total addresses = 2^8 = 256
+
+If 2 more bits are borrowed for subnetting:
+
+/24 → /26
+
+Network bits = 26
+Host bits = 6
+Total addresses per subnet = 2^6 = 64
+
+
+4. Four /26 Subnets
+-------------------
+192.168.50.0/24 becomes:
+
+1. 192.168.50.0/26
+   Network   → 192.168.50.0
+   Broadcast → 192.168.50.63
+
+2. 192.168.50.64/26
+   Network   → 192.168.50.64
+   Broadcast → 192.168.50.127
+
+3. 192.168.50.128/26
+   Network   → 192.168.50.128
+   Broadcast → 192.168.50.191
+
+4. 192.168.50.192/26
+   Network   → 192.168.50.192
+   Broadcast → 192.168.50.255
+
+
+5. /26 Block Size
+-----------------
+/26 = 255.255.255.192
+
+Block size:
+
+256 - 192 = 64
+
+Therefore the subnet boundaries are:
+
+0, 64, 128, 192
+
+
+6. Network, Host & Broadcast
+----------------------------
+Each /26 subnet contains:
+
+64 total addresses
+62 usable host addresses
+
+Network address → first address
+Usable hosts    → between network and broadcast
+Broadcast       → last address
+
+
+Example:
+
+192.168.50.130/26
+
+130 falls in the block:
+
+128–191
+
+Therefore:
+
+Network   → 192.168.50.128
+First host → 192.168.50.129
+Last host  → 192.168.50.190
+Broadcast → 192.168.50.191
+
+
+7. Important Idea
+-----------------
+An IP address contains both:
+
+Network portion + Host portion
+
+The subnet mask/prefix tells us where the network portion ends.
+
+Subnetting simply borrows some host bits and converts them into additional network bits.
+
+Example:
+
+/24 → /26
+
+Original:
+NNNNNNNN.NNNNNNNN.NNNNNNNN.HHHHHHHH
+
+After subnetting:
+NNNNNNNN.NNNNNNNN.NNNNNNNN.NNHHHHHH
+
+2 host bits were borrowed.
+
+These 2 bits create:
+
+2^2 = 4 subnets.

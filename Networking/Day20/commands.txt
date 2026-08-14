@@ -1,0 +1,51 @@
+DAY 20 — SUBNETTING COMMANDS
+============================
+
+1. ip addr
+-----------
+Shows IP addresses and CIDR prefixes assigned to network interfaces.
+
+Example:
+
+ip addr
+
+
+2. ip route
+-----------
+Shows the routing table and connected networks.
+
+Example:
+
+ip route
+
+
+3. ipcalc
+---------
+Can be used to calculate subnet information if installed.
+
+Example:
+
+ipcalc 192.168.50.130/26
+
+Useful information may include:
+
+• Network
+• Broadcast
+• Host range
+• Subnet mask
+• Number of hosts
+
+
+4. ping
+--------
+Tests connectivity between hosts.
+
+Example:
+
+ping -c 4 192.168.50.129
+
+
+NOTE:
+Commands are used only to reinforce subnetting concepts.
+The main focus of Day 20 is understanding how a network is divided
+into smaller subnets.
