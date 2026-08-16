@@ -1,0 +1,7 @@
+DAY 21 — PRIVATE & PUBLIC IP
+
+1. ip addr
+   Find private/local IP address.
+
+2. curl ifconfig.me
+   Find public IP address.

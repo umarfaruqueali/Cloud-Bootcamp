@@ -1,0 +1,21 @@
+DAY 21 — PRIVATE & PUBLIC IP
+
+Private IP:
+Used inside a local/private network.
+
+Public IP:
+Used to identify a network/connection on the Internet.
+
+NAT:
+Translates private IP addresses to public IP addresses and vice versa.
+
+Private IP ranges:
+10.0.0.0 – 10.255.255.255
+172.16.0.0 – 172.31.255.255
+192.168.0.0 – 192.168.255.255
+
+My Private IP:
+192.168.108.66
+
+My Public IP:
+49.47.133.115
