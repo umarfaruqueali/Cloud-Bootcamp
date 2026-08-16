@@ -1,0 +1,76 @@
+DAY 22 — PRACTICE
+
+1. Draw a simple home network.
+
+             INTERNET
+                 │
+              ROUTER
+             /   |   \
+            /    |    \
+        Laptop Phone   PC
+
+
+2. Identify the router.
+
+Answer:
+The router connects the home LAN to the Internet.
+
+
+3. What is the purpose of a switch?
+
+Answer:
+A switch connects multiple devices within the same LAN
+and forwards frames using MAC addresses.
+
+
+4. What is the purpose of a router?
+
+Answer:
+A router connects different networks and forwards packets
+between them using IP addresses.
+
+
+5. Complete:
+
+Switch → connects __________ within a network.
+
+Router → connects __________ networks.
+
+Answers:
+Switch → devices
+Router → different
+
+
+6. Scenario:
+
+Laptop and printer are connected to the same home network.
+
+Which device can connect them within the LAN?
+
+Answer:
+Switch.
+
+
+7. Scenario:
+
+Your home network needs to communicate with the Internet.
+
+Which device performs this job?
+
+Answer:
+Router.
+
+
+8. DRAW YOUR OWN HOME NETWORK
+
+Include:
+- Internet
+- Router
+- Laptop
+- Phone
+- PC
+
+Label:
+LAN
+Router
+Internet

@@ -1,0 +1,19 @@
+DAY 22 — COMMANDS
+
+# Show network interfaces
+ip link
+
+# Show IP addresses
+ip addr
+
+# Show routing table
+ip route
+
+# Test connectivity
+ping -c 4 192.168.96.1
+
+# Show nearby devices/neighbours
+ip neigh
+
+# Show the public IP
+curl ifconfig.me

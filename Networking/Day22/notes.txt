@@ -1,0 +1,75 @@
+================ DAY 22 — ROUTERS & SWITCHES ================
+
+1. SWITCH
+
+A switch is a networking device that connects multiple devices
+within the same Local Area Network (LAN).
+
+Example:
+
+Laptop   ──┐
+Phone    ──┼── Switch
+PC       ──┤
+Printer  ──┘
+
+A switch mainly uses MAC addresses to forward Ethernet frames
+to the correct device.
+
+KEY IDEA:
+Switch = connects devices within a network.
+
+
+2. ROUTER
+
+A router is a networking device that connects different networks
+and forwards packets between them.
+
+Example:
+
+Devices → Router → Internet
+
+The router connects our private home network to other networks,
+such as the Internet.
+
+KEY IDEA:
+Router = connects different networks.
+
+
+3. SWITCH vs ROUTER
+
+Switch:
+- Connects devices within a LAN.
+- Mainly works with MAC addresses.
+- Example: PC ↔ Printer.
+
+Router:
+- Connects different networks.
+- Uses IP addresses for routing.
+- Example: Home LAN ↔ Internet.
+
+
+4. SIMPLE HOME NETWORK
+
+                    INTERNET
+                        │
+                     ROUTER
+                   /    |    \
+                  /     |     \
+              Laptop   Phone    PC
+
+The router acts as the gateway between the home LAN
+and the Internet.
+
+
+5. KEY TAKEAWAYS
+
+Switch → connects devices.
+Router → connects networks.
+
+Switch → mainly uses MAC addresses.
+Router → routes using IP addresses.
+
+LAN = Local Area Network.
+
+A home router commonly provides routing, NAT, DHCP
+and basic firewall functionality.
