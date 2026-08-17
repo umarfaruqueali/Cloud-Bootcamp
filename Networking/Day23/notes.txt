@@ -1,0 +1,158 @@
+================== DAY 23 — DNS ====================
+
+OBJECTIVE:
+Understand DNS and how domain names are translated into IP addresses.
+
+WHAT IS DNS?
+DNS = Domain Name System.
+
+DNS translates human-readable domain names such as:
+
+google.com
+flipkart.com
+saarthik.com
+
+into IP addresses that computers use to communicate.
+
+Example:
+
+google.com
+    ↓
+142.250.122.100
+
+DNS works like the Internet's phonebook.
+
+WHY DNS IS NEEDED:
+Humans prefer domain names.
+Computers communicate using IP addresses.
+
+Instead of remembering an IP address, we use a domain name.
+
+DNS LOOKUP:
+The process of asking a DNS server for the IP address
+associated with a domain name is called DNS lookup.
+
+nslookup can be used to perform DNS queries.
+
+Example:
+
+nslookup google.com
+
+The output can show:
+- DNS server being used
+- Domain name
+- IPv4 address (A record)
+- IPv6 address (AAAA record)
+
+DNS SERVER:
+A DNS server receives DNS queries and returns information
+about domain names.
+
+In our lab, the DNS server was:
+
+10.255.255.254
+
+Port:
+
+53
+
+Port 53 is commonly used for DNS.
+
+NON-AUTHORITATIVE ANSWER:
+A non-authoritative answer means the DNS server responding
+to us is not the original authoritative DNS server for that
+domain. It is providing an answer obtained through DNS
+resolution/caching.
+
+DNS AND PING:
+When we run:
+
+ping google.com
+
+the system first needs to resolve google.com to an IP address.
+Then ping sends packets to that IP address.
+
+Therefore:
+
+Domain name
+    ↓
+DNS resolution
+    ↓
+IP address
+    ↓
+Ping
+
+IMPORTANT:
+DNS resolving successfully does NOT automatically mean
+the website is working.
+
+DNS only tells us where the domain points.
+Connectivity can be tested separately using tools such as ping.
+
+IPv4 AND IPv6:
+DNS may return both IPv4 and IPv6 addresses.
+
+IPv4 example:
+
+142.250.122.100
+
+IPv6 example:
+
+2404:6800:4013:804::64
+
+A RECORD:
+Maps a domain name to an IPv4 address.
+
+AAAA RECORD:
+Maps a domain name to an IPv6 address.
+
+PRACTICAL OBSERVATIONS:
+
+google.com resolved to multiple IPv4 and IPv6 addresses.
+
+flipkart.com resolved to:
+
+163.53.76.86
+
+saarthik.com resolved to multiple addresses including:
+
+172.67.180.24
+104.21.88.139
+
+and IPv6 addresses.
+
+neoumar.com returned:
+
+NXDOMAIN
+
+This means the DNS server reported that the requested
+domain name does not exist in the DNS data it knows.
+
+DNS DOES NOT EQUAL WEBSITE SPEED:
+DNS lookup is only one part of accessing a website.
+
+A website's total loading time can also depend on:
+
+DNS resolution
+Network connection
+TLS/HTTPS connection
+Server response
+Website/application processing
+Content size
+CDN and routing
+
+SUMMARY:
+
+DNS converts domain names into IP addresses.
+
+nslookup → investigates DNS resolution.
+
+ping → tests network reachability and measures round-trip time.
+
+DNS commonly uses port 53.
+
+A record → IPv4
+AAAA record → IPv6
+
+DNS resolution and website performance are related,
+but they are not the same thing.

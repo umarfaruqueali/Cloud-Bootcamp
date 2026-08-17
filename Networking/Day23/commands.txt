@@ -1,0 +1,77 @@
+DAY 23 — DNS COMMANDS
+====================
+
+1. Install DNS utilities:
+
+sudo apt install bind9-dnsutils
+
+
+2. DNS lookup:
+
+nslookup google.com
+
+
+3. DNS lookup for another domain:
+
+nslookup flipkart.com
+
+
+4. DNS lookup for saarthik.com:
+
+nslookup saarthik.com
+
+
+5. DNS lookup for neoumar.com:
+
+nslookup neoumar.com
+
+
+6. Ping a domain:
+
+ping -c 4 google.com
+
+
+7. Ping another domain:
+
+ping -c 4 flipkart.com
+
+
+8. Ping a domain that could not be resolved:
+
+ping -c 4 neoumar.com
+
+
+9. Ping a specific IP address:
+
+ping -c 4 142.250.122.100
+
+
+10. Trace the network route:
+
+traceroute saarthik.com
+
+
+11. Trace the network route to Google:
+
+traceroute google.com
+
+
+12. Measure website connection timing using curl:
+
+curl -o /dev/null -s -w \
+"DNS: %{time_namelookup}s\nConnect: %{time_connect}s\nTLS: %{time_appconnect}s\nTTFB: %{time_starttransfer}s\nTotal: %{time_total}s\n" \
+https://saarthik.com
+
+
+13. Compare website timing with Google:
+
+curl -o /dev/null -s -w \
+"DNS: %{time_namelookup}s\nConnect: %{time_connect}s\nTLS: %{time_appconnect}s\nTTFB: %{time_starttransfer}s\nTotal: %{time_total}s\n" \
+https://google.com
+
+
+14. Check TTFB and total time:
+
+curl -o /dev/null -s -w \
+"TTFB: %{time_starttransfer}s | Total: %{time_total}s\n" \
+https://saarthik.com

@@ -1,0 +1,379 @@
+DAY 23 — DNS PRACTICE / LAB
+============================
+
+OBJECTIVE:
+Practice DNS resolution, connectivity testing, route tracing,
+and basic website timing analysis using Linux commands.
+
+
+--------------------------------------------------
+1. INSTALL DNS UTILITIES
+--------------------------------------------------
+
+Command:
+
+sudo apt install bind9-dnsutils
+
+Purpose:
+Install the DNS utilities required to use nslookup.
+
+Result:
+Installation completed successfully.
+
+
+--------------------------------------------------
+2. DNS LOOKUP — GOOGLE
+--------------------------------------------------
+
+Command:
+
+nslookup google.com
+
+Observed:
+
+DNS Server:
+10.255.255.254
+
+DNS Server Port:
+53
+
+google.com returned multiple IPv4 addresses and IPv6 addresses.
+
+Observation:
+One domain can resolve to multiple IP addresses.
+
+
+--------------------------------------------------
+3. DNS LOOKUP — FLIPKART
+--------------------------------------------------
+
+Command:
+
+nslookup flipkart.com
+
+Observed IPv4 address:
+
+163.53.76.86
+
+Observation:
+DNS successfully resolved flipkart.com to an IP address.
+
+
+--------------------------------------------------
+4. DNS LOOKUP — SAARTHIK
+--------------------------------------------------
+
+Command:
+
+nslookup saarthik.com
+
+Observed IPv4 addresses:
+
+172.67.180.24
+104.21.88.139
+
+Observed IPv6 addresses:
+
+2606:4700:3033::ac43:b418
+2606:4700:3035::6815:588b
+
+Observation:
+saarthik.com has multiple IP addresses.
+
+This can allow traffic to be distributed across
+different servers/locations and provides redundancy.
+
+
+--------------------------------------------------
+5. DNS LOOKUP — NEOUMAR
+--------------------------------------------------
+
+Command:
+
+nslookup neoumar.com
+
+Observed:
+
+NXDOMAIN
+
+Observation:
+The DNS server reported that the domain could not be found.
+
+
+--------------------------------------------------
+6. PING GOOGLE
+--------------------------------------------------
+
+Command:
+
+ping -c 4 google.com
+
+Observed:
+
+Packets transmitted: 4
+Packets received: 4
+Packet loss: 0%
+
+Average RTT:
+approximately 56.8 ms
+
+Observation:
+DNS resolution worked and all four ICMP packets received
+a response.
+
+
+--------------------------------------------------
+7. PING FLIPKART
+--------------------------------------------------
+
+Command:
+
+ping -c 4 flipkart.com
+
+Observed:
+
+Packets transmitted: 4
+Packets received: 4
+Packet loss: 0%
+
+Average RTT:
+approximately 42.4 ms
+
+Observation:
+flipkart.com was reachable and responded successfully.
+
+
+--------------------------------------------------
+8. PING SAARTHIK
+--------------------------------------------------
+
+Command:
+
+ping -c 4 saarthik.com
+
+Observed:
+
+Packets transmitted: 4
+Packets received: 3
+Packet loss: 25%
+
+Average RTT:
+approximately 206 ms
+
+Observation:
+saarthik.com showed significantly higher latency and
+25% packet loss during this test.
+
+This suggested that the network path to the website
+was slower/less reliable at the time of testing.
+
+
+--------------------------------------------------
+9. PING A SPECIFIC IP
+--------------------------------------------------
+
+Command:
+
+ping -c 4 142.250.122.100
+
+Observed:
+
+Packets transmitted: 4
+Packets received: 4
+Packet loss: 0%
+
+Average RTT:
+approximately 60.7 ms
+
+Observation:
+We can ping an IP address directly without using
+a domain name.
+
+
+--------------------------------------------------
+10. TRACE ROUTE — SAARTHIK
+--------------------------------------------------
+
+Command:
+
+traceroute saarthik.com
+
+Observed:
+
+The route passed through multiple hops before reaching
+the destination.
+
+Some hops showed private IP addresses.
+
+Some hops displayed:
+
+* * *
+
+Observation:
+Not every router responds to traceroute probes.
+
+The * * * entries do not automatically mean that the
+network is broken.
+
+
+--------------------------------------------------
+11. TRACE ROUTE — GOOGLE
+--------------------------------------------------
+
+Command:
+
+traceroute google.com
+
+Observed:
+
+The route passed through multiple hops.
+
+Several intermediate hops responded quickly.
+
+Some hops showed:
+
+* * *
+
+The final destination responded successfully.
+
+
+--------------------------------------------------
+12. WEBSITE TIMING — SAARTHIK
+--------------------------------------------------
+
+Command:
+
+curl -o /dev/null -s -w \
+"DNS: %{time_namelookup}s\nConnect: %{time_connect}s\nTLS: %{time_appconnect}s\nTTFB: %{time_starttransfer}s\nTotal: %{time_total}s\n" \
+https://saarthik.com
+
+Observed during one test:
+
+DNS:
+approximately 0.014 s
+
+Connect:
+approximately 0.222 s
+
+TLS:
+approximately 0.459 s
+
+TTFB:
+approximately 1.230 s
+
+Total:
+approximately 1.449 s
+
+
+Observation:
+DNS lookup itself was very fast.
+
+A significant amount of time was spent establishing
+the connection/TLS session and waiting for the server
+to begin responding.
+
+
+--------------------------------------------------
+13. WEBSITE TIMING — GOOGLE
+--------------------------------------------------
+
+Command:
+
+curl -o /dev/null -s -w \
+"DNS: %{time_namelookup}s\nConnect: %{time_connect}s\nTLS: %{time_appconnect}s\nTTFB: %{time_starttransfer}s\nTotal: %{time_total}s\n" \
+https://google.com
+
+Observed during one test:
+
+DNS:
+approximately 0.030 s
+
+Connect:
+approximately 0.061 s
+
+TLS:
+approximately 0.104 s
+
+TTFB:
+approximately 0.214 s
+
+Total:
+approximately 0.214 s
+
+
+Observation:
+Google responded much faster in this test.
+
+
+--------------------------------------------------
+14. SAARTHIK — REPEATED TIMING TEST
+--------------------------------------------------
+
+Command:
+
+curl -o /dev/null -s -w \
+"TTFB: %{time_starttransfer}s | Total: %{time_total}s\n" \
+https://saarthik.com
+
+Repeated several times.
+
+Observed Total times were approximately:
+
+2.61 s
+1.64 s
+1.61 s
+2.15 s
+
+Observation:
+The response time varied between requests.
+
+This shows that website performance can fluctuate
+between requests.
+
+
+--------------------------------------------------
+15. WHAT WE LEARNED FROM THE INVESTIGATION
+--------------------------------------------------
+
+DNS:
+Domain names are resolved into IP addresses.
+
+nslookup:
+Used to investigate DNS resolution.
+
+ping:
+Used to test reachability and measure round-trip latency.
+
+traceroute:
+Shows the network path toward a destination.
+
+curl timing:
+Helps break website connection time into stages such as:
+
+DNS lookup
+Connection
+TLS
+TTFB
+Total response time
+
+
+--------------------------------------------------
+FINAL LAB CONCLUSION
+--------------------------------------------------
+
+Investigated several real websites using Linux
+networking tools.
+
+Observed that:
+
+- One domain can have multiple IP addresses.
+- DNS resolution can be successful even when other
+  network problems exist.
+- Ping latency can vary between websites.
+- Packet loss can occur on a route.
+- Traceroute can reveal the path toward a destination.
+- DNS lookup time is only one part of website loading time.
+- TTFB and total response time are useful indicators
+  when investigating website performance.
+
+Day 23 DNS practical investigation completed.
