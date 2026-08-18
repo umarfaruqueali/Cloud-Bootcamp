@@ -1,0 +1,71 @@
+================ DAY 24 — DHCP ================
+
+1. ip addr
+
+Shows network interfaces and their assigned IP addresses.
+
+Command:
+ip addr
+
+Useful for checking:
+- Network interface name
+- IPv4 address
+- IPv6 address
+- MAC address
+- Interface state
+
+
+2. ip route
+
+Shows the system's routing table.
+
+Command:
+ip route
+
+Useful for checking:
+- Default gateway
+- Network routes
+- Which interface is used for outgoing traffic
+
+
+3. nmcli device show | grep -i dhcp
+
+Attempts to display DHCP-related information from
+NetworkManager.
+
+Command:
+nmcli device show | grep -i dhcp
+
+NOTE:
+nmcli was not installed on the system, so this command
+returned "command not found".
+
+It suggested installing NetworkManager.
+
+
+4. resolvectl status
+
+Shows the system's DNS configuration.
+
+Command:
+resolvectl status
+
+Useful for checking:
+- Current DNS server
+- DNS servers
+- DNS configuration for network links
+
+
+5. KEY COMMANDS
+
+ip addr
+→ Check IP addresses and network interfaces.
+
+ip route
+→ Check routing table and default gateway.
+
+resolvectl status
+→ Check DNS configuration.
+
+nmcli device show
+→ View NetworkManager device information.

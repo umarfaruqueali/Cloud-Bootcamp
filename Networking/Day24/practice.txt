@@ -1,0 +1,123 @@
+================ DAY 24 — DHCP PRACTICE ================
+
+1. CHECK NETWORK INTERFACES
+
+Command:
+
+ip addr
+
+Observed:
+
+Active interface:
+eth0
+
+IPv4 Address:
+192.168.108.66/20
+
+Observation:
+
+The system has an IPv4 address assigned to the eth0 interface.
+
+
+2. CHECK ROUTING TABLE
+
+Command:
+
+ip route
+
+Observed:
+
+Default Gateway:
+192.168.96.1
+
+Interface:
+eth0
+
+Observation:
+
+The default gateway is the router/network device used to
+forward traffic toward other networks.
+
+
+3. CHECK DHCP INFORMATION
+
+Command:
+
+nmcli device show | grep -i dhcp
+
+Observed:
+
+nmcli was not available on the system.
+
+Result:
+
+Command not found.
+
+Observation:
+
+NetworkManager was not installed, so DHCP information could
+not be inspected through nmcli.
+
+
+4. CHECK DNS CONFIGURATION
+
+Command:
+
+resolvectl status
+
+Observed:
+
+DNS Server:
+10.255.255.254
+
+Observation:
+
+The system is currently using 10.255.255.254 as its DNS server.
+
+
+5. NETWORK CONFIGURATION SUMMARY
+
+Interface:
+eth0
+
+IP Address:
+192.168.108.66/20
+
+Default Gateway:
+192.168.96.1
+
+DNS Server:
+10.255.255.254
+
+
+6. UNDERSTANDING THE CONFIGURATION
+
+IP Address:
+Identifies the machine on its network.
+
+Subnet Prefix:
+Defines the network portion of the IP address.
+
+Default Gateway:
+Provides a route toward other networks.
+
+DNS Server:
+Resolves domain names into IP addresses.
+
+
+7. FINAL PRACTICAL TAKEAWAY
+
+The following commands can be used to inspect the main
+network configuration of a Linux machine:
+
+ip addr
+    → IP address and interfaces
+
+ip route
+    → Routes and default gateway
+
+resolvectl status
+    → DNS configuration
+
+The hands-on session demonstrated the network configuration
+currently being used by the Ubuntu system.

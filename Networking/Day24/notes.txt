@@ -1,0 +1,135 @@
+================ DAY 24 — DHCP ================
+
+1. DHCP
+
+DHCP (Dynamic Host Configuration Protocol) automatically provides
+network configuration to devices when they connect to a network.
+
+A DHCP server can provide:
+
+- IP address
+- Subnet mask
+- Default gateway
+- DNS server
+
+KEY IDEA:
+DHCP = automatically provides network configuration.
+
+
+2. WHY DHCP IS NEEDED
+
+Without DHCP, every device would need its network settings
+configured manually.
+
+Example:
+
+Laptop → DHCP Server
+          ↓
+      IP Address
+      Subnet Mask
+      Gateway
+      DNS
+
+DHCP makes network configuration automatic and reduces
+manual configuration errors.
+
+
+3. DHCP DORA PROCESS
+
+DHCP commonly uses the DORA process:
+
+D → Discover
+O → Offer
+R → Request
+A → Acknowledge
+
+Example:
+
+Client                         DHCP Server
+  │                                 │
+  │──── DHCP Discover ──────────────>│
+  │<──── DHCP Offer ────────────────│
+  │──── DHCP Request ───────────────>│
+  │<──── DHCP ACK ──────────────────│
+
+After the ACK, the client can use the assigned network
+configuration.
+
+
+4. DHCP LEASE
+
+A DHCP IP address is usually assigned for a limited period
+called a lease.
+
+Example:
+
+Laptop → 192.168.1.20
+          Lease: 24 hours
+
+Before the lease expires, the device can renew its address.
+
+KEY IDEA:
+DHCP usually assigns an IP temporarily rather than permanently.
+
+
+5. DHCP AND DEFAULT GATEWAY
+
+DHCP can provide the default gateway to a device.
+
+Example:
+
+IP Address:      192.168.1.20
+Subnet Mask:     255.255.255.0
+Gateway:         192.168.1.1
+DNS Server:      10.255.255.254
+
+The default gateway is normally the router that allows
+the device to communicate with other networks.
+
+
+6. DHCP IN A HOME NETWORK
+
+                    INTERNET
+                        │
+                     ROUTER
+                  DHCP Server
+                   /    |    \
+                  /     |     \
+              Laptop   Phone    PC
+
+The home router commonly acts as the DHCP server.
+
+It assigns private IP addresses to devices on the LAN.
+
+
+7. DHCP vs DNS
+
+DHCP:
+- Assigns network configuration.
+- Can provide IP address, gateway and DNS server.
+
+DNS:
+- Resolves domain names into IP addresses.
+
+Example:
+
+DHCP → Laptop gets 192.168.1.20
+
+DNS → google.com → 142.250.x.x
+
+
+8. KEY TAKEAWAYS
+
+DHCP = Dynamic Host Configuration Protocol.
+
+DHCP automatically provides network configuration.
+
+DORA = Discover → Offer → Request → Acknowledge.
+
+DHCP commonly provides:
+IP address + Subnet mask + Gateway + DNS.
+
+DHCP uses leases, so assigned IP addresses can expire
+and be renewed.
+
+A home router commonly acts as a DHCP server.
