@@ -1,0 +1,51 @@
+================ DAY 25 — HTTP & HTTPS ================
+
+No Linux commands are required for today's hands-on.
+
+Browser DevTools commands / steps:
+
+1. Open Google Chrome.
+
+2. Open:
+   Developer Tools → Network
+
+3. Reload the webpage.
+
+4. Click a request from the Network list.
+
+5. Open:
+
+   Headers
+   → View request method, URL, status code and headers.
+
+6. Open:
+
+   Response
+   → View the data returned by the server.
+
+7. Open:
+
+   Cookies
+   → View cookies associated with the request.
+
+8. Check important cookie attributes:
+
+   Domain
+   Expires
+   HttpOnly
+   Secure
+   SameSite
+   Path
+
+
+IMPORTANT:
+
+Do not copy or share actual cookie values.
+
+Example observations from today's hands-on:
+
+Method  → GET
+Scheme  → HTTPS
+Host    → www.google.com
+Status  → 200
+Version → HTTP/3

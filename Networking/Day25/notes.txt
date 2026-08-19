@@ -1,0 +1,130 @@
+================ DAY 25 — HTTP & HTTPS ================
+
+1. HTTP
+
+HTTP (HyperText Transfer Protocol) is a protocol used for
+communication between a client and a web server.
+
+Example:
+
+Browser → HTTP Request → Web Server
+Browser ← HTTP Response ← Web Server
+
+HTTP is used to request and transfer web resources such as
+HTML, CSS, JavaScript, images and other data.
+
+
+2. HTTPS
+
+HTTPS = HTTP + TLS encryption.
+
+HTTPS protects communication between the client and server
+by encrypting the data exchanged over the network.
+
+Example:
+
+Browser → HTTPS Request → Server
+Browser ← HTTPS Response ← Server
+
+KEY IDEA:
+HTTP  → communication without TLS encryption.
+HTTPS → HTTP secured using TLS.
+
+
+3. HTTP REQUEST
+
+A request is sent by the client to the server.
+
+Important parts:
+
+- Method → what action is requested.
+- URL → resource being requested.
+- Headers → additional information about the request.
+- Cookies → stored browser data sent when applicable.
+
+Common HTTP methods:
+
+GET  → retrieve data.
+POST → send data to the server.
+
+
+4. HTTP RESPONSE
+
+The server sends a response back to the client.
+
+Important parts:
+
+- Status Code
+- Headers
+- Response Body
+- Cookies
+
+Example:
+
+200 OK → request was successful.
+
+
+5. HTTP STATUS CODES
+
+2xx → Success
+200 → OK
+
+3xx → Redirection
+
+4xx → Client error
+404 → Not Found
+
+5xx → Server error
+500 → Internal Server Error
+
+
+6. BROWSER DEVTOOLS
+
+Browser DevTools → Network tab can be used to inspect
+HTTP/HTTPS communication.
+
+A request can show:
+
+Headers → request/response information
+Cookies → cookies associated with the request
+Request → request details/data
+Response → data returned by server
+Timings → request timing information
+
+
+7. COOKIES
+
+A cookie is a small piece of data associated with a website
+and stored by the browser.
+
+Cookies can be sent with HTTP requests and can help websites
+maintain sessions and store preferences.
+
+Important cookie attributes:
+
+Secure → sent only over HTTPS.
+HttpOnly → cannot be accessed directly by JavaScript.
+SameSite → controls cross-site cookie behavior.
+Domain → specifies the applicable domain.
+Path → specifies applicable URL paths.
+Expires → specifies when the cookie expires.
+
+
+8. DAY 25 KEY TAKEAWAYS
+
+HTTP → web communication protocol.
+
+HTTPS → HTTP secured using TLS.
+
+Request → Client → Server.
+
+Response → Server → Client.
+
+200 → successful request.
+
+DevTools Network tab → inspect web requests and responses.
+
+Cookie → small browser-stored data associated with a website.
+
+Secure → HTTPS only.
+HttpOnly → JavaScript cannot directly access it.

@@ -1,0 +1,96 @@
+================ DAY 25 — HTTP & HTTPS ================
+
+PRACTICE TASK
+
+Objective:
+Inspect a real HTTP/HTTPS request using browser DevTools.
+
+
+TASK 1 — Open Network Tab
+
+1. Open Chrome.
+2. Open any website.
+3. Press F12.
+4. Select Network.
+5. Reload the page.
+
+
+TASK 2 — Inspect Request
+
+Select one request and find:
+
+[ ] Request Method
+[ ] URL / Host
+[ ] Scheme
+[ ] Status Code
+[ ] HTTP Version
+
+
+TASK 3 — Inspect Response
+
+Open the Response tab.
+
+Find:
+
+[ ] Response body
+[ ] Returned HTML/data
+
+
+TASK 4 — Inspect Cookies
+
+Open the Cookies tab.
+
+Find:
+
+[ ] Domain
+[ ] Expires
+[ ] Secure
+[ ] HttpOnly
+[ ] SameSite
+[ ] Path
+
+DO NOT copy or share actual cookie values.
+
+
+TASK 5 — Identify Status Codes
+
+Remember:
+
+200 → OK
+404 → Not Found
+500 → Internal Server Error
+
+
+TASK 6 — QUICK CHECK
+
+Answer these before the quiz:
+
+1. What is HTTP?
+
+2. What does HTTPS add to HTTP?
+
+3. Which side sends the HTTP request?
+
+4. Which side sends the HTTP response?
+
+5. What does status code 200 mean?
+
+6. What is a cookie?
+
+7. What does Secure mean for a cookie?
+
+8. What does HttpOnly mean?
+
+9. Where can HTTP requests be inspected in Chrome?
+
+10. What is the difference between HTTP and HTTPS?
+
+
+DAY 25 HANDS-ON STATUS
+
+[✓] Opened Network tab
+[✓] Inspected GET request
+[✓] Observed HTTPS
+[✓] Observed status 200
+[✓] Inspected Response
+[✓] Inspected Cookies
