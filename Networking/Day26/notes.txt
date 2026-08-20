@@ -1,0 +1,143 @@
+================ DAY 26 — NETWORK PORTS ================
+
+1. PORT
+
+A port is a logical number used to identify a specific
+network service or application on a device.
+
+An IP address identifies the device, while a port identifies
+the service.
+
+Example:
+
+192.168.1.10:22
+
+192.168.1.10 → IP address
+22           → SSH port
+
+KEY IDEA:
+IP Address → Which device?
+Port       → Which service?
+
+
+2. PORT NUMBER RANGE
+
+TCP and UDP ports range from 0 to 65535.
+
+Common ranges:
+
+0–1023
+→ Well-known ports
+
+1024–49151
+→ Registered ports
+
+49152–65535
+→ Dynamic / Private ports
+
+
+3. TCP vs UDP PORTS
+
+Ports can be used with TCP or UDP.
+
+TCP:
+- Connection-oriented
+- Reliable delivery
+- Used by services such as SSH and HTTP
+
+UDP:
+- Connectionless
+- Lower overhead
+- Used by services such as DNS and DHCP
+
+
+4. COMMON PORTS
+
+20  → FTP Data
+21  → FTP Control
+22  → SSH
+23  → Telnet
+25  → SMTP
+53  → DNS
+67  → DHCP Server
+68  → DHCP Client
+80  → HTTP
+110 → POP3
+123 → NTP
+143 → IMAP
+161 → SNMP
+389 → LDAP
+443 → HTTPS
+445 → SMB
+3306 → MySQL
+3389 → RDP
+5432 → PostgreSQL
+6379 → Redis
+
+
+5. IMPORTANT CLOUD PORTS
+
+22
+→ SSH / Remote Linux administration
+
+53
+→ DNS
+
+67/68
+→ DHCP
+
+80
+→ HTTP
+
+443
+→ HTTPS
+
+3306
+→ MySQL
+
+3389
+→ RDP / Windows Remote Desktop
+
+5432
+→ PostgreSQL
+
+6379
+→ Redis
+
+
+6. LISTENING PORTS
+
+A service can listen for incoming network connections
+on a particular port.
+
+Example:
+
+Server
+  │
+  ├── :22   → SSH
+  ├── :80   → HTTP
+  └── :443  → HTTPS
+
+The operating system uses the port number to deliver network
+traffic to the appropriate service.
+
+
+7. KEY TAKEAWAYS
+
+IP address identifies the device.
+
+Port identifies the network service.
+
+TCP and UDP use port numbers.
+
+0–1023 = Well-known ports.
+
+22 → SSH
+53 → DNS
+80 → HTTP
+443 → HTTPS
+
+3306 → MySQL
+3389 → RDP
+5432 → PostgreSQL
+6379 → Redis

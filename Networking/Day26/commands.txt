@@ -1,0 +1,79 @@
+================ DAY 26 — NETWORK PORTS ================
+
+1. ss -tuln
+
+Shows listening TCP and UDP sockets.
+
+Command:
+
+ss -tuln
+
+Options:
+
+-t → TCP
+-u → UDP
+-l → Listening
+-n → Show numerical addresses and ports
+
+
+2. ss -tulnp
+
+Shows listening TCP and UDP sockets along with
+process information.
+
+Command:
+
+ss -tulnp
+
+Options:
+
+-t → TCP
+-u → UDP
+-l → Listening
+-n → Numerical addresses and ports
+-p → Process information
+
+
+3. sudo ss -tulnp
+
+Used when process information is not visible with
+normal user privileges.
+
+Command:
+
+sudo ss -tulnp
+
+Shows:
+
+- Listening ports
+- Protocol
+- Local address
+- Port number
+- Process name
+- PID
+
+
+4. DAY 26 OBSERVATION
+
+The system showed listening services including:
+
+Port 22
+→ sshd
+→ SSH
+
+Port 53
+→ systemd-resolved
+→ DNS
+
+Port 323
+→ systemd-timesyncd
+→ Time synchronization
+
+
+5. IMPORTANT COMMAND MEMORY
+
+ss -tuln
+→ Check listening ports.
+
+sudo ss -tulnp
+→ Check listening ports + processes/PIDs.

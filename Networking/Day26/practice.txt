@@ -1,0 +1,147 @@
+================ DAY 26 — NETWORK PORTS ================
+
+HANDS-ON PRACTICE
+
+1. CHECK LISTENING PORTS
+
+Command:
+
+ss -tuln
+
+Purpose:
+
+Displays listening TCP and UDP sockets without process
+information.
+
+Observed:
+
+The system displayed listening network sockets along with
+their local addresses and port numbers.
+
+
+2. CHECK LISTENING PORTS WITH PROCESS INFORMATION
+
+Command:
+
+sudo ss -tulnp
+
+Purpose:
+
+Displays listening TCP and UDP sockets along with the
+associated process name and PID.
+
+The normal command:
+
+ss -tulnp
+
+did not show process names.
+
+Running it with sudo provided the required process information.
+
+
+3. IDENTIFY SSH
+
+Observed:
+
+Port:
+22
+
+Process:
+sshd
+
+Service:
+SSH
+
+Observation:
+
+The system has an SSH service listening on port 22.
+
+
+4. IDENTIFY DNS
+
+Observed:
+
+Port:
+53
+
+Process:
+systemd-resolved
+
+Service:
+DNS
+
+Observation:
+
+The system has local DNS resolution handled by
+systemd-resolved.
+
+
+5. IDENTIFY TIME SYNCHRONIZATION
+
+Observed:
+
+Port:
+323
+
+Process:
+systemd-timesyncd
+
+Service:
+System time synchronization
+
+Observation:
+
+systemd-timesyncd was listening on port 323.
+
+
+6. LISTENING PORT SUMMARY
+
+Port 22
+→ sshd
+→ SSH
+
+Port 53
+→ systemd-resolved
+→ DNS
+
+Port 323
+→ systemd-timesyncd
+→ Time synchronization
+
+
+7. COMMON PORT PRACTICE
+
+The following common ports were studied:
+
+22   → SSH
+53   → DNS
+67/68 → DHCP
+80   → HTTP
+443  → HTTPS
+3306 → MySQL
+3389 → RDP
+5432 → PostgreSQL
+6379 → Redis
+
+
+8. PRACTICAL TAKEAWAY
+
+ss -tuln
+→ Shows listening ports.
+
+sudo ss -tulnp
+→ Shows listening ports with process names and PIDs.
+
+A listening port indicates that a service is waiting for
+network connections on that port.
+
+
+DAY 26 HANDS-ON STATUS
+
+[✓] Checked listening TCP/UDP ports
+[✓] Used ss -tuln
+[✓] Used sudo ss -tulnp
+[✓] Identified sshd on port 22
+[✓] Identified systemd-resolved on port 53
+[✓] Identified systemd-timesyncd on port 323
+[✓] Studied important cloud-related ports
