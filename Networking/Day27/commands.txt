@@ -1,0 +1,100 @@
+================ DAY 27 — NAT & FIREWALLS ================
+
+1. CHECK NETWORK INTERFACES
+
+ip addr
+
+Shows network interfaces and assigned IP addresses.
+
+Used to find the system's private IP.
+
+
+2. CHECK ROUTING TABLE
+
+ip route
+
+Shows the system's routing table.
+
+Used to identify the default gateway.
+
+Example:
+
+default via 192.168.96.1 dev eth0
+
+
+3. CHECK ROUTE TO A SPECIFIC DESTINATION
+
+ip route get 8.8.8.8
+
+Shows how Linux will reach a specific destination.
+
+Example:
+
+8.8.8.8 via 192.168.96.1 dev eth0
+src 192.168.108.66
+
+
+4. CHECK PUBLIC IP
+
+curl -4 ifconfig.me
+
+Shows the public IPv4 address visible to the
+external Internet service.
+
+
+5. CHECK UFW STATUS
+
+sudo ufw status
+
+Shows whether UFW is active or inactive.
+
+
+6. CHECK UFW STATUS VERBOSE
+
+sudo ufw status verbose
+
+Shows detailed UFW status and firewall information.
+
+
+7. SHOW UFW RAW CONFIGURATION
+
+sudo ufw show raw
+
+Shows the underlying firewall configuration/rules.
+
+Useful for understanding firewall chains such as:
+
+INPUT
+OUTPUT
+FORWARD
+
+
+IMPORTANT:
+
+Do not enable or modify firewall rules on a system
+without understanding their effect.
+
+During today's hands-on, UFW was kept inactive.
+
+
+8. FIREWALL CHAINS
+
+INPUT
+→ Incoming traffic to the computer.
+
+OUTPUT
+→ Outgoing traffic from the computer.
+
+FORWARD
+→ Traffic passing through the computer.
+
+
+DAY 27 COMMANDS PRACTICED
+
+[✓] ip addr
+[✓] ip route
+[✓] ip route get 8.8.8.8
+[✓] curl -4 ifconfig.me
+[✓] sudo ufw status
+[✓] sudo ufw status verbose
+[✓] sudo ufw show raw

@@ -1,0 +1,141 @@
+================ DAY 27 — NAT & FIREWALLS ================
+
+PRACTICE
+
+1. Check the system's network interfaces:
+
+ip addr
+
+Identify the active network interface and its private IPv4
+address.
+
+
+2. Check the routing table:
+
+ip route
+
+Identify the default gateway and the interface used to reach
+other networks.
+
+
+3. Check the route to an external destination:
+
+ip route get 8.8.8.8
+
+Observe the gateway, source IP and network interface used
+to reach 8.8.8.8.
+
+
+4. Check the public IPv4 address:
+
+curl -4 ifconfig.me
+
+Compare the private IP shown by `ip addr` with the public
+IP visible to the Internet.
+
+
+5. Understand the NAT path:
+
+Private IP
+    ↓
+Gateway / NAT
+    ↓
+Public IP
+    ↓
+Internet
+
+NAT translates addresses between private and public networks.
+
+
+6. Check UFW status:
+
+sudo ufw status
+
+Observe whether UFW is active or inactive.
+
+
+7. Check detailed UFW status:
+
+sudo ufw status verbose
+
+Observe the current firewall status and configuration.
+
+
+8. Inspect the underlying UFW configuration:
+
+sudo ufw show raw
+
+Observe firewall chains such as:
+
+INPUT
+OUTPUT
+FORWARD
+
+
+9. Understand firewall chains:
+
+INPUT
+→ Traffic coming into the computer.
+
+OUTPUT
+→ Traffic leaving the computer.
+
+FORWARD
+→ Traffic passing through the computer.
+
+
+10. Observe the relationship between ports and firewalls:
+
+A service can be listening on a port without that port
+necessarily being accessible.
+
+Example:
+
+SSH service
+    ↓
+Port 22 listening
+    ↓
+Firewall/network rules
+    ↓
+Access may be allowed or blocked.
+
+
+11. Compare NAT and Firewall:
+
+NAT
+→ Translates IP addresses.
+
+Firewall
+→ Allows or blocks network traffic.
+
+
+12. Day 27 practical observation:
+
+Private IP:
+192.168.108.66
+
+Default Gateway:
+192.168.96.1
+
+Public IPv4:
+Checked using `curl -4 ifconfig.me`
+
+UFW:
+Installed but kept inactive.
+
+Firewall configuration:
+Inspected without enabling or changing firewall rules.
+
+
+DAY 27 PRACTICE STATUS
+
+[✓] Network interface checked
+[✓] Private IP identified
+[✓] Default gateway identified
+[✓] Internet route checked
+[✓] Public IP checked
+[✓] NAT concept observed
+[✓] UFW status checked
+[✓] Firewall configuration inspected
+[✓] INPUT / OUTPUT / FORWARD understood
+[✓] Firewall settings left unchanged

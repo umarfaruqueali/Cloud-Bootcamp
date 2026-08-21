@@ -1,0 +1,201 @@
+================ DAY 27 — NAT & FIREWALLS ================
+
+1. NAT
+
+NAT (Network Address Translation) is a technique used to
+translate IP addresses between private and public networks.
+
+A typical home network uses private IP addresses for local
+devices and a public IP address for communication with the
+Internet.
+
+Example:
+
+Laptop
+192.168.108.66
+      │
+      ▼
+Router / Gateway
+192.168.96.1
+      │
+      │ NAT
+      ▼
+Public IP
+49.x.x.x
+      │
+      ▼
+Internet
+
+
+2. PRIVATE IP vs PUBLIC IP
+
+Private IP:
+- Used inside private/local networks.
+- Not directly routable on the public Internet.
+- Example: 192.168.108.66
+
+Public IP:
+- Used for communication over the public Internet.
+- Visible to external Internet services.
+
+KEY IDEA:
+Private IP → local network
+Public IP → Internet
+
+
+3. DEFAULT GATEWAY
+
+A default gateway is the device that forwards traffic
+from the local network to other networks.
+
+Example:
+
+Laptop
+192.168.108.66
+      │
+      ▼
+Gateway
+192.168.96.1
+      │
+      ▼
+Internet
+
+Traffic for destinations outside the local network is sent
+to the default gateway.
+
+
+4. FIREWALL
+
+A firewall is a security system that examines network traffic
+and allows or blocks traffic according to defined rules.
+
+Example:
+
+Incoming Traffic
+       │
+       ▼
+   Firewall
+    /     \
+ ALLOW   BLOCK
+    │
+    ▼
+Service
+
+
+5. FIREWALL CHAINS
+
+INPUT:
+- Handles traffic coming into the computer.
+
+OUTPUT:
+- Handles traffic leaving the computer.
+
+FORWARD:
+- Handles traffic passing through the computer,
+  such as when the computer is acting as a router.
+
+
+6. FIREWALL vs NAT
+
+NAT:
+- Translates IP addresses.
+- Helps private devices communicate with the Internet.
+
+Firewall:
+- Controls network traffic.
+- Allows or blocks traffic according to rules.
+
+KEY IDEA:
+
+NAT      → Address translation.
+Firewall → Traffic control.
+
+
+7. LISTENING PORT vs FIREWALL RULE
+
+A service listening on a port means that an application
+is ready to accept network connections on that port.
+
+Example:
+
+Port 22 → SSH service listening.
+
+However, a listening service does not automatically mean
+that traffic is allowed to reach it.
+
+A firewall can allow or block access to the port.
+
+Example:
+
+SSH listening on port 22
+        +
+Firewall allows port 22
+        ↓
+SSH can be accessed through the allowed network path.
+
+
+8. UFW
+
+UFW (Uncomplicated Firewall) is a tool used to manage
+firewall rules on Linux.
+
+Examples of UFW commands:
+
+ufw status
+ufw status verbose
+ufw show raw
+
+UFW was initially inactive on the system.
+
+No firewall rules were enabled or changed during the
+hands-on because the system is being used for learning
+and unnecessary firewall changes could affect connectivity.
+
+
+9. DAY 27 HANDS-ON OBSERVATIONS
+
+Private IP:
+
+192.168.108.66
+
+Default Gateway:
+
+192.168.96.1
+
+Route to 8.8.8.8:
+
+8.8.8.8 via 192.168.96.1
+src 192.168.108.66
+
+Public IP was checked using:
+
+curl -4 ifconfig.me
+
+The external service returned a different public IPv4
+address from the laptop's private IP.
+
+This demonstrated the private-to-public network path
+associated with NAT.
+
+
+10. KEY TAKEAWAYS
+
+Private IP → Used inside a private network.
+
+Public IP → Used for Internet communication.
+
+Gateway → Forwards traffic outside the local network.
+
+NAT → Translates addresses between networks.
+
+Firewall → Allows or blocks network traffic.
+
+INPUT → Incoming traffic.
+
+OUTPUT → Outgoing traffic.
+
+FORWARD → Traffic passing through the computer.
+
+Listening port ≠ automatically accessible.
+
+UFW → Linux firewall management tool.
