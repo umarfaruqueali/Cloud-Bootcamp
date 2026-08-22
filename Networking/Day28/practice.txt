@@ -1,0 +1,57 @@
+================ Day 28 — Practice / Hands-on ==============
+
+✓ Installed Nginx on Ubuntu.
+
+✓ Verified that nginx.service was active and running.
+
+✓ Checked the default Nginx web server using curl.
+
+✓ Created an Nginx load balancer configuration.
+
+✓ Configured an upstream backend server group:
+
+  127.0.0.1:8001
+  127.0.0.1:8002
+  127.0.0.1:8003
+
+✓ Configured Nginx to listen for client requests on
+  port 8080.
+
+✓ Configured proxy_pass to forward requests from Nginx
+  to the backend server group.
+
+✓ Tested the Nginx configuration using:
+
+  sudo nginx -t
+
+✓ Enabled the load balancer configuration using a
+  symbolic link in sites-enabled.
+
+✓ Reloaded Nginx after configuration changes.
+
+✓ Verified that Nginx was listening on port 8080 using ss.
+
+✓ Tested the load balancer using:
+
+  curl http://localhost:8080
+
+✓ Successfully received the backend server directory
+  listing through Nginx.
+
+✓ Understood the complete request flow:
+
+  Client
+     ↓
+  Nginx :8080
+     ↓
+  Backend pool
+  ├── :8001
+  ├── :8002
+  └── :8003
+
+✓ Understood that the load balancer provides a single
+  entry point and forwards requests to backend servers.
+
+✓ Stopped the experiment after understanding the basic
+  load-balancing architecture without going deeper into
+  modifying the individual backend responses.

@@ -1,0 +1,179 @@
+==================== Day 28 ===================
+
+Topic : VPN & Load Balancers
+
+
+⇒ LOAD BALANCER :
+
+• A load balancer distributes incoming client requests
+  across multiple backend servers.
+
+• It provides a single entry point for clients while
+  distributing the workload among available servers.
+
+Example:
+
+Client
+   │
+   ▼
+Load Balancer
+   │
+   ├──► Backend Server A
+   ├──► Backend Server B
+   └──► Backend Server C
+
+
+⇒ WHY LOAD BALANCING :
+
+• Prevents one server from handling all requests.
+• Improves availability and scalability.
+• Allows multiple backend servers to work together.
+
+KEY IDEA:
+
+Client → Load Balancer → Backend Servers
+
+
+⇒ NGINX :
+
+• Nginx is a web server and reverse proxy that can also
+  work as a load balancer.
+
+• As a reverse proxy, Nginx receives the client request
+  and forwards it to another server.
+
+In our lab:
+
+Client
+   │
+   ▼
+Nginx :8080
+   │
+   ├──► :8001
+   ├──► :8002
+   └──► :8003
+
+
+⇒ UPSTREAM :
+
+• In Nginx, an upstream block defines a group of backend
+  servers.
+
+Example:
+
+upstream backend_servers {
+    server 127.0.0.1:8001;
+    server 127.0.0.1:8002;
+    server 127.0.0.1:8003;
+}
+
+• Nginx can distribute requests among these servers.
+
+
+⇒ PROXY_PASS :
+
+• proxy_pass tells Nginx where to forward a request.
+
+Example:
+
+location / {
+    proxy_pass http://backend_servers;
+}
+
+Flow:
+
+Client → Nginx → proxy_pass → Backend
+
+
+⇒ LISTEN :
+
+• The listen directive specifies the port on which Nginx
+  accepts incoming connections.
+
+Example:
+
+listen 8080;
+
+Therefore:
+
+localhost:8080 → Nginx Load Balancer
+
+
+⇒ OUR LOAD BALANCER :
+
+Nginx listens on:
+
+8080
+
+Backend servers:
+
+8001
+8002
+8003
+
+Request flow:
+
+curl :8080
+     ↓
+   Nginx
+     ↓
+Backend pool
+ ┌───┼───┐
+8001 8002 8003
+
+
+⇒ IMPORTANT :
+
+• Port 8080 is the entry point of our load balancer.
+• Ports 8001–8003 are backend servers.
+• Nginx forwards requests to the backend pool.
+• The client does not directly need to contact each
+  backend server.
+
+
+⇒ VPN :
+
+• VPN stands for Virtual Private Network.
+
+• A VPN creates an encrypted connection between a device
+  and a remote network or VPN server.
+
+• It can provide secure communication over an untrusted
+  network such as the Internet.
+
+Basic idea:
+
+Device
+  │
+  │ Encrypted VPN tunnel
+  ▼
+VPN Server
+  │
+  ▼
+Private Network
+
+
+★ MEMORY BOX ★
+
+Load Balancer
+→ Distributes requests across backend servers.
+
+Nginx
+→ Web server + reverse proxy + load balancer.
+
+upstream
+→ Defines backend server group.
+
+proxy_pass
+→ Forwards requests to a backend.
+
+listen
+→ Port on which Nginx accepts connections.
+
+Our lab:
+8080 → Load Balancer
+8001 → Backend A
+8002 → Backend B
+8003 → Backend C
+
+Client → Nginx → Backend Servers
