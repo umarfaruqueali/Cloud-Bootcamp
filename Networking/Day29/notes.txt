@@ -1,0 +1,87 @@
+=============== Day - 29 =================
+
+Topic : AWS Networking Preview
+
+AWS
+AWS (Amazon Web Services) is a cloud platform that provides
+computing, storage, networking, databases and other IT services.
+
+AWS Region
+A geographical area containing multiple Availability Zones.
+
+Availability Zone (AZ)
+An isolated location inside an AWS Region.
+
+VPC
+VPC (Virtual Private Cloud) is a logically isolated network
+inside AWS.
+
+A VPC spans a Region.
+
+Subnet
+A subnet is a smaller network inside a VPC.
+
+A subnet belongs to exactly one Availability Zone.
+
+One AZ can contain multiple subnets.
+
+Public Subnet
+A subnet whose route table has a route to an Internet Gateway.
+
+Private Subnet
+A subnet without a direct route to an Internet Gateway.
+
+Route Table
+A route table contains rules that determine where network
+traffic is sent.
+
+Internet Gateway (IGW)
+Connects a VPC to the Internet.
+
+NAT Gateway
+Allows resources in a private subnet to access the Internet
+outbound without providing them a direct Internet path.
+
+Load Balancer
+Distributes incoming traffic among multiple backend servers.
+
+Example:
+
+Client
+   ↓
+Load Balancer
+   ↓
+EC2-A / EC2-B / EC2-C
+
+
+Important Relationship
+
+AWS
+ ↓
+Region
+ ↓
+VPC
+ ↓
+Subnet
+ ↓
+EC2
+
+VPC spans the Region.
+
+Subnet exists inside one Availability Zone.
+
+⭐ Memory Box ⭐
+
+Region → Geographical AWS location.
+AZ → Isolated location inside a Region.
+VPC → Private network in AWS.
+Subnet → Smaller network inside a VPC.
+Route Table → Decides where traffic goes.
+Internet Gateway → Connects VPC to Internet.
+NAT Gateway → Private subnet → Internet (outbound).
+Load Balancer → Distributes traffic among servers.
+
+Important:
+VPC is NOT inside an AZ.
+A subnet cannot span multiple AZs.
+One AZ can contain multiple subnets.

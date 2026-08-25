@@ -1,0 +1,156 @@
+================= Day - 29 ==================
+
+Topic : AWS Networking Preview
+
+PRACTICE RECORD
+
+Objective:
+Understand the basic AWS networking hierarchy and sketch
+a VPC with two subnets.
+
+Completed:
+
+✓ Identified AWS as a cloud platform.
+✓ Understood Region.
+✓ Understood Availability Zone.
+✓ Understood VPC.
+✓ Understood subnet.
+✓ Understood VPC vs AZ relationship.
+✓ Understood that one AZ can contain multiple subnets.
+✓ Understood that one subnet belongs to one AZ.
+✓ Understood public and private subnets.
+✓ Understood route tables.
+✓ Understood Internet Gateway.
+✓ Understood NAT Gateway.
+✓ Connected the Load Balancer concept with EC2.
+✓ Sketched a VPC with two subnets.
+
+
+MENTAL MODEL 1 — AWS NETWORKING
+
+AWS
+ ↓
+Region
+ ↓
+VPC
+ ↓
+Subnet
+ ↓
+EC2
+
+VPC spans the Region.
+Each subnet belongs to one AZ.
+
+
+MENTAL MODEL 2 — VPC & AVAILABILITY ZONES
+
+                    AWS REGION
+┌─────────────────────────────────────────────┐
+│                                             │
+│                 YOUR VPC                    │
+│                                             │
+│   AZ-A                         AZ-B         │
+│     │                            │           │
+│  Subnet A                    Subnet B       │
+│     │                            │           │
+│    EC2                          EC2          │
+│                                             │
+└─────────────────────────────────────────────┘
+
+VPC → spans the Region.
+Subnet → belongs to one AZ.
+One AZ → can contain multiple subnets.
+One subnet → cannot span multiple AZs.
+
+
+MENTAL MODEL 3 — PUBLIC SUBNET
+
+Internet
+   │
+   ↓
+Internet Gateway
+   │
+   ↓
+Route Table
+   │
+   ↓
+Public Subnet
+   │
+   ↓
+EC2
+
+
+MENTAL MODEL 4 — PRIVATE SUBNET + NAT
+
+Private EC2
+     │
+     ↓
+Route Table
+     │
+     ↓
+NAT Gateway
+     │
+     ↓
+Internet Gateway
+     │
+     ↓
+Internet
+
+NAT Gateway → allows outbound Internet access
+for resources in a private subnet.
+
+
+MENTAL MODEL 5 — LOAD BALANCER
+
+                    Internet
+                       │
+                       ↓
+                Load Balancer
+                       │
+             ┌─────────┼─────────┐
+             ↓         ↓         ↓
+           EC2-A     EC2-B     EC2-C
+
+Load Balancer → distributes incoming traffic
+among multiple backend servers.
+
+
+FINAL DAY-29 MENTAL MAP
+
+                         AWS REGION
+┌─────────────────────────────────────────────────┐
+│                                                 │
+│                     VPC                         │
+│                                                 │
+│    AZ-A                         AZ-B             │
+│ ┌──────────────┐           ┌──────────────┐     │
+│ │Public Subnet │           │Public Subnet │     │
+│ │     EC2      │           │     EC2      │     │
+│ └──────────────┘           └──────────────┘     │
+│                                                 │
+│ ┌──────────────┐           ┌──────────────┐     │
+│ │Private Subnet│           │Private Subnet│     │
+│ │   Database   │           │   Database   │     │
+│ └──────────────┘           └──────────────┘     │
+│                                                 │
+└─────────────────────────────────────────────────┘
+              │
+              ↓
+       Internet Gateway
+              │
+              ↓
+           Internet
+
+
+KEY RELATIONSHIP
+
+VPC → spans Region
+Subnet → belongs to one AZ
+AZ → can contain multiple subnets
+
+KEY NETWORKING COMPONENTS
+
+Route Table → decides where traffic goes.
+Internet Gateway → connects VPC to Internet.
+NAT Gateway → private resources → Internet outbound.
+Load Balancer → distributes traffic among servers.

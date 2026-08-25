@@ -1,0 +1,28 @@
+Day - 29
+Topic : AWS Networking Preview
+
+No AWS CLI commands were required for today's objective.
+
+Hands-on:
+Sketched a VPC containing two subnets.
+
+Concepts represented in the diagram:
+
+VPC
+Subnet A
+Subnet B
+Availability Zones
+CIDR ranges
+
+Example:
+
+VPC
+10.0.0.0/16
+
+Subnet A
+10.0.1.0/24
+
+Subnet B
+10.0.2.0/24
+
+No AWS resources were created today.
