@@ -1,3 +1,483 @@
-================= Day 30 ===================
+# Day-30 #
+# Networking Revision - Session 1 #
+# Days 16-22 #
 
-Networking Revision
+==================================================
+OBJECTIVE
+==================================================
+
+Revise Day 16-22 through practical problem-solving.
+
+Topics:
+
+Day 16 → OSI Model
+Day 17 → TCP/IP
+Day 18 → IPv4
+Day 19 → CIDR
+Day 20 → Subnetting
+Day 21 → Private/Public IP
+Day 22 → Routers & Switches
+
+
+==================================================
+TROUBLESHOOTING MINDSET
+==================================================
+
+Do not immediately guess the cause.
+
+Use:
+
+Problem
+   ↓
+Observe symptoms
+   ↓
+What works?
+   ↓
+What fails?
+   ↓
+What is different?
+   ↓
+Form a hypothesis
+   ↓
+Choose a diagnostic
+   ↓
+Interpret the result
+   ↓
+Eliminate possibilities
+   ↓
+Investigate the next likely area
+   ↓
+Fix
+   ↓
+Verify
+
+
+KEY IDEA:
+
+Troubleshooting is not about knowing the answer immediately.
+
+It is about collecting evidence and narrowing down
+the possible causes.
+
+
+==================================================
+PRACTICAL INCIDENT
+==================================================
+
+Problem:
+
+A Linux server can communicate with another machine
+on its local network but cannot reach the Internet.
+
+Example:
+
+Server → Local machine       ✓
+Server → 8.8.8.8             ✗
+
+Another machine using the same gateway can reach
+8.8.8.8 successfully.
+
+
+--------------------------------------------------
+STEP 1 — IDENTIFY WHAT WORKS AND WHAT FAILS
+--------------------------------------------------
+
+Local communication works.
+
+Internet communication fails.
+
+Therefore, do not immediately assume that the entire
+network interface is broken.
+
+Ask:
+
+"What is different between local and Internet traffic?"
+
+
+--------------------------------------------------
+STEP 2 — INVESTIGATE ROUTING
+--------------------------------------------------
+
+Question:
+
+How does the server know where to send traffic
+outside its local network?
+
+Answer:
+
+Default gateway / default route.
+
+
+Command:
+
+ip route
+
+Example:
+
+default via 192.168.96.1 dev eth0
+192.168.96.0/20 dev eth0 proto kernel scope link src 192.168.108.66
+
+
+Interpretation:
+
+Default route exists.
+Gateway = 192.168.96.1
+Interface = eth0
+
+
+KEY IDEA:
+
+A route in the routing table tells the kernel where
+to send traffic.
+
+A default route is used when no more specific route
+matches the destination.
+
+
+--------------------------------------------------
+STEP 3 — TEST THE GATEWAY
+--------------------------------------------------
+
+Command:
+
+ping 192.168.96.1
+
+Purpose:
+
+Check whether the server can actually reach its
+configured gateway.
+
+
+Result:
+
+Gateway reachable ✓
+
+
+Conclusion:
+
+The server can reach its gateway.
+
+Therefore, the problem is not simply:
+
+"Server cannot reach its gateway."
+
+
+--------------------------------------------------
+STEP 4 — TEST EXTERNAL CONNECTIVITY
+--------------------------------------------------
+
+Command:
+
+ping 8.8.8.8
+
+Result in the simulated incident:
+
+From 192.168.96.1
+Destination Host Unreachable
+
+
+Important observation:
+
+The message comes from the gateway:
+
+192.168.96.1
+
+
+This means:
+
+Server → Gateway       ✓
+Gateway → Destination  ✗
+
+
+The problem is now narrowed beyond the server's
+local network configuration.
+
+
+--------------------------------------------------
+STEP 5 — COMPARE WITH A WORKING MACHINE
+--------------------------------------------------
+
+A working PC using the same gateway can reach:
+
+8.8.8.8 ✓
+
+
+Its traceroute showed:
+
+192.168.96.1
+      ↓
+192.168.29.1
+      ↓
+10.199.144.1
+      ↓
+...
+      ↓
+8.8.8.8 ✓
+
+
+This provides a useful baseline.
+
+KEY IDEA:
+
+When troubleshooting, compare a working system with
+a failing system.
+
+Look for the first important difference.
+
+
+==================================================
+FINAL CONCLUSION OF THE INCIDENT
+==================================================
+
+The server's:
+
+Interface             ✓
+IP configuration      ✓
+Subnet/prefix         ✓
+Default route         ✓
+Gateway reachability  ✓
+
+Internet connectivity ✗
+
+
+The failure occurs beyond the server's local
+network/gateway boundary.
+
+The likely investigation area is:
+
+Gateway-side forwarding / NAT / policy.
+
+
+IMPORTANT:
+
+NAT is a hypothesis, not proven root cause.
+
+In a real production environment, we would need
+access to the gateway and additional evidence to
+confirm the exact cause.
+
+For this revision exercise, the important conclusion
+is that the fault has been narrowed to the
+gateway/upstream forwarding path.
+
+
+==================================================
+CONCEPTS USED
+==================================================
+
+OSI:
+
+Use layers as a troubleshooting framework.
+
+Do not immediately choose a layer based only on
+the symptom.
+
+First gather evidence.
+
+
+TCP/IP:
+
+Application
+Transport
+Internet
+Network Access
+
+
+IPv4:
+
+Used to identify hosts and networks.
+
+
+CIDR:
+
+Prefix length describes the network boundary.
+
+Example:
+
+192.168.108.66/20
+
+
+Subnetting:
+
+Helps determine which addresses belong to the same
+network and which require routing.
+
+
+Private/Public IP:
+
+Private IP addresses are used inside private networks.
+
+NAT can translate private addressing for communication
+with external/public networks.
+
+
+Switch:
+
+Primarily connects devices within a local network
+and forwards frames using MAC addresses.
+
+
+Router:
+
+Connects different networks and forwards packets
+using IP routing.
+
+
+Gateway:
+
+The default gateway is normally the router used to
+reach destinations outside the local network.
+
+
+==================================================
+COMMANDS USED AS DIAGNOSTIC TOOLS
+==================================================
+
+ip addr
+→ Inspect interfaces, IP addresses and prefix length.
+
+ip route
+→ Inspect routing table and default gateway.
+
+ping <IP>
+→ Test basic IP reachability.
+
+traceroute <IP>
+→ Observe the path/hops toward a destination.
+
+KEY IDEA:
+
+Do not memorize commands in isolation.
+
+Learn:
+
+"What problem would make me use this command?"
+
+Examples:
+
+Need to check IP/interface
+→ ip addr
+
+Need to check routing/gateway
+→ ip route
+
+Need to test reachability
+→ ping
+
+Need to observe network path
+→ traceroute
+
+
+==================================================
+TROUBLESHOOTING RULES
+==================================================
+
+1. Do not immediately guess the root cause.
+
+2. Start with the symptoms.
+
+3. Separate:
+   What works?
+   What fails?
+
+4. Find what is different between the two.
+
+5. Form a hypothesis.
+
+6. Choose a command/test that can provide evidence
+   for or against that hypothesis.
+
+7. Interpret the output before choosing the next step.
+
+8. Eliminate possibilities progressively.
+
+9. Compare with a known-working system when possible.
+
+10. Stop when the problem has been narrowed to a
+    reasonable fault boundary.
+
+11. Do not invent endless hypothetical causes when
+    available evidence is insufficient.
+
+
+==================================================
+MENTAL MODEL
+==================================================
+
+When a server cannot reach a destination:
+
+Server
+  ↓
+Interface
+  ↓
+Local network
+  ↓
+Default gateway
+  ↓
+Router / forwarding
+  ↓
+Upstream network
+  ↓
+Destination
+
+
+At each stage ask:
+
+"Where does the traffic successfully reach?"
+
+Then investigate the next stage.
+
+
+==================================================
+MOST IMPORTANT LESSON
+==================================================
+
+Theory tells us what networking components do.
+
+Troubleshooting tells us:
+
+WHEN to investigate them,
+WHY to investigate them,
+HOW to collect evidence,
+and HOW to narrow down the problem.
+
+
+OLD APPROACH:
+
+Theory
+  ↓
+Memorize
+  ↓
+Quiz
+
+
+NEW APPROACH:
+
+Concept
+  ↓
+Real problem
+  ↓
+Observe
+  ↓
+Hypothesis
+  ↓
+Diagnostic command
+  ↓
+Interpret output
+  ↓
+Narrow down
+  ↓
+Fix
+  ↓
+Verify
+
+
+★ DAY-30 REVISION SESSION-1 ★
+
+Networking Days 16-22 revised.
+
+Focus:
+Practical troubleshooting and problem-solving.
+
+Status:
+COMPLETE
