@@ -1,4 +1,506 @@
 
+# Networking Revision - Session 2 #
+# Days 23-28 + HTTP/HTTPS #
+
+==================================================
+OBJECTIVE
+==================================================
+
+Revise the remaining networking topics through
+short practical scenarios.
+
+Day 23 → DNS
+Day 24 → DHCP
+Day 25 → Ports & Services
+Day 26 → Network Sockets
+Day 27 → NAT & Firewall
+Day 28 → VPN & Load Balancer
+HTTP/HTTPS → Final networking topic
 
 
-This is revision 2 log
+==================================================
+DAY 23 — DNS
+==================================================
+
+DNS (Domain Name System) translates human-readable
+domain names into IP addresses.
+
+Example:
+
+google.com
+    ↓
+DNS
+    ↓
+IP address
+
+
+Practical troubleshooting:
+
+8.8.8.8        → works
+google.com     → fails
+
+Possible problem:
+
+DNS name resolution.
+
+
+Command:
+
+nslookup google.com
+
+→ Checks whether DNS can resolve a domain name.
+
+
+KEY IDEA:
+
+IP connectivity working + domain name failing
+→ Investigate DNS.
+
+
+==================================================
+DAY 24 — DHCP
+==================================================
+
+DHCP automatically provides network configuration
+to a device.
+
+DHCP can provide:
+
+• IP address
+• Subnet / prefix
+• Default gateway
+• DNS server
+
+
+Practical troubleshooting:
+
+New server:
+
+IP address     → missing
+Subnet         → missing
+Gateway        → missing
+DNS            → missing
+
+Likely area:
+
+DHCP / network configuration.
+
+
+KEY IDEA:
+
+No network configuration on a newly connected device
+→ Check DHCP/configuration.
+
+
+==================================================
+DAY 25 — PORTS & SERVICES
+==================================================
+
+A port identifies a communication endpoint used by
+a network service.
+
+Example:
+
+SSH
+→ TCP port 22
+
+
+A service listening on a port means that the application
+is ready to accept network connections on that port.
+
+IMPORTANT:
+
+Listening ≠ Automatically Accessible.
+
+
+Example:
+
+Client
+   ↓
+Port 22
+   ↓
+Firewall
+   ├── ALLOW → SSH service
+   └── BLOCK → Connection denied
+
+
+A firewall or other network rule can prevent a client
+from reaching a listening service.
+
+
+==================================================
+DAY 26 — NETWORK SOCKETS
+==================================================
+
+A socket represents an endpoint of network communication.
+
+The `ss` command is used to inspect sockets and network
+connections.
+
+Example:
+
+ss -tuln
+
+Useful for checking:
+
+• Listening TCP ports
+• Listening UDP ports
+• Network sockets
+
+
+Example:
+
+LISTEN  0  128  0.0.0.0:8080
+
+Meaning:
+
+LISTEN
+→ A TCP service is listening.
+
+0.0.0.0:8080
+→ Listening on port 8080 on all IPv4 interfaces.
+
+
+IMPORTANT:
+
+The `0` and `128` fields are queue/backlog-related
+fields, not sent/received traffic counters.
+
+
+KEY IDEA:
+
+ss
+→ Inspect network sockets and listening ports.
+
+
+==================================================
+DAY 27 — NAT & FIREWALL
+==================================================
+
+NAT
+(Network Address Translation)
+
+NAT translates network addresses so devices using
+private addressing can communicate with external/public
+networks.
+
+Typical flow:
+
+Private IP
+    ↓
+Gateway / NAT
+    ↓
+Public addressing
+    ↓
+Internet
+
+
+FIREWALL
+
+A firewall controls network traffic according to
+configured rules.
+
+It can allow or block traffic.
+
+Firewall chains:
+
+INPUT
+→ Incoming traffic to the computer.
+
+OUTPUT
+→ Outgoing traffic from the computer.
+
+FORWARD
+→ Traffic passing through the computer.
+
+
+KEY IDEA:
+
+NAT
+→ Address translation.
+
+Firewall
+→ Traffic control.
+
+
+==================================================
+DAY 28 — LOAD BALANCER
+==================================================
+
+A load balancer distributes incoming traffic between
+multiple backend servers.
+
+Example:
+
+                 ┌──→ Server 1
+Client → Load Balancer
+                 └──→ Server 2
+
+
+Reasons for using multiple application servers:
+
+• Load distribution
+• Redundancy
+• Fault tolerance
+• Better availability
+
+
+If one server fails, the load balancer can potentially
+send traffic to another healthy server.
+
+
+KEY IDEA:
+
+Load Balancer
+→ Distributes incoming traffic across backend servers.
+
+
+==================================================
+DAY 28 — VPN
+==================================================
+
+VPN (Virtual Private Network) creates a secure connection
+over an untrusted/public network.
+
+Basic idea:
+
+Client
+   ↓
+Encrypted VPN connection
+   ↓
+Private network
+
+
+KEY IDEA:
+
+VPN
+→ Secure connection to a private network over another
+  network such as the Internet.
+
+
+==================================================
+HTTP & HTTPS
+==================================================
+
+HTTP
+→ HyperText Transfer Protocol.
+
+Used for communication between clients and web servers.
+
+Basic flow:
+
+Client
+   ↓
+HTTP request
+   ↓
+Web Server
+   ↓
+HTTP response
+   ↓
+Client
+
+
+Common port:
+
+HTTP → TCP 80
+
+
+HTTPS
+
+HTTPS is HTTP protected using TLS.
+
+Common port:
+
+HTTPS → TCP 443
+
+
+HTTP
+→ Web communication
+→ No TLS encryption
+
+HTTPS
+→ HTTP + TLS
+→ Encrypted communication
+
+
+Practical troubleshooting:
+
+HTTP works
+HTTPS fails
+
+Possible investigation:
+
+• TLS handshake
+• Certificate
+• HTTPS server configuration
+• Port 443 availability
+
+
+KEY IDEA:
+
+HTTP  → Port 80
+HTTPS → Port 443
+
+
+==================================================
+PRACTICAL TROUBLESHOOTING PATTERNS
+==================================================
+
+DNS:
+
+8.8.8.8 works
+google.com fails
+→ Investigate DNS.
+
+
+DHCP:
+
+No IP/subnet/gateway/DNS configuration
+→ Investigate DHCP/configuration.
+
+
+Service:
+
+Service is listening
+but client cannot connect
+→ Check firewall/network access.
+
+
+NAT:
+
+Private device needs to communicate with
+external/public networks
+→ NAT may be involved.
+
+
+Load Balancer:
+
+Multiple backend servers
+→ Distribute incoming traffic.
+
+
+HTTPS:
+
+HTTP works
+HTTPS fails
+→ Investigate TLS/HTTPS/port 443.
+
+
+==================================================
+TROUBLESHOOTING MINDSET
+==================================================
+
+Do not immediately guess the root cause.
+
+Use:
+
+Symptom
+   ↓
+What works?
+   ↓
+What fails?
+   ↓
+Form hypothesis
+   ↓
+Choose diagnostic
+   ↓
+Interpret evidence
+   ↓
+Narrow down
+   ↓
+Fix
+   ↓
+Verify
+
+
+IMPORTANT:
+
+Use the smallest amount of investigation needed to
+identify the relevant fault area.
+
+Do not create endless hypothetical possibilities
+without new evidence.
+
+
+==================================================
+COMMAND → PURPOSE
+==================================================
+
+nslookup <domain>
+→ Test DNS name resolution.
+
+ss -tuln
+→ Inspect listening TCP/UDP sockets.
+
+ip addr
+→ Inspect interfaces and IP configuration.
+
+ip route
+→ Inspect routing table and default gateway.
+
+ping <IP>
+→ Test IP reachability.
+
+traceroute <IP>
+→ Observe the network path toward a destination.
+
+
+==================================================
+MEMORY BOX
+==================================================
+
+DNS
+→ Domain name → IP address.
+
+DHCP
+→ Automatically provides network configuration.
+
+Port
+→ Communication endpoint for a service.
+
+Listening
+→ Service is ready to accept connections.
+
+ss
+→ Inspect sockets/listening ports.
+
+NAT
+→ Address translation.
+
+Firewall
+→ Traffic control.
+
+VPN
+→ Secure connection over another network.
+
+Load Balancer
+→ Distributes traffic across servers.
+
+HTTP
+→ Port 80.
+
+HTTPS
+→ Port 443 + TLS.
+
+Listening ≠ Automatically Accessible.
+
+
+==================================================
+DAY-30 REVISION SESSION-2
+==================================================
+
+Days 23-28 revised.
+
+HTTP/HTTPS revised.
+
+Focus:
+
+Short practical scenarios
++
+Troubleshooting reasoning
++
+Command selection
+
+Status:
+
+COMPLETE
