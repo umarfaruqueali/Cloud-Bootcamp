@@ -85,3 +85,6 @@ Important:
 VPC is NOT inside an AZ.
 A subnet cannot span multiple AZs.
 One AZ can contain multiple subnets.
+
+
+===================================
