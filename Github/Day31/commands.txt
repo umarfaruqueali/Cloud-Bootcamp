@@ -1,0 +1,25 @@
+DAY 31 - INTRODUCTION TO GIT
+
+1. git status
+   Shows the current state of the working directory and staging area.
+
+2. git log --oneline -5
+   Shows the last 5 commits in a short format.
+
+3. git log
+   Shows detailed commit history.
+
+4. git diff
+   Shows changes that are not yet staged.
+
+5. git add <file>
+   Moves changes from the working directory to the staging area.
+
+6. git diff --staged
+   Shows changes that are currently staged and ready to be committed.
+
+7. git commit -m "message"
+   Creates a commit from the staged changes.
+
+8. git push
+   Uploads local commits to the remote GitHub repository.

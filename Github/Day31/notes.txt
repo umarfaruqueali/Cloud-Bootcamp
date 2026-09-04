@@ -1,0 +1,129 @@
+====================DAY 31 - INTRODUCTION TO GIT =====================
+
+Git is a distributed version control system used to track changes in files and manage different versions of a project.
+
+Git works mainly on the local computer.
+
+GitHub is a cloud-based platform that hosts Git repositories online.
+It allows developers to store, share and collaborate on Git projects.
+
+GIT vs GITHUB
+
+Git:
+- Version control system.
+- Installed and used on the local computer.
+- Tracks changes in files.
+- Creates commits.
+- Works even without an internet connection.
+
+GitHub:
+- Online platform for hosting Git repositories.
+- Stores Git repositories remotely.
+- Allows collaboration and sharing.
+- Provides a remote backup of the project.
+- Requires internet access for pushing and pulling changes.
+
+Simple idea:
+
+Git = Tool that manages versions locally.
+
+GitHub = Online platform where Git repositories can be stored and shared.
+
+
+BASIC GIT WORKFLOW
+
+Working Directory
+       ↓
+   git add
+       ↓
+Staging Area
+       ↓
+  git commit
+       ↓
+Local Repository
+       ↓
+   git push
+       ↓
+GitHub (Remote Repository)
+
+
+IMPORTANT COMMANDS
+
+git status
+Shows the current state of files.
+
+git log --oneline -5
+Shows recent commits in a compact format.
+
+git log
+Shows detailed commit history.
+
+git diff
+Shows changes that are not yet staged.
+
+git add <file>
+Moves changes from the working directory to the staging area.
+
+git diff --staged
+Shows changes that are currently staged and ready to be committed.
+
+git commit -m "message"
+Creates a commit from the staged changes.
+
+git push
+Uploads local commits to the remote GitHub repository.
+
+
+IMPORTANT CONCEPT
+
+git diff shows:
+
+Working Directory → Staging Area
+
+git diff --staged shows:
+
+Staging Area → Next Commit
+
+
+A commit is a saved snapshot of the project.
+
+Git allows us to review changes before committing them.
+
+GIT + GITHUB
+
+Git manages the project and its history locally.
+
+GitHub stores the Git repository remotely.
+
+Example:
+
+Local Repository
+      │
+      │ git push
+      ↓
+GitHub Repository
+      │
+      │ git pull
+      ↓
+Local Repository
+
+
+IMPORTANT TERMS
+
+Repository:
+A project directory tracked by Git.
+
+Local Repository:
+The Git repository stored on your computer.
+
+Remote Repository:
+A copy of the repository stored on a remote server such as GitHub.
+
+Commit:
+A saved snapshot of changes.
+
+Staging Area:
+A temporary area where changes are selected before committing.
+
+GitHub:
+A platform used to host and collaborate on Git repositories.

@@ -1,0 +1,33 @@
+DAY 31 - GIT PRACTICE
+
+Practice workflow:
+
+1. Check repository status.
+   git status
+
+2. View recent commits.
+   git log --oneline -5
+
+3. Make a change to a file.
+
+4. Check the change.
+   git diff
+
+5. Stage the change.
+   git add <file>
+
+6. Check staged changes.
+   git diff --staged
+
+7. Commit the change.
+   git commit -m "Practice git diff"
+
+8. Push the commit.
+   git push
+
+9. Verify repository status.
+   git status
+
+Expected final result:
+
+nothing to commit, working tree clean
