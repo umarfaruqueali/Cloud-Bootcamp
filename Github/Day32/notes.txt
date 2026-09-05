@@ -1,0 +1,170 @@
+=======================   DAY 32 - GIT REPOSITORY BASICS ================================
+
+GIT REPOSITORY
+A Git repository is a project directory tracked by Git.
+
+A repository contains:
+• Project files
+• Git history
+• .git directory
+
+LOCAL REPOSITORY
+A repository stored on the local computer.
+
+REMOTE REPOSITORY
+A repository stored on a remote platform such as GitHub.
+
+--------------------------------------------------
+
+GIT INIT
+
+git init
+
+• Initializes a new Git repository in the current directory.
+• Creates the hidden .git directory.
+• The .git directory stores Git metadata and history.
+
+Example:
+
+mkdir project
+cd project
+git init
+
+--------------------------------------------------
+
+GIT CLONE
+
+git clone <repository-url>
+
+• Creates a local copy of an existing remote repository.
+• Downloads project files and Git history.
+• Creates a new directory for the cloned repository.
+• The cloned repository contains its own .git directory.
+
+Example:
+
+git clone <repository-url>
+
+KEY IDEA:
+
+git init
+→ Create a new Git repository.
+
+git clone
+→ Copy an existing Git repository.
+
+--------------------------------------------------
+
+GIT STATUS
+
+git status
+
+• Shows the current state of the repository.
+• Shows untracked, modified and staged files.
+• Shows whether the working tree is clean.
+
+--------------------------------------------------
+
+STAGING AND COMMIT
+
+git add <file>
+→ Moves a change to the staging area.
+
+git commit -m "message"
+→ Saves the staged changes as a commit in the local repository.
+
+Basic workflow:
+
+Working Directory
+       ↓
+    git add
+       ↓
+Staging Area
+       ↓
+   git commit
+       ↓
+Local Repository
+
+--------------------------------------------------
+
+GIT DIFF
+
+git diff
+
+• Shows unstaged changes in the working directory.
+
+git diff --staged
+
+• Shows changes currently present in the staging area.
+
+--------------------------------------------------
+
+GIT LOG
+
+git log --oneline
+
+• Shows commit history in compact form.
+
+git log --oneline -5
+
+• Shows the latest 5 commits.
+
+Example:
+
+94cb1bf Day 31 - Introduction to Git
+f187972 Practice git diff
+b95428f Introduction to Git
+
+--------------------------------------------------
+
+CLONED REPOSITORY
+
+After cloning a repository:
+
+Local Repository
+       ↑
+       │ git clone
+       │
+Remote Repository
+(GitHub)
+
+The cloned repository contains:
+• Project files
+• Commit history
+• .git directory
+
+--------------------------------------------------
+
+★ MEMORY BOX ★
+
+git init
+→ Creates a new Git repository.
+
+git clone
+→ Copies an existing repository.
+
+git add
+→ Working Directory → Staging Area.
+
+git commit
+→ Staging Area → Local Repository.
+
+git diff
+→ Shows unstaged changes.
+
+git diff --staged
+→ Shows staged changes.
+
+git log
+→ Shows commit history.
+
+.git
+→ Hidden directory containing Git repository data.
+
+INIT vs CLONE:
+
+git init
+→ Start Git tracking for a new project.
+
+git clone
+→ Get an existing Git repository.

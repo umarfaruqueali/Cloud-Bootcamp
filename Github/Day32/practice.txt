@@ -1,0 +1,66 @@
+DAY 32 - GIT REPOSITORY BASICS
+
+HANDS-ON PRACTICE
+
+1. Created a separate Git repository for practice using git init.
+
+2. Created README.txt inside the repository.
+
+3. Checked the repository state using:
+   git status
+
+4. Observed README.txt as an untracked file.
+
+5. Staged README.txt using:
+   git add README.txt
+
+6. Checked the staging state using:
+   git status
+
+7. Inspected the staged change using:
+   git diff --staged
+
+8. Created the first commit using:
+   git commit -m "Initial commit"
+
+9. Verified that the working tree was clean using:
+   git status
+
+10. Viewed the commit history using:
+    git log --oneline
+
+11. Modified README.txt by adding a second line.
+
+12. Checked the modified state using:
+    git status
+
+13. Inspected the unstaged change using:
+    git diff
+
+14. Staged the modified README.txt using:
+    git add README.txt
+
+15. Inspected the staged change using:
+    git diff --staged
+
+16. Created the second commit using:
+    git commit -m "Add second line"
+
+17. Verified the commit history using:
+    git log --oneline
+
+18. Practiced cloning an existing GitHub repository using:
+    git clone <repository-url>
+
+19. Entered the cloned repository and checked its status.
+
+20. Verified that the cloned repository contained the existing project files,
+    Git history and .git directory.
+
+OBSERVATION:
+
+git init → creates a new repository.
+
+git clone → creates a local copy of an existing repository.
+
+A cloned repository already contains its Git history and .git directory.

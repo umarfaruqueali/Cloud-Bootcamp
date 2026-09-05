@@ -1,0 +1,55 @@
+===================== DAY 32 - GIT REPOSITORY BASICS ===========================
+
+git init
+Initializes a new Git repository in the current directory.
+
+Syntax:
+git init
+
+git status
+Shows the current state of the working directory and staging area.
+
+Syntax:
+git status
+
+git add <file>
+Stages a file for the next commit.
+
+Syntax:
+git add <file>
+
+git commit -m "message"
+Creates a commit from the staged changes.
+
+Syntax:
+git commit -m "message"
+
+git log --oneline
+Shows commit history in a compact format.
+
+Syntax:
+git log --oneline
+
+git diff
+Shows changes in the working directory that have not been staged.
+
+Syntax:
+git diff
+
+git diff --staged
+Shows changes that are currently staged.
+
+Syntax:
+git diff --staged
+
+git clone <repository-url>
+Creates a local copy of an existing remote Git repository.
+
+Syntax:
+git clone <repository-url>
+
+git log --oneline -5
+Shows the latest 5 commits in compact format.
+
+Syntax:
+git log --oneline -5
