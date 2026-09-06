@@ -1,6 +1,30 @@
-Day 33 GitHub Practice
 
-• Explored the Cloud-Bootcamp repository on GitHub.
-• Viewed repository commit history.
-• Inspected a commit and its file changes.
-• Observed how local Git commits appear on GitHub after git push.
+
+DAY 33 — GITHUB HANDS-ON PRACTICE
+
+Objective:
+Understand GitHub and observe how a local Git repository appears on GitHub.
+
+Activities completed:
+
+1. Opened the Cloud-Bootcamp GitHub repository.
+2. Explored the repository files and folder structure.
+3. Viewed the repository commit history.
+4. Opened a previous commit and inspected its file changes.
+5. Observed how the changes made in a local Git repository appear on GitHub after git push.
+6. Modified Day33/practice.txt locally.
+7. Staged and committed the change.
+8. Pushed the commit to GitHub.
+9. Verified the new commit/change on GitHub.
+
+Observations:
+
+• GitHub stores the pushed repository content and commit history.
+• A GitHub commit page shows the files changed by a commit.
+• GitHub does not display the commands typed in the terminal.
+• The result of those commands is visible through committed changes.
+• The Cloud-Bootcamp repository can serve as a technical learning portfolio.
+
+Result:
+
+GitHub repository successfully updated with Day 33 work.

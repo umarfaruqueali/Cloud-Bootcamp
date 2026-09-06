@@ -1,0 +1,19 @@
+GIT COMMANDS — DAY 33
+
+Topic: GitHub
+
+No new Git commands were introduced today.
+
+Commands used during the GitHub hands-on:
+
+git status
+→ Checks the current state of the working directory and staging area.
+
+git add practice.txt
+→ Stages the modified practice.txt file.
+
+git commit -m "Complete GitHub practice"
+→ Creates a commit containing the staged changes.
+
+git push
+→ Uploads local commits to the remote GitHub repository.

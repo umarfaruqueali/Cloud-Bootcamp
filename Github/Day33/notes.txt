@@ -1,0 +1,113 @@
+# Day-33 #
+
+Topic : GitHub
+
+⇒ WHAT IS GITHUB?
+
+• GitHub is an online platform for hosting Git repositories.
+• It stores repositories online and provides collaboration features.
+• GitHub allows developers to share, manage and collaborate on projects.
+
+KEY IDEA:
+
+Git
+→ Version control system.
+
+GitHub
+→ Online platform built around Git.
+
+
+⇒ GITHUB REPOSITORY
+
+• A GitHub repository is the online version of a Git repository.
+• It contains project files and Git commit history.
+• A repository can be public or private.
+
+Public repository
+→ Anyone can view the repository.
+
+Private repository
+→ Access is restricted to permitted users.
+
+
+⇒ LOCAL REPOSITORY vs GITHUB REPOSITORY
+
+Local repository
+→ Exists on the computer.
+→ Git manages the local history.
+
+GitHub repository
+→ Exists online.
+→ Stores the pushed commits and project files.
+
+Basic flow:
+
+Local Repository
+      ↓
+    commit
+      ↓
+   git push
+      ↓
+GitHub Repository
+
+
+⇒ COMMITS ON GITHUB
+
+• Commits created locally become visible on GitHub after they are pushed.
+• GitHub can display the commit message, changed files and differences.
+• GitHub shows what changed between versions.
+
+Example:
+
+Previous version
+      ↓
+   changes
+      ↓
+New version
+
+
+⇒ README
+
+• README.md is commonly used to describe a repository.
+• It can explain the project's purpose, structure, setup and usage.
+• README files use Markdown formatting.
+
+KEY IDEA:
+
+README
+→ Introduction and documentation for a repository.
+
+
+⇒ GITHUB AS A PORTFOLIO
+
+• A public GitHub repository can demonstrate technical learning and projects.
+• Organized files, meaningful commits and useful documentation make a repository easier to understand.
+• GitHub can therefore be used as part of a technical portfolio.
+
+
+★ MEMORY BOX ★
+
+Git
+→ Manages version history.
+
+GitHub
+→ Hosts Git repositories online.
+
+Repository
+→ Project files + Git history.
+
+Commit
+→ Recorded version/change.
+
+git push
+→ Sends local commits to GitHub.
+
+README
+→ Explains the project/repository.
+
+IMPORTANT:
+
+GitHub does not record everything typed in the terminal.
+
+GitHub shows the repository content and
+the changes recorded in Git commits.
