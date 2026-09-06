@@ -1,0 +1,6 @@
+Day 33 GitHub Practice
+
+• Explored the Cloud-Bootcamp repository on GitHub.
+• Viewed repository commit history.
+• Inspected a commit and its file changes.
+• Observed how local Git commits appear on GitHub after git push.
