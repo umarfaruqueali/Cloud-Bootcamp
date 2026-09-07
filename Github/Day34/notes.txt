@@ -1,0 +1,186 @@
+DAY 34 - GIT BRANCHES
+=====================
+
+GIT BRANCH
+----------
+
+A branch is a separate line of development in a Git repository.
+
+Branches allow new features or changes to be developed without
+directly changing the main branch.
+
+MAIN BRANCH
+-----------
+
+main is the primary branch of the repository.
+
+Feature development is usually done on separate branches and
+later merged into main.
+
+FEATURE BRANCH
+--------------
+
+A feature branch is created for developing a specific feature,
+fix, experiment, or change.
+
+Example:
+
+main
+  |
+  └── feature/login
+
+
+CREATING A BRANCH
+-----------------
+
+git branch feature/login
+
+Creates the branch but keeps the current branch unchanged.
+
+
+SWITCHING BRANCHES
+------------------
+
+git switch feature/login
+
+Moves the working directory to the specified branch.
+
+The currently active branch can be checked with:
+
+git branch
+
+The * symbol identifies the active branch.
+
+
+BRANCH WORKFLOW
+---------------
+
+main
+  ↓
+Create feature branch
+  ↓
+Switch to feature branch
+  ↓
+Make changes
+  ↓
+Commit changes
+  ↓
+Push feature branch to GitHub
+  ↓
+Switch to main
+  ↓
+Merge feature branch
+  ↓
+Push main
+
+
+UPSTREAM / TRACKING BRANCH
+--------------------------
+
+When a new local branch is pushed to GitHub for the first time,
+Git may not know which remote branch it should track.
+
+Example:
+
+git push --set-upstream origin feature/login
+
+This pushes the branch to GitHub and establishes the relationship
+between the local branch and its remote branch.
+
+After this is configured, git push can normally be used.
+
+
+MERGING
+--------
+
+git merge <branch-name>
+
+Merges the specified branch into the currently active branch.
+
+Example:
+
+git switch main
+git merge feature/login
+
+The changes from feature/login are brought into main.
+
+IMPORTANT:
+The branch being merged is NOT automatically deleted.
+
+
+FAST-FORWARD MERGE
+------------------
+
+A fast-forward merge occurs when the current branch has no new
+commits that diverge from the branch being merged.
+
+Git can simply move the current branch pointer forward.
+
+Example:
+
+main
+  |
+  A
+
+feature
+  |
+  A → B → C
+
+After merging feature into main:
+
+main
+  |
+  A → B → C
+
+
+BRANCHES ON GITHUB
+------------------
+
+A branch pushed to GitHub becomes available as a remote branch.
+
+The main branch and feature branches can contain different
+commits and changes.
+
+A branch does not contain only the files created on that branch.
+It starts from the repository's existing state and then records
+additional changes made on that branch.
+
+
+TROUBLESHOOTING
+---------------
+
+If git push reports that the current branch has no upstream
+branch, the branch needs to be pushed with:
+
+git push --set-upstream origin <branch-name>
+
+
+★ MEMORY BOX ★
+
+BRANCH
+→ Separate line of development.
+
+git branch
+→ Create/list branches.
+
+git switch
+→ Switch branches.
+
+git merge
+→ Bring another branch's changes into the current branch.
+
+git push --set-upstream
+→ First push of a new branch + establish tracking.
+
+FAST-FORWARD
+→ Current branch can move directly forward to the other branch.
+
+IMPORTANT:
+Merge affects the branch currently checked out.
+
+Example:
+
+git switch main
+git merge feature/login
+
+→ feature/login is merged INTO main.

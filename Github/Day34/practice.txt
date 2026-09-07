@@ -1,0 +1,124 @@
+DAY 34 - GIT BRANCH PRACTICE
+============================
+
+Objective:
+Practice creating, switching, modifying, pushing, and merging
+Git branches.
+
+
+1. Branch Creation
+------------------
+
+Checked the current branch using:
+
+git branch
+
+Confirmed that main was the active branch.
+
+Created a feature branch:
+
+git branch feature/day34-practice
+
+Verified that the new branch was created.
+
+
+2. Switching Branch
+-------------------
+
+Switched from main to the feature branch:
+
+git switch feature/day34-practice
+
+Used git branch to verify that feature/day34-practice was active.
+
+
+3. Making Changes
+-----------------
+
+Created:
+
+branch-practice.txt
+
+Added branch practice content to the file.
+
+Checked the repository status and confirmed that the file was
+untracked.
+
+Staged the file:
+
+git add .
+
+Verified that the file was staged.
+
+Created a commit:
+
+git commit -m "Add branch practice"
+
+
+4. Pushing Feature Branch
+-------------------------
+
+Attempted:
+
+git push
+
+Git reported that the feature branch had no upstream branch.
+
+Used:
+
+git push --set-upstream origin feature/day34-practice
+
+The branch was successfully pushed to GitHub.
+
+The feature/day34-practice branch became visible on GitHub.
+
+
+5. Switching Back to Main
+-------------------------
+
+Switched back to main:
+
+git switch main
+
+Verified the active branch using:
+
+git branch
+
+
+6. Merging the Feature Branch
+-----------------------------
+
+Attempted to merge the feature branch but initially entered the
+branch name incorrectly.
+
+Corrected the command:
+
+git merge feature/day34-practice
+
+The merge completed successfully as a fast-forward merge.
+
+
+7. Publishing the Merge
+-----------------------
+
+After merging, git status showed that main was ahead of
+origin/main by one commit.
+
+Pushed the merged changes:
+
+git push
+
+Verified that main was up to date with origin/main.
+
+
+OBSERVATIONS
+------------
+
+• A branch allows changes to be developed separately from main.
+• A new branch can be pushed to GitHub independently.
+• The first push of a new branch may require an upstream branch
+  to be configured.
+• The branch must be merged while the target branch is active.
+• A successful fast-forward merge moved main forward to include
+  the feature branch commit.
+• The feature branch remained available after the merge.

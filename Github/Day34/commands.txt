@@ -1,0 +1,78 @@
+DAY 34 - GIT BRANCHES
+=====================
+
+git branch
+
+Lists all local branches.
+The * symbol shows the currently active branch.
+
+Example:
+git branch
+
+
+git branch <branch-name>
+
+Creates a new branch without switching to it.
+
+Example:
+git branch feature/day34-practice
+
+
+git switch <branch-name>
+
+Switches to an existing branch.
+
+Example:
+git switch feature/day34-practice
+
+
+git switch main
+
+Switches back to the main branch.
+
+
+git add .
+
+Stages all changes in the current directory.
+
+Example:
+git add .
+
+
+git commit -m "message"
+
+Creates a commit from the staged changes.
+
+Example:
+git commit -m "Add branch practice"
+
+
+git push --set-upstream origin <branch-name>
+
+Pushes a new local branch to GitHub and sets the remote
+branch as its upstream/tracking branch.
+
+Example:
+git push --set-upstream origin feature/day34-practice
+
+After the upstream is configured, future pushes from that
+branch can use:
+
+git push
+
+
+git merge <branch-name>
+
+Merges the specified branch into the currently active branch.
+
+Example:
+git switch main
+git merge feature/day34-practice
+
+
+git push
+
+Pushes local commits to the configured remote branch.
+
+Example:
+git push
