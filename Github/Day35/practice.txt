@@ -1,0 +1,157 @@
+# Day-35 #
+# Git Merge Conflicts — Hands-on Practice
+
+
+OBJECTIVE:
+
+Create a real merge conflict between main and a feature branch,
+resolve the conflict manually, complete the merge, and push the
+result to GitHub.
+
+
+PRACTICE:
+
+1. Created the starting file:
+
+conflict-practice.txt
+
+Initial content:
+
+Git Merge Conflicts
+
+
+2. Created the feature branch:
+
+feature/merge-conflict
+
+
+3. Changed the file on the feature branch to:
+
+Feature branch version
+
+Committed the feature branch change.
+
+
+4. Switched back to main.
+
+
+5. Changed the same file on main to:
+
+Main branch version
+
+Committed the main branch change.
+
+
+6. Attempted to merge:
+
+git merge feature/merge-conflict
+
+
+RESULT:
+
+Git could not automatically merge the conflicting changes.
+
+A merge conflict occurred because both branches changed the
+same part of the file differently.
+
+
+7. Checked repository status.
+
+Git reported:
+
+You have unmerged paths.
+
+The file was shown as:
+
+both modified
+
+
+8. Inspected the conflicted file.
+
+Git had inserted conflict markers:
+
+<<<<<<< HEAD
+Main branch version
+=======
+Feature branch version
+>>>>>>> feature/merge-conflict
+
+
+9. Opened the file in Nano and resolved the conflict manually.
+
+Final content:
+
+Git Merge Conflicts Resolved
+
+
+10. Verified the resolved file using:
+
+cat conflict-practice.txt
+
+
+11. Staged the resolved file:
+
+git add conflict-practice.txt
+
+
+12. Checked the repository status.
+
+Git reported:
+
+All conflicts fixed but you are still merging.
+
+
+13. Completed the merge using:
+
+git commit
+
+
+A merge commit was created:
+
+b2e1752 Merge branch 'feature/merge-conflict'
+
+
+14. Inspected the commit history using:
+
+git log --oneline --graph --all -5
+
+
+The graph showed the feature branch and main branch joining
+at the merge commit.
+
+
+15. Pushed the completed merge to GitHub using:
+
+git push
+
+
+16. Final verification:
+
+git status
+
+Result:
+
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean.
+
+
+OBSERVATIONS:
+
+• A merge conflict occurs when Git cannot automatically reconcile
+  overlapping incompatible changes.
+
+• Conflict markers show the competing versions.
+
+• Editing the file removes the conflict markers and selects the
+  desired final content.
+
+• git add marks the resolved file.
+
+• git commit concludes the merge.
+
+• A merge commit records the joining of the two branch histories.
+
+• git log --graph makes the branch and merge structure visible.
+
+• The completed merge was successfully pushed to GitHub.

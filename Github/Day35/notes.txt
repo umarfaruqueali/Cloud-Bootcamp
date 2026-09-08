@@ -1,0 +1,170 @@
+# Day-35 #
+
+Topic : Git Merge Conflicts
+
+
+⇒ MERGE CONFLICT :
+
+• A merge conflict occurs when Git cannot automatically reconcile changes from two branches.
+
+• A conflict usually occurs when different changes overlap in the same part of a file.
+
+• Two branches changing the same file does NOT automatically mean there will be a conflict.
+
+Example:
+
+Same file + different lines
+→ Usually no conflict
+
+Same part + different changes
+→ Conflict
+
+
+⇒ WHEN CONFLICTS OCCUR :
+
+Common situations:
+
+• Same line changed differently on two branches.
+• Same section changed differently on two branches.
+• One branch deletes a file while another branch modifies the same file.
+• Two branches make incompatible rename changes.
+
+
+⇒ WHEN THERE IS NO CONFLICT :
+
+• Different files changed.
+• Different lines of the same file changed.
+• Both branches make the same change.
+• Only one branch changes a file.
+
+
+⇒ CONFLICT MARKERS :
+
+When Git cannot automatically merge a file, it inserts conflict markers.
+
+Example:
+
+<<<<<<< HEAD
+Main branch version
+=======
+Feature branch version
+>>>>>>> feature/merge-conflict
+
+Meaning:
+
+<<<<<<< HEAD
+→ Beginning of the current branch's version.
+
+=======
+→ Separates the two conflicting versions.
+
+>>>>>>> feature/merge-conflict
+→ End of the incoming branch's version.
+
+
+⇒ CONFLICT RESOLUTION :
+
+Basic workflow:
+
+git merge <branch>
+        ↓
+Merge conflict
+        ↓
+git status
+        ↓
+Inspect conflicted file
+        ↓
+Edit file
+        ↓
+Remove conflict markers
+        ↓
+git add <file>
+        ↓
+git commit
+        ↓
+Merge completed
+
+
+⇒ GIT STATUS DURING CONFLICT :
+
+Before resolving:
+
+You have unmerged paths.
+
+Git identifies the conflicted file as:
+
+both modified
+
+
+After resolving and staging:
+
+All conflicts fixed but you are still merging.
+
+This means:
+
+• Conflict resolution is complete.
+• The resolved file is staged.
+• The merge still needs a commit.
+
+
+⇒ MERGE COMMIT :
+
+• A merge commit records the joining of two branch histories.
+• A true merge commit has both branch histories as parents.
+
+Example:
+
+main
+  \
+   feature
+      \
+       merge commit
+
+
+⇒ IMPORTANT IDEA :
+
+Git does not ask:
+
+"Did both branches change the same file?"
+
+Git asks:
+
+"Can these changes be automatically reconciled?"
+
+If yes
+→ Merge succeeds automatically.
+
+If no
+→ Merge conflict occurs.
+
+
+★ MEMORY BOX ★
+
+Same file ≠ automatic conflict
+
+Overlapping incompatible changes
+→ CONFLICT
+
+git merge
+→ Attempt to combine branch histories
+
+Conflict markers
+→ Show competing versions
+
+git add <file>
+→ Mark resolved file
+
+git commit
+→ Conclude the merge
+
+git merge --abort
+→ Cancel an in-progress merge and attempt to return to the pre-merge state
+
+
+⭐ REMEMBER:
+
+CONFLICT
+→ Human decision required
+
+NO CONFLICT
+→ Git can combine the changes automatically

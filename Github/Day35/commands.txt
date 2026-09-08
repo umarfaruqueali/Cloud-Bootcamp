@@ -1,0 +1,115 @@
+# Day-35 #
+# Git Merge Conflicts — Commands
+
+
+1. git branch
+
+• Lists local branches.
+• The * shows the currently active branch.
+
+Example:
+
+git branch
+
+
+2. git switch -c <branch-name>
+
+• Creates a new branch and immediately switches to it.
+
+Example:
+
+git switch -c feature/merge-conflict
+
+
+3. git switch <branch-name>
+
+• Switches to an existing branch.
+
+Example:
+
+git switch main
+
+
+4. git merge <branch-name>
+
+• Merges the specified branch into the currently active branch.
+• Git attempts to combine the histories automatically.
+• If Git cannot automatically reconcile conflicting changes, a merge conflict occurs.
+
+Example:
+
+git merge feature/merge-conflict
+
+
+5. cat <file>
+
+• Displays the contents of a file in the terminal.
+• Used during the lab to inspect the conflict markers.
+
+Example:
+
+cat conflict-practice.txt
+
+
+6. nano <file>
+
+• Opens a file in the Nano text editor.
+• Used to manually edit the conflicted file and remove the conflict markers.
+
+Example:
+
+nano conflict-practice.txt
+
+
+7. git add <file>
+
+• Stages the resolved version of a conflicted file.
+• During conflict resolution, this tells Git that the conflict has been resolved.
+
+Example:
+
+git add conflict-practice.txt
+
+
+8. git status
+
+• Shows the current state of the repository.
+• During a merge conflict, it shows unmerged paths.
+• After staging the resolved file, it shows that all conflicts are fixed but the merge still needs to be concluded.
+
+Example:
+
+git status
+
+
+9. git commit
+
+• Creates the merge commit after conflicts have been resolved and staged.
+• Concludes the merge.
+
+Example:
+
+git commit
+
+
+10. git log --oneline --graph --all -5
+
+• Shows recent commit history in compact form.
+• --oneline → one line per commit
+• --graph → displays branch and merge structure
+• --all → shows all local branches
+• -5 → shows the latest five commits
+
+Example:
+
+git log --oneline --graph --all -5
+
+
+11. git push
+
+• Pushes local commits to the remote repository.
+• Used after completing the merge to publish the merge history to GitHub.
+
+Example:
+
+git push
