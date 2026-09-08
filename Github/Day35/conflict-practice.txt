@@ -1,1 +1,1 @@
-Git Merge Conflicts
+Main branch version
