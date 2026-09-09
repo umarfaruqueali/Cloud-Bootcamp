@@ -1,0 +1,33 @@
+DAY 36 - README & .gitignore
+
+README.md
+→ Markdown documentation file commonly used to explain a project or repository section.
+
+→ GitHub automatically renders Markdown files in a formatted view.
+
+Markdown basics used:
+#  → main heading
+## → subheading
+-  → bullet point
+`text` → inline code
+
+.gitignore
+→ Specifies files and patterns that Git should ignore.
+
+Examples:
+*.log
+.env
+node_modules/
+
+*.log
+→ Ignores files ending with .log.
+
+Important:
+.gitignore does not delete files.
+It prevents matching untracked files from appearing as files to be tracked by Git.
+
+git check-ignore -v
+→ Shows which .gitignore rule is responsible for ignoring a file.
+
+Important:
+A .gitignore rule does not automatically stop tracking a file that Git is already tracking.

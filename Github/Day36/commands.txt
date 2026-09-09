@@ -1,0 +1,19 @@
+DAY 36 - README & .gitignore
+
+git status
+→ Shows the current state of the working tree.
+
+git add <file>
+→ Stages a file for the next commit.
+
+git commit -m "message"
+→ Creates a commit containing staged changes.
+
+git push
+→ Uploads local commits to the remote repository.
+
+touch <file>
+→ Creates an empty file.
+
+git check-ignore -v <file>
+→ Checks whether a file is ignored and shows the rule responsible.

@@ -1,0 +1,25 @@
+DAY 36 - PRACTICE
+
+1. Created Linux/README.md documenting the Linux module.
+
+2. Used Markdown headings, bullet lists, and inline code formatting.
+
+3. Committed and pushed the Linux README to GitHub.
+
+4. Opened the README on GitHub and verified that Markdown was rendered correctly.
+
+5. Created Github/Day36/ignore-practice.log as a test file.
+
+6. Verified with git status that the log file appeared as an untracked file before applying an ignore rule.
+
+7. Created .gitignore at the Cloud-Bootcamp repository root.
+
+8. Added the rule:
+   *.log
+
+9. Ran git status again and confirmed that ignore-practice.log was no longer listed.
+
+10. Used git check-ignore -v to verify that the file was ignored because of the *.log rule in .gitignore.
+
+Observation:
+.gitignore can apply its rules to matching files throughout the repository.
