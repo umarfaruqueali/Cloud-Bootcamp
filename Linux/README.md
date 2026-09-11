@@ -42,3 +42,6 @@ The Linux module includes hands-on exercises covering:
 
 Build a strong Linux foundation for cloud engineering, DevOps, automation, and server administration.
 
+## Status
+Git module revision in progress.
+
