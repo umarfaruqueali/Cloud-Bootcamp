@@ -1,0 +1,83 @@
+# Day 37 Revision #
+
+GIT REPOSITORY WORKFLOW
+
+Create / change files
+        ↓
+git status
+        ↓
+Create feature branch
+        ↓
+Make changes
+        ↓
+git add
+        ↓
+git commit
+        ↓
+git push
+        ↓
+Create Pull Request on GitHub
+        ↓
+Review / Compare changes
+        ↓
+Merge Pull Request into main
+        ↓
+git checkout main
+        ↓
+git pull
+        ↓
+Verify git status
+        ↓
+Delete merged feature branch
+
+
+IMPORTANT CONCEPTS
+
+• origin = name given by Git to the remote repository connection.
+• origin/main = main branch of the remote repository tracked locally.
+• main = local main branch.
+• feature branch = separate line of development.
+
+GitHub Pull Request:
+• A Pull Request asks to merge changes from one branch into another.
+• Example:
+  feature/day37-workflow → main
+
+• GitHub can compare the branches and show whether they can be merged automatically.
+
+• A Pull Request can be merged directly on GitHub without running
+  `git merge` in the terminal.
+
+• After GitHub merges the Pull Request, the local repository should run:
+
+  git checkout main
+  git pull
+
+  This downloads the latest main changes from GitHub.
+
+
+BRANCH CLEANUP
+
+After a feature branch has been successfully merged:
+
+git branch -d <branch-name>
+
+• Deletes the local feature branch.
+• The merged work remains in main.
+
+Example:
+
+git branch -d feature/day37-workflow
+
+
+KEY IDEA
+
+Local repository
+      ↕
+    origin
+      ↕
+GitHub repository
+
+origin is NOT the origin point of the repository.
+
+It is simply the conventional name Git gives to the remote repository connection.
