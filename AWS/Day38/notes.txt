@@ -1,0 +1,147 @@
+# Day 38 - AWS Overview #
+
+## AWS
+
+AWS (Amazon Web Services) is a cloud platform that provides services for:
+• Compute
+• Storage
+• Databases
+• Networking
+• Security
+• Monitoring and other cloud requirements
+
+---
+
+## AWS GLOBAL INFRASTRUCTURE
+
+AWS infrastructure is organized into:
+
+AWS
+│
+├── Regions
+│    │
+│    ├── Availability Zone
+│    ├── Availability Zone
+│    └── Availability Zone
+│
+└── Edge Locations
+
+---
+
+## REGION
+
+A Region is a separate geographic area containing AWS infrastructure.
+
+Examples:
+• Mumbai → ap-south-1
+• Hyderabad → ap-south-2
+• Singapore → ap-southeast-1
+• Frankfurt → eu-central-1
+
+Region selection can depend on:
+• Proximity to users
+• Service availability
+• Compliance/data requirements
+• Pricing
+
+---
+
+## AVAILABILITY ZONE (AZ)
+
+An Availability Zone is an isolated location within an AWS Region.
+
+A Region contains multiple Availability Zones.
+
+Purpose:
+• High availability
+• Fault isolation
+
+KEY IDEA:
+Region → Geographic area
+AZ → Isolated location inside a Region
+
+---
+
+## EDGE LOCATIONS
+
+Edge Locations are AWS infrastructure locations positioned closer to users.
+
+They are commonly used by services such as Amazon CloudFront to deliver content with lower latency.
+
+---
+
+## SHARED RESPONSIBILITY MODEL
+
+AWS security is divided between AWS and the customer.
+
+### AWS responsibility
+Security OF the cloud:
+• Physical data centers
+• Physical servers
+• Networking infrastructure
+• Underlying hardware
+• Facilities
+
+### Customer responsibility
+Security IN the cloud:
+• IAM permissions
+• Passwords and MFA
+• Data
+• Operating-system configuration
+• Application security
+• Network/security configuration
+
+KEY IDEA:
+AWS secures the cloud.
+Customer secures what is put in the cloud.
+
+Customer responsibility varies depending on the AWS service being used.
+
+---
+
+## ROOT USER
+
+The root user is the identity created when an AWS account is created.
+
+It has extremely broad privileges.
+
+Best practices:
+• Do not use root for everyday work.
+• Protect root with MFA.
+• Do not create root access keys.
+• Use IAM identities for normal AWS work.
+
+---
+
+## BASIC AWS SERVICE CATEGORIES
+
+Compute
+→ EC2
+
+Storage
+→ S3
+
+Networking
+→ VPC
+
+Identity and Security
+→ IAM
+
+---
+
+★ MEMORY BOX ★
+
+Region
+→ Geographic area
+
+Availability Zone
+→ Isolated location inside a Region
+
+Edge Location
+→ Infrastructure closer to users
+
+Shared Responsibility
+→ AWS secures the cloud; customer secures what is in the cloud.
+
+Root User
+→ Highly privileged account identity; protect with MFA and avoid daily use.

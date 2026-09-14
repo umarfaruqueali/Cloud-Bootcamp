@@ -1,0 +1,47 @@
+# Day 38 - Practice #
+
+## AWS Account Security
+
+• Created and activated the AWS Cloud-Bootcamp account.
+• Registered root-user MFA using an authenticator app.
+• Verified that root access keys = 0.
+• Did not create root access keys.
+
+## Billing Safety
+
+• Opened Billing and Cost Management.
+• Verified the Free Plan account status.
+• Verified starting credits of $100.
+• Verified the Free Plan period.
+• Enabled AWS Free Tier alerts.
+• Confirmed that Free Tier alerts are delivered to the root-user email address.
+• Left CloudWatch billing alerts disabled.
+
+## AWS Console Exploration
+
+Explored the following AWS services without creating resources:
+
+• EC2 → Compute / virtual servers
+• S3 → Object storage
+• IAM → Identity and access management
+• VPC → Virtual networking
+
+## Global Infrastructure
+
+Reviewed:
+• AWS Regions
+• Availability Zones
+• Edge Locations
+
+Current console Region observed:
+Asia Pacific (Hyderabad) → ap-south-2
+
+## Shared Responsibility
+
+Reviewed the difference between:
+• Security OF the cloud → AWS responsibility
+• Security IN the cloud → Customer responsibility
+
+## Safety Practice
+
+No billable AWS resources were launched during the hands-on session.

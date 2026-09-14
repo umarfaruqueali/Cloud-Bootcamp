@@ -1,0 +1,15 @@
+# Day 38 - Commands #
+
+No terminal commands were used today.
+
+Day 38 hands-on work was performed through the AWS Management Console.
+
+AWS Console areas explored:
+• EC2
+• S3
+• IAM
+• Billing and Cost Management
+• Billing Preferences
+
+No AWS resources were created.
+No AWS CLI commands were executed.
