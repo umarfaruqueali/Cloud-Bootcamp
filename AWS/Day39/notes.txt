@@ -1,0 +1,96 @@
+# Day 39 - Global Infrastructure #
+
+## REGION & AVAILABILITY ZONES
+
+A Region contains multiple Availability Zones.
+
+Examples observed:
+
+Mumbai
+Region → ap-south-1
+AZs:
+• ap-south-1a
+• ap-south-1b
+• ap-south-1c
+
+Hyderabad
+Region → ap-south-2
+AZs:
+• ap-south-2a
+• ap-south-2b
+• ap-south-2c
+
+Singapore
+Region → ap-southeast-1
+AZs:
+• ap-southeast-1a
+• ap-southeast-1b
+• ap-southeast-1c
+
+---
+
+## AZ NAME vs AZ ID
+
+An Availability Zone has:
+
+• AZ Name → Example: ap-south-1a
+• AZ ID → Example: aps1-az1
+
+AZ Name:
+→ Human-readable name containing the Region code and AZ letter.
+
+AZ ID:
+→ Stable identifier for the underlying Availability Zone.
+
+The letter in an AZ name does not necessarily match the number in the AZ ID.
+
+Example from Mumbai:
+
+ap-south-1a → aps1-az1
+ap-south-1b → aps1-az3
+ap-south-1c → aps1-az2
+
+Example from Hyderabad:
+
+ap-south-2a → aps2-az1
+ap-south-2b → aps2-az2
+ap-south-2c → aps2-az3
+
+---
+
+## LOCAL ZONES
+
+Local Zones extend AWS infrastructure closer to users in locations outside the main Region.
+
+Examples observed:
+
+Mumbai Region:
+• Delhi Local Zone
+• Kolkata Local Zone
+
+Singapore Region:
+• Hanoi Local Zone
+• Manila Local Zone
+
+A Local Zone is different from an Availability Zone.
+
+---
+
+★ MEMORY BOX ★
+
+Region
+→ Contains multiple Availability Zones.
+
+AZ Name
+→ Example: ap-south-1a
+
+AZ ID
+→ Example: aps1-az1
+
+Do NOT assume:
+a = az1
+b = az2
+c = az3
+
+Local Zone
+→ Extends AWS infrastructure closer to users outside the main Region location.

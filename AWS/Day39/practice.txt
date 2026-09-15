@@ -1,0 +1,95 @@
+# Day 39 - Practice #
+
+## Objective
+
+Identify 3 AWS Regions and their Availability Zones.
+
+---
+
+## 1. Mumbai Region
+
+Region:
+ap-south-1
+
+Availability Zones:
+• ap-south-1a
+• ap-south-1b
+• ap-south-1c
+
+AZ IDs observed:
+• ap-south-1a → aps1-az1
+• ap-south-1b → aps1-az3
+• ap-south-1c → aps1-az2
+
+Additional Local Zones observed:
+• Delhi
+• Kolkata
+
+---
+
+## 2. Hyderabad Region
+
+Region:
+ap-south-2
+
+Availability Zones:
+• ap-south-2a
+• ap-south-2b
+• ap-south-2c
+
+AZ IDs observed:
+• ap-south-2a → aps2-az1
+• ap-south-2b → aps2-az2
+• ap-south-2c → aps2-az3
+
+No Local Zones were shown for Hyderabad in the console during this lab.
+
+---
+
+## 3. Singapore Region
+
+Region:
+ap-southeast-1
+
+Availability Zones:
+• ap-southeast-1a
+• ap-southeast-1b
+• ap-southeast-1c
+
+AZ IDs observed:
+• ap-southeast-1a → apse1-az2
+• ap-southeast-1b → apse1-az1
+• ap-southeast-1c → apse1-az3
+
+Additional Local Zones observed:
+• Hanoi, Vietnam
+• Manila, Philippines
+
+---
+
+## Key Observation
+
+AZ names and AZ IDs do not always follow the same numbering order.
+
+Mumbai:
+a → az1
+b → az3
+c → az2
+
+Hyderabad:
+a → az1
+b → az2
+c → az3
+
+Singapore:
+a → az2
+b → az1
+c → az3
+
+This demonstrates why AZ IDs should be treated as the stable identifiers rather than assuming the AZ letter corresponds to the AZ ID number.
+
+## Lab Result
+
+Successfully identified 3 AWS Regions and their Availability Zones through the AWS Console.
+
+No AWS resources were created.

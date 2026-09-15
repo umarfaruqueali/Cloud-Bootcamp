@@ -1,0 +1,12 @@
+# Day 39 - Commands #
+
+No terminal commands were used today.
+
+The Day 39 hands-on lab was performed through the AWS Management Console.
+
+AWS Console navigation used:
+• Regions and Zones
+• Availability Zones
+• Local Zones
+
+No AWS resources were created.
