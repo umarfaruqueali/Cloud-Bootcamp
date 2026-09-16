@@ -1,0 +1,24 @@
+DAY 40 - COMMANDS
+
+No terminal commands were used today.
+
+The Day 40 IAM lab was completed through the AWS Management Console.
+
+AWS Console actions performed:
+
+1. Opened IAM
+2. Created IAM user:
+   cloud-admin
+3. Enabled AWS Management Console access
+4. Created IAM group:
+   Administrators
+5. Attached AWS managed policy:
+   AdministratorAccess
+6. Added cloud-admin to the Administrators group
+7. Logged in using cloud-admin
+8. Assigned a Virtual MFA device to cloud-admin
+9. Tested cloud-admin login with MFA successfully
+
+Note:
+AWS CLI and programmatic access are covered later in the AWS CLI section.
+No access keys were created during this lab.

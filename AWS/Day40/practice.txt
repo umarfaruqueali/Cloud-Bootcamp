@@ -1,0 +1,88 @@
+DAY 40 - IAM BASICS PRACTICE
+
+OBJECTIVE
+Create an IAM administrator user and stop using the root user
+for normal AWS administration.
+
+1. IAM USER
+
+Created IAM user:
+
+cloud-admin
+
+Console access was enabled.
+
+A custom password was configured.
+
+
+2. IAM GROUP
+
+Created group:
+
+Administrators
+
+Attached policy:
+
+AdministratorAccess
+
+Added:
+
+cloud-admin
+
+to the Administrators group.
+
+
+3. IAM ADMINISTRATOR LOGIN
+
+Logged out of the root session.
+
+Logged in successfully as:
+
+cloud-admin
+
+Verified that the AWS Management Console was accessible
+using the IAM administrator account.
+
+
+4. MFA
+
+Assigned a Virtual MFA device to:
+
+cloud-admin
+
+MFA login was tested successfully.
+
+
+5. ROOT ACCOUNT
+
+Root account MFA was already enabled.
+
+Root account will not be used for normal AWS administration.
+
+cloud-admin will be used for regular AWS labs and administration.
+
+
+6. OBSERVATION
+
+The AWS Management Console looks essentially the same when
+logged in as root or as cloud-admin.
+
+However:
+
+Root user
+→ Complete account access and certain root-only capabilities.
+
+cloud-admin + AdministratorAccess
+→ Broad administrative access through IAM policies,
+but it is still an IAM identity and is not the root user.
+
+
+7. FINAL RESULT
+
+IAM administrator user created successfully.
+Administrators group created successfully.
+AdministratorAccess attached successfully.
+cloud-admin MFA enabled successfully.
+cloud-admin MFA login tested successfully.
+
+Day 40 IAM lab completed.

@@ -1,0 +1,132 @@
+DAY 40 - IAM BASICS
+
+IAM = Identity and Access Management
+
+IAM controls:
+• Authentication → Who are you?
+• Authorization → What are you allowed to do?
+
+IAM IDENTITIES
+
+1. IAM User
+→ An identity within an AWS account.
+→ Used to represent a person or application.
+
+2. IAM Group
+→ Collection of IAM users.
+→ Policies attached to a group apply to its users.
+→ Helps manage permissions centrally.
+
+3. IAM Role
+→ An identity that can be assumed.
+→ Provides temporary credentials.
+→ Deeper study in Day 41.
+
+4. Root User
+→ Created when the AWS account is created.
+→ Has complete account access.
+→ Should not be used for everyday AWS tasks.
+→ Keep MFA enabled.
+→ Do not create root access keys.
+
+
+IAM POLICIES
+
+• Policies are JSON documents that define permissions.
+• Policies can be attached to users, groups, or roles.
+• Permissions determine which AWS actions and resources are allowed.
+
+Example:
+
+cloud-admin
+     ↓
+Administrators group
+     ↓
+AdministratorAccess policy
+
+
+ADMINISTRATOR ACCESS
+
+AdministratorAccess
+→ AWS managed policy.
+→ Provides full access to AWS services and resources.
+
+An IAM administrator with AdministratorAccess is NOT the same
+as the root user.
+
+Root user
+→ Can perform certain root-only account tasks.
+
+IAM administrator
+→ Permissions come from IAM policies.
+→ Cannot perform tasks that specifically require root credentials.
+
+
+LEAST PRIVILEGE
+
+→ Give only the permissions required for a task.
+→ Avoid unnecessary broad permissions.
+
+AdministratorAccess is broad access and should therefore be used
+only for trusted administrative work.
+
+
+MFA
+
+MFA = Multi-Factor Authentication
+
+→ Adds an additional authentication factor during sign-in.
+→ Helps protect accounts even if a password is compromised.
+
+Root MFA:
+→ Enabled.
+
+cloud-admin MFA:
+→ Enabled.
+
+
+DAY 40 ACCOUNT STRUCTURE
+
+Root
+│
+├── MFA enabled
+└── Used only when specifically required
+        │
+        ▼
+cloud-admin
+│
+├── Administrators group
+├── AdministratorAccess
+└── MFA enabled
+
+
+★ MEMORY BOX ★
+
+Authentication
+→ Who are you?
+
+Authorization
+→ What are you allowed to do?
+
+User
+→ Individual IAM identity
+
+Group
+→ Collection of users
+
+Policy
+→ Defines permissions
+
+AdministratorAccess
+→ Full access to AWS services/resources
+
+Least privilege
+→ Only required permissions
+
+MFA
+→ Additional authentication factor
+
+Root
+→ Avoid for everyday AWS work
+
+IAM administrator ≠ Root user
