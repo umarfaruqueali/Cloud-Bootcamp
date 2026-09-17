@@ -1,0 +1,188 @@
+# Day-41 #
+
+Topic : IAM Policies & Roles
+
+---
+
+## ⇒ IAM POLICY
+
+IAM Policy
+→ JSON document that defines permissions.
+
+A policy specifies:
+→ Effect
+→ Action
+→ Resource
+→ Optional Condition
+
+Example:
+
+{
+  "Effect": "Allow",
+  "Action": "s3:ListBucket",
+  "Resource": "*"
+}
+
+Effect
+→ Allow or Deny an action.
+
+Action
+→ AWS operation being allowed or denied.
+
+Resource
+→ AWS resource to which the permission applies.
+
+---
+
+## ⇒ MANAGED POLICY TYPES
+
+AWS Managed Policy
+→ Created and maintained by AWS.
+
+Customer Managed Policy
+→ Created and managed by the AWS account owner.
+→ Can be reused with multiple identities.
+
+Inline Policy
+→ Policy embedded directly into one identity.
+
+---
+
+## ⇒ IMPLICIT DENY
+
+If no applicable policy allows an action:
+
+→ The action is implicitly denied.
+
+Example:
+
+Policy allows:
+s3:ListAllMyBuckets
+
+But does not allow:
+s3:DeleteBucket
+
+Result:
+
+ListAllMyBuckets → Allowed
+DeleteBucket → Denied
+
+KEY IDEA:
+Not explicitly allowed → Implicit Deny
+
+---
+
+## ⇒ IAM ROLE
+
+IAM Role
+→ An identity that can be assumed by a trusted entity.
+
+Roles are commonly used to provide temporary credentials
+to AWS services or other trusted entities.
+
+Example:
+
+EC2
+ ↓
+IAM Role
+ ↓
+S3 permissions
+
+No hardcoded access keys are required on the EC2 instance.
+
+---
+
+## ⇒ TRUST POLICY
+
+Trust Policy
+→ Defines who can assume the role.
+
+Example:
+
+Principal
+→ ec2.amazonaws.com
+
+Action
+→ sts:AssumeRole
+
+KEY IDEA:
+Trust policy answers:
+
+"Who can assume this role?"
+
+---
+
+## ⇒ PERMISSIONS POLICY vs TRUST POLICY
+
+Trust Policy
+→ Who can assume the role?
+
+Permissions Policy
+→ What can the role do?
+
+Example:
+
+EC2
+ ↓
+Trust Policy
+ ↓
+Can assume role
+ ↓
+Permissions Policy
+ ↓
+S3:ListAllMyBuckets
+ ↓
+Allowed
+
+---
+
+## ⇒ IAM POLICY SIMULATOR
+
+Policy Simulator
+→ Tests whether an identity is allowed to perform
+a particular AWS action.
+
+Example:
+
+S3 → ListAllMyBuckets
+→ Allowed
+
+S3 → DeleteBucket
+→ Denied
+
+The simulator evaluates permissions without performing
+the actual AWS action.
+
+---
+
+★ MEMORY BOX ★
+
+Policy
+→ Defines permissions
+
+Action
+→ Specific AWS operation
+
+Allow
+→ Permission granted
+
+Implicit Deny
+→ No applicable Allow exists
+
+Role
+→ Identity that can be assumed
+
+Trust Policy
+→ Who can assume the role?
+
+Permissions Policy
+→ What can the role do?
+
+Policy Simulator
+→ Test permissions safely
+
+KEY FORMULA:
+
+Trust = WHO
+
+Permissions = WHAT

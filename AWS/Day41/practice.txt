@@ -1,0 +1,108 @@
+DAY 41 - IAM POLICIES & ROLES PRACTICE
+
+OBJECTIVE
+Create read-only and admin policies and understand IAM roles,
+trust policies and permission policies.
+
+1. CUSTOMER-MANAGED POLICIES
+
+Created:
+
+CloudBootcamp-S3-ReadOnly
+→ Customer managed policy.
+
+CloudBootcamp-S3-Admin
+→ Customer managed policy.
+
+These policies were created to practice defining permissions
+for AWS resources.
+
+2. IAM GROUP
+
+Created:
+
+ReadOnlyUsers
+
+The group provides a structure for assigning permissions
+centrally to read-only users.
+
+3. IAM ROLE
+
+Created:
+
+CloudBootcamp-EC2-S3ReadOnly
+
+Trusted entity:
+EC2
+
+The role uses a trust policy allowing EC2 to assume the role.
+
+Attached permissions policy:
+
+CloudBootcamp-S3-ReadOnly
+
+4. TRUST POLICY
+
+Observed the role trust policy:
+
+Principal:
+ec2.amazonaws.com
+
+Action:
+sts:AssumeRole
+
+Meaning:
+
+EC2
+→ Trusted entity
+→ Can assume the role.
+
+5. PERMISSIONS POLICY
+
+The role has:
+
+CloudBootcamp-S3-ReadOnly
+
+This policy determines what the role can do after it
+has been assumed.
+
+6. POLICY SIMULATOR
+
+Test 1:
+
+S3 → ListAllMyBuckets
+
+Result:
+Allowed
+
+Reason:
+Explicit allow in one policy statement.
+
+Test 2:
+
+S3 → DeleteBucket
+
+Result:
+Denied
+
+Reason:
+Implicit deny due to no matching statement.
+
+7. KEY OBSERVATION
+
+A role's trust policy and permissions policy have different jobs.
+
+Trust Policy
+→ Determines who can assume the role.
+
+Permissions Policy
+→ Determines what the role can do.
+
+8. SAFETY
+
+The role was tested using IAM Policy Simulator.
+
+No EC2 instance was launched and no billable compute
+resource was created.
+
+DAY 41 IAM POLICIES & ROLES LAB COMPLETED.
