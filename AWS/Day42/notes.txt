@@ -1,0 +1,248 @@
+# Day-42 #
+
+Topic : Billing, Budgets & Amazon SNS
+
+---
+
+## ⇒ AWS BILLING & COST MANAGEMENT
+
+Billing and Cost Management
+→ Used to view and manage AWS costs and bills.
+
+It helps monitor:
+→ Costs
+→ Usage
+→ Budgets
+→ Billing information
+
+---
+
+## ⇒ AWS BUDGET
+
+AWS Budget
+→ Defines a spending or usage target and alerts when a threshold is reached.
+
+Cost Budget
+→ Monitors AWS costs against a specified amount.
+
+Example:
+
+Budget
+→ $1.00 per month
+
+Alert threshold
+→ 75%
+
+Alert amount
+→ $0.75
+
+---
+
+## ⇒ BUDGET PERIOD
+
+Period
+→ Defines how often the budget is evaluated.
+
+Example:
+
+Monthly
+→ Budget applies to each month.
+
+Recurring budget
+→ Continues to apply to future periods.
+
+---
+
+## ⇒ ALERT THRESHOLD
+
+Threshold
+→ Point at which a budget alert is triggered.
+
+Example:
+
+Budget = $1.00
+Threshold = 75%
+
+75% of $1.00
+= $0.75
+
+---
+
+## ⇒ ACTUAL vs FORECASTED
+
+Actual Costs
+→ Alert based on costs that have actually occurred.
+
+Forecasted Costs
+→ Alert based on AWS's forecast of future costs.
+
+Day 42:
+→ Actual Costs selected.
+
+---
+
+## ⇒ BUDGET ACTIONS
+
+Budget Action
+→ Allows an automated response when a budget threshold is exceeded.
+
+Example:
+→ An eligible resource may be stopped to prevent further costs.
+
+Day 42:
+→ No budget actions configured.
+
+---
+
+## ⇒ AMAZON SNS
+
+SNS = Simple Notification Service
+
+→ Managed messaging service used to send notifications.
+
+Basic flow:
+
+Publisher
+   ↓
+SNS Topic
+   ↓
+Subscriber
+
+---
+
+## ⇒ SNS TOPIC
+
+SNS Topic
+→ A communication channel to which messages are published.
+
+Example:
+
+cloud-budget-alerts
+
+---
+
+## ⇒ PUBLISHER
+
+Publisher
+→ Entity that sends a message to an SNS topic.
+
+Day 42:
+
+AWS Budgets
+→ Publisher
+
+---
+
+## ⇒ SUBSCRIBER
+
+Subscriber
+→ Endpoint that receives messages from an SNS topic.
+
+Examples:
+→ Email
+→ SMS
+→ Lambda
+→ SQS
+
+Day 42:
+
+Email
+→ Subscriber
+
+---
+
+## ⇒ SNS ARN
+
+ARN = Amazon Resource Name
+
+→ Uniquely identifies an AWS resource.
+
+The SNS topic ARN identifies:
+
+cloud-budget-alerts
+
+The ARN was used by AWS Budgets to identify the SNS topic.
+
+---
+
+## ⇒ SNS ACCESS POLICY
+
+SNS Access Policy
+→ Defines who or what can access an SNS topic.
+
+Day 42:
+
+Principal:
+→ budgets.amazonaws.com
+
+Action:
+→ SNS:Publish
+
+Meaning:
+
+AWS Budgets
+   ↓
+Allowed to publish
+   ↓
+SNS Topic
+
+The policy also restricted the permission using:
+→ Source Account
+→ Source ARN
+
+---
+
+## ⇒ BUDGET → SNS → EMAIL
+
+Complete Day 42 flow:
+
+AWS Budgets
+      ↓
+75% actual-cost threshold
+      ↓
+SNS Topic
+cloud-budget-alerts
+      ↓
+Email Subscriber
+
+---
+
+★ MEMORY BOX ★
+
+Budget
+→ Spending/usage target
+
+Cost Budget
+→ Monitors costs
+
+Threshold
+→ Point that triggers an alert
+
+Actual
+→ Costs already incurred
+
+Forecasted
+→ Expected future costs
+
+Budget Action
+→ Automated response to a threshold
+
+SNS
+→ Notification/messaging service
+
+Topic
+→ Notification channel
+
+Publisher
+→ Sends message
+
+Subscriber
+→ Receives message
+
+SNS Access Policy
+→ Controls who can access the topic
+
+Budget → SNS → Email
+→ AWS cost alert notification flow
+
+⚠️ Budget is an alerting mechanism, not a hard spending limit.

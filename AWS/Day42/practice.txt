@@ -1,0 +1,197 @@
+# Day-42 Practice #
+
+Topic : Billing, Budgets & Amazon SNS
+
+---
+
+## ⇒ BILLING ACCESS
+
+1. Opened AWS Billing and Cost Management using cloud-admin.
+
+2. Billing access initially showed Access Denied.
+
+3. Switched to the root user.
+
+4. Verified:
+   IAM user and role access to Billing information
+   → Activated
+
+5. Returned to cloud-admin.
+
+---
+
+## ⇒ CREATE AWS BUDGET
+
+Created a custom cost budget.
+
+Budget name:
+cloud-budget
+
+Budget type:
+Cost budget
+
+Period:
+Monthly
+
+Renewal:
+Recurring
+
+Budgeting method:
+Fixed
+
+Budget amount:
+$1.00
+
+Budget scope:
+All AWS services
+
+---
+
+## ⇒ CONFIGURE ALERT
+
+Created Alert #1.
+
+Threshold:
+75% of budgeted amount
+
+Budget:
+$1.00
+
+Alert threshold:
+$0.75
+
+Trigger:
+Actual costs
+
+No email recipient was configured directly in the budget alert.
+
+---
+
+## ⇒ CREATE SNS TOPIC
+
+Created Amazon SNS topic.
+
+Topic name:
+cloud-budget-alerts
+
+Type:
+Standard
+
+Encryption:
+Default / no additional server-side encryption configured
+
+---
+
+## ⇒ SNS EMAIL SUBSCRIPTION
+
+Created an email subscription for:
+
+cloud-budget-alerts
+
+Protocol:
+Email
+
+Subscription:
+Created successfully
+
+Email confirmation:
+Confirmed successfully
+
+---
+
+## ⇒ SNS ACCESS POLICY
+
+Edited the SNS topic access policy.
+
+Kept the existing default topic-owner statement.
+
+Added a statement allowing:
+
+Principal:
+budgets.amazonaws.com
+
+Action:
+SNS:Publish
+
+Resource:
+cloud-budget-alerts SNS topic
+
+The permission was restricted using:
+→ aws:SourceAccount
+→ aws:SourceArn
+
+Saved the policy successfully.
+
+---
+
+## ⇒ CONNECT BUDGET TO SNS
+
+Returned to the AWS Budget creation wizard.
+
+Added the SNS topic ARN for:
+
+cloud-budget-alerts
+
+Alert:
+75% of budgeted amount
+
+Trigger:
+Actual costs
+
+---
+
+## ⇒ BUDGET ACTIONS
+
+Reviewed Step 4:
+Attach actions
+
+No budget actions were attached.
+
+No EC2 instance or other compute resource was created.
+
+---
+
+## ⇒ FINAL RESULT
+
+Created budget successfully.
+
+Budget:
+cloud-budget
+
+Budget amount:
+$1.00/month
+
+Current cost:
+$0.00
+
+Threshold:
+75%
+
+Health status:
+Healthy
+
+Budget alert:
+Configured
+
+SNS notification:
+Configured
+
+Email subscription:
+Verified
+
+---
+
+## ⇒ OBSERVATION
+
+The final notification architecture is:
+
+AWS Budgets
+    ↓
+Cost threshold exceeded
+    ↓
+SNS Topic
+cloud-budget-alerts
+    ↓
+Verified email subscriber
+
+No billable compute resources were launched during the lab.
