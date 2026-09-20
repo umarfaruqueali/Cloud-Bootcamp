@@ -1,0 +1,122 @@
+# Day-43 #
+
+Topic : AWS CLI
+
+---
+
+## ⇒ AWS CLI
+
+AWS CLI = AWS Command Line Interface
+
+→ Command-line tool used to interact with AWS services.
+
+Instead of using the AWS Console:
+
+Terminal
+   ↓
+AWS CLI
+   ↓
+AWS Services
+
+---
+
+## ⇒ AWS CLI INSTALLATION
+
+Installed AWS CLI v2.
+
+Verified with:
+
+aws --version
+
+AWS CLI version:
+2.36.49
+
+---
+
+## ⇒ PATH
+
+PATH
+→ List of directories Linux searches for executable commands.
+
+AWS CLI was installed in:
+
+~/.local/bin
+
+Added this directory to PATH so the `aws` command could be found.
+
+---
+
+## ⇒ AWS CONFIGURATION
+
+aws configure
+→ Configures AWS CLI credentials and default settings.
+
+Configured:
+
+Access Key ID
+Secret Access Key
+Default region
+Default output format
+
+Region:
+ap-south-2
+
+Output:
+json
+
+---
+
+## ⇒ STS
+
+STS = Security Token Service
+
+aws sts get-caller-identity
+→ Shows the AWS identity making the request.
+
+Used to verify CLI authentication.
+
+Result:
+cloud-admin
+
+---
+
+## ⇒ S3 CLI
+
+aws s3 ls
+→ Lists accessible S3 buckets.
+
+No output:
+→ No S3 buckets currently exist.
+
+---
+
+## ⇒ CONFIGURE LIST
+
+aws configure list
+→ Displays current AWS CLI configuration sources.
+
+Credentials are masked.
+
+---
+
+★ MEMORY BOX ★
+
+AWS CLI
+→ Interact with AWS from terminal
+
+PATH
+→ Where Linux searches for commands
+
+aws configure
+→ Configure CLI credentials/settings
+
+STS
+→ Verify AWS identity
+
+aws s3 ls
+→ List S3 buckets
+
+Never share:
+→ Secret Access Key
+→ Password
+→ MFA code

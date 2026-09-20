@@ -1,0 +1,56 @@
+# Day-43 AWS CLI Commands #
+
+## Verify AWS CLI
+
+aws --version
+
+→ Check installed AWS CLI version.
+
+
+## Add AWS CLI to PATH
+
+echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc
+
+→ Add ~/.local/bin to Bash PATH.
+
+
+## Reload Bash Configuration
+
+source ~/.bashrc
+
+→ Reload ~/.bashrc without opening a new terminal.
+
+
+## Configure AWS CLI
+
+aws configure
+
+→ Configure:
+   Access Key ID
+   Secret Access Key
+   Default region
+   Default output format
+
+
+## Verify AWS Identity
+
+aws sts get-caller-identity
+
+→ Show the AWS identity currently being used.
+
+
+## List S3 Buckets
+
+aws s3 ls
+
+→ List accessible S3 buckets.
+
+
+## View CLI Configuration
+
+aws configure list
+
+→ Show current CLI configuration and its sources.
+
+Note:
+Credentials are masked in the output.

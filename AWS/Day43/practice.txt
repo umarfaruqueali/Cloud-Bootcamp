@@ -1,0 +1,104 @@
+# Day-43 Practice #\
+
+## AWS CLI Installation
+
+Created AWS/Day43 directory.
+
+Checked AWS CLI installation:
+
+aws --version
+
+AWS CLI was initially not installed.
+
+Installed required unzip package:
+
+sudo apt update
+sudo apt install unzip
+
+Installed AWS CLI v2 using the official AWS installer.
+
+Verified AWS CLI:
+
+aws --version
+
+AWS CLI 2.36.49 was installed.
+
+---
+
+## PATH Configuration
+
+AWS CLI was installed under:
+
+~/.local/bin/aws
+
+The directory was not initially present in PATH.
+
+Added ~/.local/bin to PATH through ~/.bashrc.
+
+Reloaded Bash configuration using:
+
+source ~/.bashrc
+
+Verified that the aws command worked.
+
+---
+
+## AWS CLI Authentication
+
+Created an access key for the cloud-admin IAM user.
+
+Configured AWS CLI using:
+
+aws configure
+
+Default region:
+ap-south-2
+
+Output format:
+json
+
+Credentials were entered locally and were not shared.
+
+---
+
+## Authentication Test
+
+Ran:
+
+aws sts get-caller-identity
+
+Confirmed that AWS CLI was authenticated as:
+
+cloud-admin
+
+---
+
+## S3 Test
+
+Ran:
+
+aws s3 ls
+
+No output was returned because no S3 buckets currently exist.
+
+No AWS resources were created.
+
+---
+
+## Configuration Verification
+
+Ran:
+
+aws configure list
+
+Confirmed that credentials were configured and masked and the default region was ap-south-2.
+
+---
+
+## Result
+
+AWS CLI v2 installed successfully.
+
+AWS CLI authenticated successfully as cloud-admin.
+
+Safe AWS API calls tested successfully.
