@@ -1,0 +1,62 @@
+# Day-44 AWS CLI Commands #
+
+## S3
+
+aws s3 ls
+
+→ List S3 buckets.
+
+
+## IAM Users
+
+aws iam list-users
+
+→ List IAM users.
+
+aws iam get-user --user-name cloud-admin
+
+→ Get details of a specific IAM user.
+
+
+## IAM Groups
+
+aws iam list-groups
+
+→ List IAM groups.
+
+aws iam get-group --group-name Administrators
+
+→ Get details of a specific IAM group.
+
+aws iam list-groups-for-user --user-name cloud-admin
+
+→ List groups belonging to a user.
+
+
+## IAM Group Policies
+
+aws iam list-attached-group-policies --group-name Administrators
+
+→ List policies attached to a group.
+
+aws iam list-attached-group-policies --group-name ReadOnlyUsers
+
+→ List policies attached to ReadOnlyUsers.
+
+
+## IAM Policy
+
+aws iam get-policy --policy-arn arn:aws:iam::aws:policy/AdministratorAccess
+
+→ Get policy metadata.
+
+aws iam get-policy-version --policy-arn arn:aws:iam::aws:policy/AdministratorAccess --version-id v1
+
+→ Get the actual policy document.
+
+
+## STS
+
+aws sts get-caller-identity
+
+→ Show the currently authenticated AWS identity.

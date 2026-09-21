@@ -1,0 +1,149 @@
+# Day-44 Practice #
+
+## S3 Practice
+
+Ran:
+
+aws s3 ls
+
+Result:
+No output.
+
+Observation:
+No S3 buckets currently exist in the account.
+
+---
+
+## IAM User Practice
+
+Ran:
+
+aws iam list-users
+
+Result:
+cloud-admin found.
+
+Ran:
+
+aws iam get-user --user-name cloud-admin
+
+Result:
+cloud-admin user details returned.
+
+---
+
+## IAM Group Practice
+
+Ran:
+
+aws iam list-groups
+
+Result:
+
+Administrators
+ReadOnlyUsers
+
+Ran:
+
+aws iam get-group --group-name Administrators
+
+Result:
+Administrators group details and cloud-admin user returned.
+
+Ran:
+
+aws iam list-groups-for-user --user-name cloud-admin
+
+Result:
+cloud-admin belongs to Administrators.
+
+Ran:
+
+aws iam get-group --group-name ReadOnlyUsers
+
+Result:
+ReadOnlyUsers exists but currently has no users.
+
+---
+
+## IAM Policy Practice
+
+Ran:
+
+aws iam list-attached-group-policies --group-name Administrators
+
+Result:
+AdministratorAccess found.
+
+Ran:
+
+aws iam list-attached-group-policies --group-name ReadOnlyUsers
+
+Result:
+CloudBootcamp-S3-ReadOnly found.
+
+Ran:
+
+aws iam get-policy --policy-arn arn:aws:iam::aws:policy/AdministratorAccess
+
+Result:
+AdministratorAccess policy metadata returned.
+
+DefaultVersionId:
+v1
+
+Ran:
+
+aws iam get-policy-version --policy-arn arn:aws:iam::aws:policy/AdministratorAccess --version-id v1
+
+Result:
+Actual policy document returned.
+
+Observed:
+
+Effect = Allow
+Action = *
+Resource = *
+
+---
+
+## STS Practice
+
+Ran:
+
+aws sts get-caller-identity
+
+Result:
+Authenticated identity confirmed as cloud-admin.
+
+---
+
+## CLI Challenge Practice
+
+Successfully derived:
+
+aws iam get-group --group-name ReadOnlyUsers
+
+aws iam list-attached-group-policies --group-name ReadOnlyUsers
+
+aws sts get-caller-identity
+
+aws iam list-users
+
+---
+
+## Result
+
+Practiced AWS CLI commands for:
+
+→ S3
+→ IAM Users
+→ IAM Groups
+→ IAM Policies
+→ STS
+
+Learned to derive commands using:
+
+aws <service> <operation> <options>
+
+No AWS resources were created or modified during the practice.

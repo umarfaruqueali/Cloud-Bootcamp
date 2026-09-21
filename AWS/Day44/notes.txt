@@ -1,0 +1,113 @@
+# Day-44 #
+
+Topic : AWS CLI Practice
+
+---
+
+## ⇒ CLI COMMAND STRUCTURE
+
+General pattern:
+
+aws <service> <operation> <options>
+
+Example:
+
+aws iam get-user --user-name cloud-admin
+
+→ iam = service
+→ get-user = operation
+→ --user-name = option
+→ cloud-admin = value
+
+---
+
+## ⇒ S3
+
+aws s3 ls
+
+→ Lists accessible S3 buckets.
+
+No output:
+→ No S3 buckets currently exist.
+
+---
+
+## ⇒ IAM USERS
+
+aws iam list-users
+
+→ Lists IAM users in the AWS account.
+
+aws iam get-user --user-name cloud-admin
+
+→ Gets details of one IAM user.
+
+---
+
+## ⇒ IAM GROUPS
+
+aws iam list-groups
+
+→ Lists IAM groups.
+
+aws iam get-group --group-name Administrators
+
+→ Gets details of one group and its users.
+
+aws iam list-groups-for-user --user-name cloud-admin
+
+→ Lists groups to which a user belongs.
+
+---
+
+## ⇒ IAM POLICIES
+
+aws iam list-attached-group-policies --group-name Administrators
+
+→ Lists policies attached to a group.
+
+aws iam get-policy --policy-arn <ARN>
+
+→ Gets policy metadata.
+
+aws iam get-policy-version --policy-arn <ARN> --version-id <ID>
+
+→ Gets the actual policy document for a specific policy version.
+
+---
+
+## ⇒ STS
+
+STS = Security Token Service
+
+aws sts get-caller-identity
+
+→ Shows the AWS identity making the request.
+
+Result:
+cloud-admin
+
+---
+
+## ★ MEMORY BOX ★
+
+aws
+→ AWS CLI
+
+aws <service> <operation>
+→ Basic command pattern
+
+--option value
+→ Provide additional information
+
+S3
+→ aws s3 ls
+
+IAM
+→ Users, groups and policies
+
+STS
+→ Verify current AWS identity
+
+Think:
+Service → Operation → Options
