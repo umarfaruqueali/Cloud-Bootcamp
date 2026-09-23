@@ -1,0 +1,288 @@
+# Day-45 #
+
+Topic : Module 4A Revision — AWS Fundamentals, IAM, Billing & CLI
+
+
+## ⇒ AWS GLOBAL INFRASTRUCTURE
+
+Region
+→ Geographic area containing AWS infrastructure.
+
+Availability Zone (AZ)
+→ Isolated location inside a Region.
+
+Key idea:
+Region = geographic area
+AZ = isolated location inside a Region
+
+Example:
+ap-south-1
+├── AZ
+├── AZ
+└── AZ
+
+
+## ⇒ SHARED RESPONSIBILITY MODEL
+
+AWS
+→ Responsible for security OF the cloud.
+
+Customer
+→ Responsible for security IN the cloud.
+
+Examples:
+AWS → physical infrastructure
+Customer → IAM permissions, passwords, data, configurations
+
+
+## ⇒ ROOT USER
+
+Root user
+→ Complete account-level access.
+
+Best practice:
+→ Enable MFA.
+→ Do not use root for daily work.
+→ Do not create root access keys.
+
+Use root only when a task specifically requires root credentials.
+
+
+## ⇒ IAM
+
+IAM = Identity and Access Management
+
+User
+→ Individual identity in an AWS account.
+
+Group
+→ Collection of IAM users.
+
+Role
+→ Identity that can be assumed to obtain permissions, often using temporary credentials.
+
+Policy
+→ JSON document defining permissions.
+
+Least Privilege
+→ Give only the permissions required.
+
+Example:
+
+User
+  ↓
+Group
+  ↓
+Policy
+  ↓
+Permissions
+
+
+## ⇒ IAM POLICY
+
+Basic structure:
+
+{
+  "Effect": "Allow",
+  "Action": "...",
+  "Resource": "..."
+}
+
+Effect
+→ Allow or Deny
+
+Action
+→ AWS operation permitted/denied
+
+Resource
+→ Resource to which the permission applies.
+
+Example:
+
+"s3:ListAllMyBuckets"
+
+→ Allows listing S3 buckets.
+
+
+## ⇒ IAM ROLE
+
+Role
+→ Used when an AWS service or trusted identity needs permissions.
+
+Example:
+
+EC2
+ ↓
+IAM Role
+ ↓
+S3 permissions
+
+Advantage:
+→ Avoid hardcoding long-term access keys on EC2.
+
+
+## ⇒ MFA
+
+MFA = Multi-Factor Authentication
+
+→ Adds an additional authentication factor during sign-in.
+
+Configured:
+→ Root user MFA
+→ cloud-admin MFA
+
+
+## ⇒ BILLING & BUDGETS
+
+AWS Budget
+→ Defines a cost/usage threshold and can send alerts.
+
+Example:
+cloud-budget
+→ Monthly
+→ $1 budget
+→ 75% actual-cost alert
+
+SNS
+→ Messaging service used to deliver notifications.
+
+Free Tier safety:
+→ Monitor billing.
+→ Set budget alerts.
+→ Delete unused billable resources.
+
+
+## ⇒ AWS CLI
+
+AWS CLI
+→ Command-line tool used to interact with AWS services.
+
+Important commands:
+
+aws --version
+→ Show AWS CLI version
+
+aws configure
+→ Configure CLI credentials and defaults
+
+aws configure list
+→ Show current CLI configuration sources
+
+aws sts get-caller-identity
+→ Verify the AWS identity currently being used
+
+aws s3 ls
+→ List S3 buckets
+
+aws iam list-users
+→ List IAM users
+
+aws ec2 describe-regions
+→ List AWS Regions
+
+
+## ⇒ CLI TROUBLESHOOTING
+
+aws --version
+        ↓
+Is CLI installed?
+
+aws configure list
+        ↓
+Are credentials/configuration available?
+
+aws sts get-caller-identity
+        ↓
+Which AWS identity am I using?
+
+If authentication fails:
+→ Check credentials
+→ Check profile
+→ Check environment configuration
+→ Check permissions
+
+
+## ⇒ INTERVIEW QUESTIONS
+
+Q1. What is the difference between a Region and an Availability Zone?
+
+Answer:
+A Region is a geographic area containing AWS infrastructure.
+An Availability Zone is an isolated location within a Region.
+Multiple AZs allow applications to be distributed for higher availability.
+
+
+Q2. What is the AWS Shared Responsibility Model?
+
+Answer:
+AWS is responsible for security OF the cloud, such as physical infrastructure.
+The customer is responsible for security IN the cloud, such as IAM permissions, data and configurations.
+
+
+Q3. Why should you avoid using the root account?
+
+Answer:
+The root user has extremely broad account-level permissions.
+It should not be used for daily work because an IAM identity can be used with appropriate permissions and MFA.
+Root should be reserved for tasks that specifically require root access.
+
+
+Q4. What is the difference between IAM Users, Groups and Roles?
+
+Answer:
+User → Individual IAM identity.
+Group → Collection of users for centralized permission management.
+Role → Identity that can be assumed to obtain permissions, commonly by AWS services or other trusted identities.
+
+
+Q5. What is MFA and why is it important?
+
+Answer:
+MFA adds an additional authentication factor during sign-in.
+It provides an additional layer of protection if the password is compromised.
+
+
+Q6. What is AWS CLI and why is it useful?
+
+Answer:
+AWS CLI is a command-line tool for interacting with AWS services.
+It is useful for automation, scripting, administration and performing AWS operations without relying only on the console.
+
+
+## ★ MEMORY BOX ★
+
+Region
+→ Geographic area
+
+AZ
+→ Isolated location inside a Region
+
+User
+→ Individual identity
+
+Group
+→ Collection of users
+
+Role
+→ Assumable identity
+
+Policy
+→ Defines permissions
+
+Least Privilege
+→ Only required permissions
+
+Root
+→ Avoid for daily work
+
+MFA
+→ Extra authentication factor
+
+Budget
+→ Cost monitoring/alerting
+
+CLI
+→ AWS management from terminal
+
+STS get-caller-identity
+→ Verify current AWS identity

@@ -1,0 +1,112 @@
+# Day-45 #
+
+Topic : Module 4A Revision — Practical Review
+
+
+## MINI-LABS REVIEW
+
+1. IAM Administrator
+→ Created IAM user: cloud-admin
+→ AdministratorAccess attached through Administrators group
+→ MFA enabled
+
+2. IAM Group
+→ Administrators group created
+→ cloud-admin added to group
+
+3. Read-Only Access
+→ ReadOnlyUsers group created
+→ CloudBootcamp-S3-ReadOnly attached
+→ Permission tested using IAM Policy Simulator
+
+4. IAM Role
+→ CloudBootcamp-EC2-S3ReadOnly created
+→ Trusted entity: EC2
+→ CloudBootcamp-S3-ReadOnly attached
+
+5. AWS CLI
+→ AWS CLI v2 installed
+→ CLI configured using cloud-admin credentials
+→ Region: ap-south-2
+→ Output format: JSON
+
+6. CLI Identity Verification
+→ aws sts get-caller-identity
+→ Verified cloud-admin identity
+
+7. CLI Practice
+→ aws s3 ls
+→ aws iam list-users
+→ IAM groups and policies inspected through CLI
+
+
+## AWS FREE TIER SAFETY CHECKLIST
+
+✓ Root MFA enabled
+
+✓ Root not used for daily work
+
+✓ IAM administrator used for normal AWS work
+
+✓ IAM MFA enabled
+
+✓ Billing access configured
+
+✓ Monthly budget created
+
+✓ Budget alert configured
+
+✓ SNS notification configured
+
+✓ No unnecessary EC2 instances created
+
+✓ No unnecessary billable resources created
+
+✓ Unused billable resources must be deleted/stopped after practice
+
+✓ Billing dashboard should be checked regularly
+
+
+## JOB-STYLE TROUBLESHOOTING
+
+Problem:
+AWS CLI command fails.
+
+Check:
+
+1. Is AWS CLI installed?
+   → aws --version
+
+2. Is CLI configured?
+   → aws configure list
+
+3. Which AWS identity is being used?
+   → aws sts get-caller-identity
+
+4. If credentials are missing/invalid:
+   → Check credential/profile/environment configuration.
+
+5. If authentication works but operation fails:
+   → Check IAM permissions.
+
+
+## MODULE 4A CONCLUSION
+
+Module covered:
+
+→ AWS Global Infrastructure
+→ Regions and Availability Zones
+→ Shared Responsibility Model
+→ Root security
+→ IAM Users, Groups and Roles
+→ IAM Policies
+→ Least Privilege
+→ MFA
+→ Billing and Budgets
+→ SNS billing notifications
+→ Free Tier safety
+→ AWS CLI
+→ CLI configuration
+→ CLI troubleshooting
+
+Module 4A completed.
