@@ -1,0 +1,114 @@
+# Day-46 Practice #
+
+Objective:
+→ Launch a Free Tier Ubuntu EC2 instance.
+
+## 1. EC2 Console
+
+Opened Amazon EC2 console.
+
+Region:
+→ Asia Pacific (Hyderabad)
+
+Before launch:
+→ No running EC2 instances
+→ No key pairs
+
+---
+
+## 2. Launched EC2 Instance
+
+Instance name:
+→ Day46-EC2-Ubuntu
+
+AMI:
+→ Ubuntu Server 26.04 LTS
+
+Instance type:
+→ t3.micro
+→ Free Tier eligible
+
+Key pair:
+→ Day46-EC2-Key
+→ RSA
+→ .pem format
+
+---
+
+## 3. Network Configuration
+
+Public IP:
+→ Enabled
+
+Security Group:
+→ Created during launch
+
+Inbound SSH:
+→ TCP port 22
+→ Source: My IP
+
+Verified that the configured source IP matched the current public IP.
+
+HTTP:
+→ Not enabled
+
+HTTPS:
+→ Not enabled
+
+---
+
+## 4. Storage
+
+Root volume:
+→ 8 GiB
+→ gp3
+
+No additional volumes were created.
+
+---
+
+## 5. Instance Verification
+
+After launch:
+
+Instance state:
+→ Running
+
+Availability Zone:
+→ ap-south-2a
+
+Monitoring:
+→ Disabled
+
+IAM role:
+→ None
+
+Status checks:
+→ 3/3 passed
+
+Public IPv4:
+→ Assigned
+
+Private IPv4:
+→ Assigned
+
+---
+
+## 6. Observation
+
+Launching an EC2 instance creates a virtual Linux computer inside AWS.
+
+AWS provided:
+→ Computing resources
+→ Ubuntu operating system
+→ Storage
+→ Networking
+→ Security Group
+→ Key pair configuration
+
+The instance can later be accessed remotely using SSH.
+
+No additional EC2 instances were created.
+
+★ Result:
+Free Tier Ubuntu EC2 instance successfully launched and verified.

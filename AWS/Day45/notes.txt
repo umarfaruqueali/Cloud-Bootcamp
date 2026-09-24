@@ -1,0 +1,140 @@
+# Day-46 #
+
+Topic : Amazon EC2
+
+## ⇒ EC2
+
+EC2 = Elastic Compute Cloud
+
+→ AWS service for creating virtual servers in the cloud.
+
+EC2 instance
+→ A virtual computer running inside AWS.
+
+It can have:
+→ CPU
+→ RAM
+→ Operating System
+→ Storage
+→ Network connection
+→ Installed software
+
+---
+
+## ⇒ AMI
+
+AMI = Amazon Machine Image
+
+→ Template used to create an EC2 instance.
+
+Our AMI:
+→ Ubuntu Server 26.04 LTS
+
+AMI
+  ↓
+New EC2 instance
+  ↓
+Ubuntu server
+
+---
+
+## ⇒ INSTANCE TYPE
+
+Instance type determines the computing resources available to the EC2 instance.
+
+Our instance:
+→ t3.micro
+→ Free Tier eligible
+
+---
+
+## ⇒ KEY PAIR
+
+Key pair
+→ Used to securely connect to an EC2 instance.
+
+Created:
+→ Day46-EC2-Key
+→ Private key: .pem
+
+⚠️ Never share the private key.
+
+---
+
+## ⇒ SECURITY GROUP
+
+Security Group
+→ Acts as a virtual firewall for the EC2 instance.
+
+Configured:
+→ TCP port 22
+→ SSH access
+→ Source: My IP
+
+HTTP/HTTPS were not enabled.
+
+---
+
+## ⇒ STORAGE
+
+Root storage:
+→ 8 GiB
+→ gp3 EBS volume
+
+EBS
+→ Persistent block storage used with EC2.
+
+---
+
+## ⇒ NETWORKING
+
+EC2 receives:
+→ Private IP
+→ Public IPv4
+
+Public IP
+→ Allows internet connectivity to the instance.
+
+Private IP
+→ Used inside the AWS network.
+
+---
+
+## ⇒ INSTANCE STATE
+
+Running
+→ Virtual server is powered on and available.
+
+Stopped
+→ Instance is powered off but its EBS storage remains.
+
+Terminated
+→ Instance is permanently deleted and cannot be restarted.
+
+---
+
+★ MEMORY BOX ★
+
+EC2
+→ Virtual computer in AWS
+
+AMI
+→ Template for creating the computer
+
+Instance Type
+→ Defines computing resources
+
+EBS
+→ Virtual hard drive
+
+Security Group
+→ Virtual firewall
+
+Key Pair
+→ Secure login mechanism
+
+Launch Instance
+→ Create a new EC2 instance
+
+Instances
+→ View/manage existing EC2 instances
