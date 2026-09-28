@@ -1,0 +1,11 @@
+# DAY 47 #
+
+ssh -i ~/.ssh/Day46-EC2-Key.pem ubuntu@98.130.46.51
+whoami
+hostname
+pwd
+ls
+ls -la
+df -h
+free -h
+exit

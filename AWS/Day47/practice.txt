@@ -1,0 +1,74 @@
+# DAY 47 #
+
+LAB: CONNECT TO EC2 USING SSH
+
+1. Confirmed the EC2 instance was running in AWS Console.
+
+2. Connected from local WSL terminal using the EC2 private key:
+
+ssh -i ~/.ssh/Day46-EC2-Key.pem ubuntu@98.130.46.51
+
+3. Accepted the EC2 host fingerprint when prompted.
+
+4. Successfully entered the Ubuntu EC2 instance.
+
+5. Verified the logged-in user:
+
+whoami
+
+Result:
+ubuntu
+
+6. Verified the EC2 hostname:
+
+hostname
+
+Result:
+ip-172-31-14-46
+
+7. Verified the current working directory:
+
+pwd
+
+Result:
+/home/ubuntu
+
+8. Listed files:
+
+ls
+
+9. Listed hidden files and detailed permissions:
+
+ls -la
+
+Observed:
+.ssh directory was present in the Ubuntu user's home directory.
+
+10. Checked disk usage:
+
+df -h
+
+Observed:
+Root filesystem was approximately 6.7 GB in size.
+
+11. Checked memory:
+
+free -h
+
+Observed:
+Approximately 908 MB total memory was available on the instance.
+
+12. Logged out of the EC2 instance:
+
+exit
+
+13. Returned to the local WSL terminal.
+
+14. Stopped the EC2 instance from AWS Console after completing the lab.
+
+OBSERVATION:
+SSH provided remote terminal access to the Ubuntu EC2 instance.
+The EC2 instance had its own hostname, filesystem, memory and user environment.
+
+FINAL LAB CONCLUSION:
+Successfully connected to an AWS EC2 Ubuntu instance using SSH and an EC2 key pair, verified the remote environment, safely disconnected, and stopped the instance after completing the lab.

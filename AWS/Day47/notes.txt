@@ -1,0 +1,59 @@
+# DAY 47 #
+
+EC2 SSH CONNECTION
+
+Concept:
+SSH (Secure Shell) is a secure protocol used to remotely access and manage a server through a terminal.
+
+For our lab:
+Laptop/WSL → Internet → EC2 Public IPv4 → SSH → Ubuntu EC2 instance
+
+SSH Key Pair:
+- Private key (.pem) stays on our computer.
+- Public key is associated with the EC2 instance.
+- The private key is used to authenticate the SSH connection.
+- Never share the private key.
+
+SSH command structure:
+ssh -i <private-key> <username>@<public-ip>
+
+Our connection:
+- Username: ubuntu
+- EC2 Public IPv4: 98.130.46.51
+- Private key: Day46-EC2-Key.pem
+
+After successful connection:
+ubuntu@ip-172-31-14-46:~$
+
+This confirms we are inside the EC2 Ubuntu server.
+
+Important:
+- Public IPv4 is used to reach the EC2 instance from the internet.
+- Private IPv4 (172.31.14.46) is used internally inside the AWS VPC.
+- SSH normally uses port 22.
+- Changing networks can change the client's public IP and may affect Security Group rules.
+
+Basic verification after connecting:
+whoami  → confirms current user
+hostname → confirms server hostname
+pwd → shows current directory
+ls → lists files
+ls -la → lists hidden files and detailed permissions
+df -h → shows disk usage
+free -h → shows memory usage
+
+Logging out:
+exit
+
+This closes the SSH session but does NOT stop the EC2 instance.
+
+⭐ MEMORY BOX ⭐
+SSH = Secure remote terminal access
+
+Private key = kept secret on local machine
+Public IPv4 = address used to reach EC2
+Port 22 = standard SSH port
+ubuntu = EC2 login user
+exit = disconnect SSH session
+Stop instance = stop EC2 compute
+Terminate instance = permanently delete the instance
