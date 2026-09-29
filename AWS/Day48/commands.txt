@@ -1,0 +1,6 @@
+DAY 48 - Commands Used
+
+curl ifconfig.me
+ssh -i ~/.ssh/Day46-EC2-Key.pem ubuntu@<EC2-Public-ip>
+exit
+Ctrl+C

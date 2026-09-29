@@ -1,0 +1,29 @@
+DAY 48 - Security Groups
+
+Concept:
+Security Group (SG) = virtual firewall for an EC2 instance.
+It controls inbound and outbound network traffic using rules.
+
+Inbound Rule:
+Controls traffic coming INTO the EC2 instance.
+
+SSH Rule:
+Protocol: TCP
+Port: 22
+Source: My IP (49.47.133.119/32)
+
+/32 = only this single IP address.
+
+Important:
+Security Groups are allow-based.
+There is no explicit "Deny" rule.
+
+Test:
+Allowed IP → SSH connection successful.
+Unauthorized IP → connection timed out.
+
+Memory Box:
+SG = EC2 firewall
+Port 22 = SSH
+My IP/32 = only my current public IP
+No matching allow rule = traffic blocked

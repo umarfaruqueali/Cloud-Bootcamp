@@ -1,0 +1,24 @@
+DAY 48 - Security Group Lab
+
+1. Started the EC2 instance.
+2. Checked my current public IP using:
+   curl ifconfig.me
+
+3. Updated the Security Group:
+   SSH → TCP 22 → My IP (/32)
+
+4. Connected to EC2 successfully using SSH.
+
+5. Tested access from an unauthorized source.
+   SSH connection did not establish and timed out.
+
+6. Returned to the terminal and stopped the EC2 instance.
+
+Observation:
+Only the IP allowed by the Security Group could establish
+SSH access.
+
+Conclusion:
+Security Groups act as an allow-list firewall for EC2.
+Restricting SSH to My IP is safer than allowing SSH from
+0.0.0.0/0.
