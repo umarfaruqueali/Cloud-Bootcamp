@@ -1,0 +1,40 @@
+# DAY 49 #
+
+LAB: COMPARE t2.micro AND t3.micro
+
+1. Opened AWS EC2 → Launch Instance.
+
+2. Inspected the Instance type section.
+
+3. Searched for t2.micro.
+   Observation:
+   - t2.micro was not available in the current instance-type selection.
+
+4. Inspected t3.micro.
+   AWS Console showed:
+   - Family: t3
+   - 2 vCPU
+   - 1 GiB Memory
+   - Current generation: true
+   - Free tier eligible
+
+5. Observed other available instance types such as:
+   - t3.small
+   - c7i-flex.large
+
+6. Did NOT launch another instance.
+   Reason:
+   - The lab only required comparison.
+   - Avoided unnecessary resource usage/cost.
+
+7. Closed the Launch Instance page safely.
+
+RESULT:
+- Learned how EC2 instance types are represented.
+- Understood T-family burstable instances and CPU credits.
+- Verified t3.micro characteristics in the AWS Console.
+- t2.micro was unavailable in the current selection, so no direct live comparison was performed.
+- No additional EC2 instance was launched.
+
+LAB CONCLUSION:
+t3.micro is a current-generation T-family burstable instance with 2 vCPUs and 1 GiB memory, and it was shown as Free tier eligible in our AWS Console.

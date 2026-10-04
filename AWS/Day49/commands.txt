@@ -1,0 +1,7 @@
+# DAY 49 #
+
+COMMANDS USED
+
+No Linux/CLI commands were used today.
+
+Day 49 was completed through the AWS Management Console.

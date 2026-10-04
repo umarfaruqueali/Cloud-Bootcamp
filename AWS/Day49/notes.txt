@@ -1,0 +1,86 @@
+# DAY 49 #
+
+EC2 INSTANCE TYPES
+
+1. EC2 INSTANCE TYPE
+- Defines the hardware resources available to an EC2 instance.
+- Determines vCPU, memory, network performance, performance characteristics and cost.
+
+Example:
+t3.micro
+
+t3.micro
+│ │  │
+│ │  └── Size
+│ └───── Generation
+└─────── Family
+
+
+2. INSTANCE FAMILIES
+AWS provides different instance families for different workloads:
+- General Purpose
+- Compute Optimized
+- Memory Optimized
+- Storage Optimized
+
+T family = Burstable performance.
+
+
+3. BURSTABLE PERFORMANCE
+- T-family instances can operate around a baseline CPU level.
+- They can temporarily use more CPU when workload increases.
+- Useful for small websites, development, testing and variable/low workloads.
+
+
+4. CPU CREDITS
+- T-family instances use CPU credits to support CPU bursts.
+
+Low CPU usage
+      ↓
+CPU credits accumulate
+      ↓
+CPU demand increases
+      ↓
+Credits are consumed
+      ↓
+Temporary CPU burst
+
+
+5. UNDERSTANDING t3.micro
+- t = T-family / burstable
+- 3 = third generation
+- micro = instance size
+
+Our AWS Console showed:
+- Family: t3
+- vCPU: 2
+- Memory: 1 GiB
+- Current generation: Yes
+- Free tier eligible: Yes
+
+
+6. T2 vs T3
+
+T2:
+- Older generation
+- Burstable family
+- Uses CPU credits
+
+T3:
+- Newer generation
+- Burstable family
+- Uses CPU credits
+- Current generation
+
+
+⭐ MEMORY BOX ⭐
+
+EC2 instance type = hardware configuration
+
+T family = Burstable performance
+
+CPU credits = allow temporary CPU bursts
+
+t3.micro = T family + 3rd generation + micro size
+
+Always check the current AWS console instead of assuming an instance type is available.
