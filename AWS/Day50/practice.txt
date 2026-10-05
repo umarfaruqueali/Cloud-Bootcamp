@@ -1,0 +1,80 @@
+# DAY 50 - EBS VOLUME PRACTICE #
+
+OBJECTIVE
+Create, attach, format, mount and use an EBS volume with an EC2 instance.
+
+STEP 1 - Identify the attached volume
+
+Command:
+sudo file -s /dev/nvme1n1
+
+Result:
+The device was identified as data/raw storage before formatting.
+
+STEP 2 - Create an ext4 filesystem
+
+Command:
+sudo mkfs -t ext4 /dev/nvme1n1
+
+Result:
+An ext4 filesystem was successfully created on the EBS volume.
+
+STEP 3 - Create a mount point
+
+Command:
+sudo mkdir /mnt/data
+
+Result:
+Created the /mnt/data directory to use as the mount point.
+
+STEP 4 - Mount the EBS volume
+
+Command:
+sudo mount /dev/nvme1n1 /mnt/data
+
+Result:
+The EBS volume was successfully mounted at /mnt/data.
+
+STEP 5 - Verify the mounted filesystem
+
+Command:
+df -h
+
+Observation:
+The output showed:
+/dev/nvme1n1 mounted on /mnt/data
+
+STEP 6 - Create a test file
+
+Command:
+echo "Hello from my EBS volume" | sudo tee /mnt/data/test.txt
+
+Result:
+test.txt was created on the EBS volume.
+
+STEP 7 - Access the mounted volume
+
+Command:
+cd /mnt/data
+
+Command:
+ls
+
+Observation:
+test.txt and lost+found were visible.
+
+STEP 8 - Read the test file
+
+Command:
+cat test.txt
+
+Result:
+Hello from my EBS volume
+
+FINAL CONCLUSION
+
+Successfully created and attached an EBS volume to an EC2 instance,
+formatted it with the ext4 filesystem, mounted it at /mnt/data,
+and verified that files could be written to and read from the volume.
+
+LAB STATUS: COMPLETED

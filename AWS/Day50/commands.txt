@@ -1,0 +1,19 @@
+# DAY 50 - COMMANDS USED #
+
+sudo file -s /dev/nvme1n1
+
+sudo mkfs -t ext4 /dev/nvme1n1
+
+sudo mkdir /mnt/data
+
+sudo mount /dev/nvme1n1 /mnt/data
+
+df -h
+
+echo "Hello from my EBS volume" | sudo tee /mnt/data/test.txt
+
+cd /mnt/data
+
+ls
+
+cat test.txt

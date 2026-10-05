@@ -1,0 +1,92 @@
+# DAY 50 - EBS VOLUMES #
+
+OBJECTIVE
+Understand Amazon EBS volumes and attach an additional volume to an EC2 instance.
+
+CONCEPT
+EBS (Elastic Block Store) is persistent block storage used with EC2.
+
+An EBS volume is separate storage that can be attached to an EC2 instance.
+It persists independently of the running state of the EC2 instance.
+
+STORAGE FLOW
+
+EBS Volume
+    ↓
+/dev/nvme1n1
+    ↓
+ext4 filesystem
+    ↓
+mount
+    ↓
+/mnt/data
+    ↓
+Files
+
+IMPORTANT TERMS
+
+EBS Volume
+- Persistent block storage for EC2.
+
+Device
+- Linux representation of the attached storage.
+- Example: /dev/nvme1n1
+
+Filesystem
+- Structure used by Linux to organize and manage files.
+- ext4 is a common Linux filesystem.
+
+ext4
+- Fourth Extended Filesystem.
+- Used to organize files and directories on Linux storage.
+
+Mount Point
+- Directory through which a filesystem becomes accessible.
+- Example: /mnt/data
+
+Mount
+- Connects a filesystem on a device to a directory in Linux.
+
+COMMAND CONCEPTS
+
+lsblk
+- Lists block devices, disks and partitions.
+
+file -s
+- Checks what type of data/filesystem exists on a device.
+
+mkfs
+- Creates a filesystem on a storage device.
+- Example: mkfs -t ext4 /dev/nvme1n1
+
+mkdir
+- Creates a directory.
+
+mount
+- Makes a filesystem accessible through a directory.
+
+df -h
+- Shows filesystem disk usage in human-readable format.
+
+cat
+- Displays the contents of a file.
+
+KEY DIFFERENCE
+
+/dev/nvme1n1 = storage device
+ext4 = filesystem
+/mnt/data = mount point
+
+LAB RESULT
+
+The EBS volume was formatted with ext4, mounted at /mnt/data,
+and a test file was successfully created and read from the volume.
+
+⭐ MEMORY BOX ⭐
+
+EBS = persistent storage
+Device = /dev/nvme1n1
+Filesystem = ext4
+Mount point = /mnt/data
+
+Attach → Format → Mount → Use
