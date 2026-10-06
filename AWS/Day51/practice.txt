@@ -1,0 +1,29 @@
+# DAY 51 — EBS Snapshot Practice
+
+Objective:
+Create an EBS snapshot and understand its use as a recovery point.
+
+Steps:
+1. Opened EC2 → Elastic Block Store → Volumes.
+2. Selected the 1 GiB EBS data volume created during Day 50.
+3. Chose Create snapshot.
+4. Added description:
+   Day51-EBS-1GB-Volume-Data-Snapshot
+5. Created the snapshot.
+6. Verified:
+   - Snapshot status: Completed
+   - Progress: 100%
+   - Full snapshot size: 52 MiB
+
+Recovery Understanding:
+If the original EBS volume is lost:
+1. Create a new EBS volume from the snapshot.
+2. Attach the new volume to the EC2 instance.
+3. Mount the volume.
+4. Access the recovered data.
+
+Final Conclusion:
+Successfully created and verified an EBS snapshot.
+Understood that a snapshot is a recovery point and must
+be converted into a new EBS volume before it can be attached
+to an EC2 instance.

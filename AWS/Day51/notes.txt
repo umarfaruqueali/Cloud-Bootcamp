@@ -1,0 +1,40 @@
+# DAY 51 — EBS Snapshots
+
+EBS Snapshot:
+- Point-in-time backup/recovery point of an EBS volume.
+- Used to protect data before risky changes or for recovery.
+
+Why Snapshots?
+- Protect important EBS data.
+- Recover data after accidental deletion or corruption.
+- Create new EBS volumes from a snapshot.
+
+Volume vs Snapshot:
+- EBS Volume → Working storage attached to EC2.
+- EBS Snapshot → Point-in-time recovery copy of a volume.
+
+Snapshot behavior:
+- First snapshot stores the required data.
+- Later snapshots store changed blocks incrementally.
+
+Recovery Flow:
+Snapshot
+   ↓
+Create new EBS Volume
+   ↓
+Attach Volume to EC2
+   ↓
+Mount Volume
+   ↓
+Access/Recover Data
+
+Important:
+- A snapshot cannot be directly attached to an EC2 instance.
+- A new EBS volume must first be created from the snapshot.
+
+Day 51 Lab:
+- Created snapshot of the 1 GiB EBS data volume.
+- Snapshot: Day51-EBS-1GB-Volume-Data-Snapshot
+- Status: Completed
+- Progress: 100%
+- Full snapshot size: 52 MiB
