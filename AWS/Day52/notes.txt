@@ -1,0 +1,33 @@
+# DAY 52 — AMIs
+
+AMI (Amazon Machine Image):
+- A reusable template for launching EC2 instances.
+- Contains the information needed to launch an instance with an operating system and configured disk contents.
+
+Why AMIs?
+- Launch multiple instances with a similar setup.
+- Reuse a prepared server environment.
+- Support recovery and repeatable deployments.
+
+AMI vs EBS Snapshot:
+- AMI: Template used to launch an EC2 instance.
+- EBS Snapshot: Point-in-time backup of an EBS volume.
+- An EBS-backed AMI references snapshots of its associated EBS volumes.
+
+When launching from an AMI:
+- AWS creates a new EC2 instance.
+- New EBS volumes are created from the AMI's associated snapshots.
+- Captured disk data is restored into the new volumes.
+- The original instance and volumes remain separate.
+
+Important:
+- AMI creation does not create a new running EC2 instance.
+- Data changes made after AMI creation are not automatically included.
+- Instance type, networking and security settings are configured or selected during launch.
+
+Day 52 Lab:
+- Created a custom AMI from Day46-EC2-Ubuntu.
+- AMI name: Day52-Custom-Ubuntu-AMI
+- Visibility: Private
+- Final status: Available
+- Included the 8 GiB root volume and 1 GiB data volume.

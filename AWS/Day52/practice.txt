@@ -1,0 +1,27 @@
+# DAY 52 — Custom AMI Practice
+
+Objective:
+Create a custom AMI from an existing EC2 instance.
+
+Steps performed:
+1. Opened EC2 → Instances.
+2. Selected Day46-EC2-Ubuntu, which was stopped.
+3. Chose Actions → Image and templates → Create image.
+4. Entered the AMI name:
+   Day52-Custom-Ubuntu-AMI
+5. Kept the existing volume configuration unchanged.
+6. Included the 8 GiB root EBS volume and 1 GiB data EBS volume.
+7. Created the AMI.
+8. Opened EC2 → AMIs and verified the status.
+
+Observations:
+- AMI status initially showed Pending.
+- Final status changed to Available.
+- AMI visibility is Private.
+- AWS created associated EBS snapshots for the included volumes.
+
+Learning:
+An AMI is a reusable machine image, not a running EC2 instance. Launching from it creates a separate instance with new EBS volumes containing the captured disk data.
+
+Final Conclusion:
+Successfully created and verified a custom AMI. Understood the relationship between AMIs, EBS snapshots and new EC2 instances.
