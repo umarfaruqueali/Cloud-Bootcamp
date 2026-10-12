@@ -1,3 +1,23 @@
-#Day 53 -- Elastic Ip
+# DAY 53 — ELASTIC IP
 
+- Elastic IP (EIP) = static public IPv4 address allocated to an AWS account.
+- Can be associated with an EC2 instance or supported network interface.
+- Useful when a stable public IP is required.
 
+**Operations**
+- Allocate: Reserve an Elastic IP.
+- Associate: Connect it to an instance/network interface.
+- Disassociate: Remove its association.
+- Release: Return it to AWS.
+
+**Important Points**
+- Auto-assigned public IPs can change after an EC2 stop/start.
+- An Elastic IP remains allocated until released.
+- Releasing an EIP means the same address may not be recoverable.
+- Public IPv4 charges may apply; check current AWS pricing.
+
+⭐ MEMORY BOX ⭐
+
+Allocate → Associate → Disassociate → Release
+
+Elastic IP = Stable public IPv4

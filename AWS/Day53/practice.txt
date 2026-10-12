@@ -1,0 +1,16 @@
+# DAY 53 — Elastic IP Practice
+
+**Objective:** Allocate, associate and release an Elastic IP.
+
+**Actions**
+1. Allocated an Elastic IP in the current AWS Region.
+2. Associated it with the existing EC2 instance.
+3. Verified the successful association in the console.
+4. Disassociated and released the address.
+5. Confirmed that no Elastic IP addresses remained allocated.
+
+**Result**
+Successfully completed the Elastic IP lifecycle and cleaned up the resource.
+
+**Conclusion**
+An Elastic IP provides a reusable static public IPv4 address. Releasing unused addresses helps avoid unnecessary charges.
