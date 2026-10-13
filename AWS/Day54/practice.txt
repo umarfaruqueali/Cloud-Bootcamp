@@ -1,0 +1,27 @@
+# DAY 54 — AWS CLI PRACTICE
+
+## Objective
+Use AWS CLI to inspect EC2 instances, EBS volumes, and AMIs without modifying AWS resources.
+
+## Activities Performed
+
+1. Verified the active AWS identity using STS.
+2. Inspected EC2 instance details in Region `ap-south-2`.
+3. Used JMESPath queries to display selected instance fields in table format.
+4. Listed EBS volumes and displayed their IDs, sizes, types, states, and Availability Zones.
+5. Applied server-side filters to list volumes in `in-use` and `available` states.
+6. Inspected a specific EBS volume using its volume ID.
+7. Listed AMIs owned by the account and displayed selected image details in table format.
+
+## Observations
+
+- The EC2 instance was stopped, used instance type `t3.micro`, and was located in Availability Zone `ap-south-2a`.
+- Two EBS volumes were observed: one 8 GiB volume and one 1 GiB volume. Both were `gp3` and in the `in-use` state.
+- The `available` volume filter returned no matching volumes.
+- The custom AMI `Day52-Custom-Ubuntu-AMI` was shown with state `available`.
+- `--filters` narrowed the resources returned by AWS, while `--query` selected and formatted fields for display.
+- `--output table` improved readability.
+
+## Final Conclusion
+
+Successfully used AWS CLI to identify the active AWS identity, inspect EC2 instances, filter and inspect EBS volumes, and list owned AMIs. The lab used read-only inspection commands and did not intentionally change AWS resource states.

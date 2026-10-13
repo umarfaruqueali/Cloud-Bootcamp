@@ -1,0 +1,38 @@
+# DAY 54 — AWS CLI
+
+## 1. AWS CLI
+AWS CLI (Command Line Interface) allows us to inspect and manage AWS resources from the terminal.
+
+**Basic syntax:**
+`aws <service> <operation> <options>`
+
+## 2. Important Commands
+
+- `aws sts get-caller-identity` — checks the AWS account and identity being used.
+- `aws ec2 describe-instances` — displays EC2 instance details.
+- `aws ec2 describe-volumes` — displays EBS volume details.
+- `aws ec2 describe-images --owners self` — lists AMIs owned by our account.
+
+## 3. Useful Options
+
+- `--region` — specifies the AWS Region.
+- `--query` — selects fields, filters results, or changes the displayed structure using JMESPath.
+- `--output table` — displays results in a readable table.
+- `--filters` — filters resources using supported AWS API conditions.
+- `--volume-ids` — inspects specific EBS volumes.
+
+## 4. Important Examples
+
+- `--query "Volumes[*].{ID:VolumeId,Size:Size,State:State}"` — displays selected volume fields.
+- `--filters "Name=status,Values=in-use"` — returns volumes that are in use.
+- `--filters "Name=status,Values=available"` — returns unattached, available volumes.
+- `--owners self` — limits AMI results to images owned by the current account.
+
+## ⭐ Memory Box ⭐
+
+- **Filters:** narrow results returned by AWS.
+- **Query:** selects or reshapes returned data.
+- **Output:** controls display format.
+- **Describe commands:** inspect resources without modifying them.
+- **EBS `in-use`:** attached to an instance; **`available`:** not attached.
+- Always specify the correct Region when inspecting regional resources.

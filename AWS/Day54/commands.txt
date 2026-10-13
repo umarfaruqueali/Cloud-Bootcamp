@@ -1,0 +1,44 @@
+# DAY 54 — COMMANDS USED
+
+aws sts get-caller-identity
+
+aws ec2 describe-instances --region ap-south-2
+
+aws ec2 describe-instances 
+  --region ap-south-2 
+  --query "Reservations[].Instances[].{ID:InstanceId,State:State.Name,Type:InstanceType,AZ:Placement.AvailabilityZone}" 
+  --output table
+
+aws ec2 describe-volumes 
+  --region ap-south-2 
+  --output table
+
+aws ec2 describe-volumes 
+  --region ap-south-2 
+  --query "Volumes[*].{ID:VolumeId,Size:Size,Type:VolumeType,State:State,AZ:AvailabilityZone}" 
+  --output table
+
+aws ec2 describe-volumes 
+  --region ap-south-2 
+  --filters "Name=status,Values=in-use" 
+  --query "Volumes[*].{ID:VolumeId,Size:Size,State:State}" 
+  --output table
+
+aws ec2 describe-volumes 
+  --region ap-south-2 
+  --filters "Name=status,Values=available" 
+  --query "Volumes[*].{ID:VolumeId,Size:Size,State:State}" 
+  --output table
+
+aws ec2 describe-volumes 
+  --region ap-south-2 
+  --volume-ids vol-098b7e3cba2ad0547 
+  --query "Volumes[0].{ID:VolumeId,Size:Size,Type:VolumeType,State:State,AZ:AvailabilityZone}" 
+  --output table
+
+aws ec2 describe-images --owners self
+
+aws ec2 describe-images 
+  --owners self 
+  --query "Images[*].{ID:ImageId,Name:Name,State:State,Platform:PlatformDetails}" 
+  --output table
