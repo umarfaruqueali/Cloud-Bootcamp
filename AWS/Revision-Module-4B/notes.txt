@@ -1,0 +1,45 @@
+#DAY 55 # — Module 4B Revision + Apache Website Deployment
+
+CONCEPT
+- EC2: virtual server in AWS.
+- Apache: web-server software installed on Ubuntu; receives HTTP requests and serves website files.
+- HTML: defines the webpage content and structure.
+- Security Group: virtual firewall controlling allowed inbound/outbound traffic.
+- HTTP uses TCP port 80. HTTPS uses TCP port 443 and requires TLS configuration.
+- SSH uses TCP port 22. Restrict SSH source to a trusted/current public IP, typically /32.
+- Public IPv4 can change after stop/start unless a retained address is configured.
+- Stopping EC2 generally stops compute charges, but attached EBS storage charges continue; public IPv4 charges may also apply.
+
+DEPLOYMENT PATH
+Browser -> public IPv4:80 -> Security Group inbound rule -> EC2 Ubuntu -> Apache -> /var/www/html/index.html
+Apache was enabled with systemctl enable --now apache2.
+
+IMPORTANT COMMANDS
+- aws ec2 describe-instances ... : inspect instance state/IP (read-only).
+- aws ec2 describe-security-groups ... : inspect Security Group rules (read-only).
+- ssh -i KEY ubuntu@PUBLIC_IP : connect to Ubuntu EC2.
+- sudo apt update : refresh package index.
+- sudo apt install apache2 -y : install Apache.
+- sudo systemctl enable --now apache2 : enable/start Apache.
+- systemctl is-active apache2 : check Apache status.
+- sudo tee /var/www/html/index.html ... : write the HTML homepage.
+- curl -I http://localhost : inspect HTTP response headers.
+- curl http://localhost : inspect returned HTML.
+- aws ec2 stop/start/describe-instances : stop/start/inspect an EC2 instance; stop/start changes state and may affect cost.
+
+IMPORTANT EXAMPLES
+- Website file: /var/www/html/index.html
+- EC2 instance: i-0d7cecc6d3701c23b
+- Region: ap-south-2
+- Instance type: t3.micro
+- Security Group: sg-09da7bade1794175c
+- HTTP test returned: HTTP/1.1 200 OK
+- Apache reported: Apache/2.4.66 (Ubuntu)
+- Browser displayed: “Hello from AWS EC2!”
+- Public IPv4 used during the lab: 18.61.227.88 (may change after restart)
+
+⭐ MEMORY BOX ⭐
+EC2 = server | Apache = web server | HTML = webpage | SG = traffic rules
+Port 22 = SSH | Port 80 = HTTP | Port 443 = HTTPS
+curl localhost tests locally; browser + public IP tests external access.
+Stop EC2 when finished, but remember EBS and public IPv4 charges may remain.

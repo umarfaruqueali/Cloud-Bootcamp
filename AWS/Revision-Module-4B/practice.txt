@@ -1,0 +1,45 @@
+# DAY 55 — Module 4B Revision and Mini-project 1
+
+OBJECTIVE
+Revise Module 4B and deploy a basic HTML website on the existing Ubuntu EC2 instance without creating another AMI or EBS volume.
+
+LAB DETAILS
+- Region: ap-south-2
+- Existing instance: i-0d7cecc6d3701c23b
+- Type: t3.micro
+- Security Group: sg-09da7bade1794175c
+- Existing SSH key: /home/umar/.ssh/Day46-EC2-Key.pem
+- Public IP during this lab: 18.61.227.88
+
+ACTIONS AND OBSERVATIONS
+1. Completed the Day 55 revision quiz.
+2. Inspected the existing EC2 instance. It was stopped and had no public IP before starting.
+3. Inspected the Security Group. Inbound access initially allowed SSH (TCP 22) only from 223.228.254.116/32; outbound traffic allowed all destinations.
+4. Started the existing EC2 instance. It reached running state and received public IPv4 18.61.227.88.
+5. The SSH connection initially waited because the client's public IP had changed. Updated the existing SSH inbound rule to the current public IP, keeping access restricted rather than opening SSH to everyone.
+6. Connected to Ubuntu using the existing Day46-EC2-Key.pem key.
+7. Checked for Apache and Nginx. Neither was installed.
+8. Installed Apache with apt and enabled/started the apache2 service. `systemctl is-active apache2` returned `active`.
+9. Created `/var/www/html/index.html` containing a heading and text identifying the page as the Day 55 Cloud Bootcamp website.
+10. Tested with `curl -I http://localhost`; response included `HTTP/1.1 200 OK`, `Server: Apache/2.4.66 (Ubuntu)`, and `Content-Type: text/html`.
+11. Tested with `curl http://localhost`; the response contained the custom HTML.
+12. Added inbound HTTP TCP port 80 to the existing Security Group.
+13. Opened http://18.61.227.88 in the browser. The page displayed “Hello from AWS EC2!”, the Apache description, and “Cloud Bootcamp - Day 55”.
+14. Stopped the EC2 instance after the successful browser test.
+
+RESULT
+The website was successfully deployed on the existing EC2 instance and verified both locally with curl and externally in a browser. Apache was active during testing. The instance was stopped after the test to limit compute charges.
+
+COST AND SECURITY NOTES
+- No new EC2 instance, AMI, EBS volume, or Elastic IP was created for this project.
+- Compute charges generally stop when an EC2 instance is stopped, but attached EBS storage charges continue; public IPv4 charges may apply.
+- HTTP is unencrypted and was used only for this basic demonstration.
+- SSH was restricted to a specific source IP, not 0.0.0.0/0.
+- The HTTP inbound rule was added. Remove it if public access is not needed until the next practice session.
+- Confirm the final instance state in AWS CLI/Console before considering cleanup complete.
+
+CONCLUSION
+Practised basic EC2 web hosting: start and inspect an instance, troubleshoot SSH source-IP restrictions, install Apache, create an HTML page, allow HTTP traffic, verify the page from the server and browser, and stop the instance afterward.
+
+MINI-PROJECTS 2 AND 3
+Existing AMI and EBS-volume projects were reviewed only. No additional AMI or EBS volume was created during Day 55.

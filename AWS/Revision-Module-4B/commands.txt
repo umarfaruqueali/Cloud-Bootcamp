@@ -1,0 +1,86 @@
+# DAY 55 — commands used
+
+# Local Ubuntu/WSL: inspect EC2 state, public IP and Security Group
+aws ec2 describe-instances \
+  --instance-ids i-0d7cecc6d3701c23b \
+  --region ap-south-2 \
+  --query 'Reservations[].Instances[].{State:State.Name,Type:InstanceType,PublicIP:PublicIpAddress,SecurityGroups:SecurityGroups[].GroupId}' \
+  --output table
+
+aws ec2 describe-security-groups \
+  --group-ids sg-09da7bade1794175c \
+  --region ap-south-2 \
+  --query 'SecurityGroups[].{Name:GroupName,Inbound:IpPermissions,Outbound:IpPermissionsEgress}' \
+  --output json
+
+# Local Ubuntu/WSL: locate PEM key
+find ~ -type f -name "*.pem" 2>/dev/null
+
+# Local Ubuntu/WSL: start/inspect instance
+aws ec2 start-instances \
+  --instance-ids i-0d7cecc6d3701c23b \
+  --region ap-south-2
+
+aws ec2 describe-instances \
+  --instance-ids i-0d7cecc6d3701c23b \
+  --region ap-south-2 \
+  --query 'Reservations[].Instances[].State.Name' \
+  --output text
+
+aws ec2 describe-instances \
+  --instance-ids i-0d7cecc6d3701c23b \
+  --region ap-south-2 \
+  --query 'Reservations[].Instances[].{State:State.Name,PublicIP:PublicIpAddress}' \
+  --output table
+
+# Local Ubuntu/WSL: SSH connection (key permissions were already configured)
+ssh -i ~/.ssh/Day46-EC2-Key.pem ubuntu@18.61.227.88
+
+# Remote EC2 (Ubuntu): check for Apache/Nginx
+if command -v apache2 >/dev/null 2>&1; then
+  echo "Apache is installed"
+  systemctl is-active apache2
+elif command -v nginx >/dev/null 2>&1; then
+  echo "Nginx is installed"
+  systemctl is-active nginx
+else
+  echo "Neither Apache nor Nginx is installed"
+fi
+
+# Remote EC2: install and start Apache
+sudo apt update
+sudo apt install apache2 -y
+sudo systemctl enable --now apache2
+systemctl is-active apache2
+
+# Remote EC2: create homepage
+sudo tee /var/www/html/index.html > /dev/null <<'EOF'
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My First AWS Website</title>
+</head>
+<body>
+    <h1>Hello from AWS EC2!</h1>
+    <p>My first website is running on an Ubuntu EC2 instance.</p>
+    <p>Web server: Apache</p>
+    <p>Cloud Bootcamp - Day 55</p>
+</body>
+</html>
+EOF
+
+# Remote EC2: test HTTP locally and inspect returned HTML
+curl -I http://localhost
+curl http://localhost
+
+# Local Ubuntu/WSL: verify final stopped state (run after stopping EC2)
+aws ec2 describe-instances \
+  --instance-ids i-0d7cecc6d3701c23b \
+  --region ap-south-2 \
+  --query 'Reservations[].Instances[].State.Name' \
+  --output text
+
+# Note: Include the final stop command below only if you actually ran it:
+# aws ec2 stop-instances --instance-ids i-0d7cecc6d3701c23b --region ap-south-2
