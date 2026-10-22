@@ -1,1 +1,22 @@
-#S3 -Storage Fundamentals
+# DAY 56 #
+Storage Fundamentals
+
+Concept
+Object storage: data stored as objects.
+Block storage: data stored in disk-like blocks.
+File storage: data organized into files and folders.
+
+Types / AWS Services
+Amazon S3 — Object storage
+Amazon EBS — Block storage
+Amazon EFS — Shared file storage
+
+Important Examples
+Images and backups → S3
+EC2 disk → EBS
+Shared directory → EFS
+
+⭐ Memory Box ⭐
+S3 = Objects
+EBS = Disk
+EFS = Shared Files

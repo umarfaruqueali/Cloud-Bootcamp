@@ -1,0 +1,19 @@
+# DAY 56 — PRACTICE
+
+Objective:
+Compare object, block and file storage.
+
+Activities:
+- Compared S3, EBS and EFS.
+- Identified suitable storage for images, databases and shared files.
+- Reviewed S3 Lifecycle rules.
+- Reviewed S3 bucket policies.
+
+Observations:
+- Storage selection depends on the application's access requirements.
+- Lifecycle rules can automate storage transitions.
+- No AWS resources were created.
+
+Conclusion:
+Storage fundamentals reviewed.
+Ready for Day 57: Amazon S3 Basics.
