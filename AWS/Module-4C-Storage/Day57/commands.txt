@@ -1,0 +1,10 @@
+# DAY 57 — COMMANDS
+
+# Create a test text file
+echo "Hello from Amazon S3-Day57" > s3-test.txt
+
+# Display current directory
+pwd
+
+# Verify the test file exists
+ls -l s3-test.txt

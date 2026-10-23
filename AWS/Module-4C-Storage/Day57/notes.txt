@@ -1,0 +1,32 @@
+# DAY 57 #
+Amazon S3 Basics
+
+Concept
+Amazon S3 is managed object storage used to store and retrieve data.
+
+Components
+- Bucket: Container for objects.
+- Object: Data + metadata + key.
+- Object key: Identifies an object inside a bucket.
+- S3 URI: s3://bucket-name/object-key
+- ARN: Standard AWS resource identifier.
+- Region: Geographic AWS location.
+
+Bucket Details
+Name: neoumar-s3-practice-2026-umar
+Region: ap-south-2 (Hyderabad)
+
+Important Concepts
+- S3 Standard: General-purpose object storage class.
+- SSE-S3: Server-side encryption using S3-managed keys.
+- Block Public Access: Helps prevent public access.
+- ACLs disabled: Access managed using policies.
+- Versioning disabled: Uploading to the same key replaces
+  the existing object's contents.
+- AWS SDK, CLI and pre-signed URLs support automated uploads.
+
+⭐ Memory Box ⭐
+Bucket = Container
+Object = Data + Metadata + Key
+Key = Object identifier
+S3 URI = Object reference, not permission.

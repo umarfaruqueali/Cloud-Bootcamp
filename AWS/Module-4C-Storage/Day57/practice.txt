@@ -1,0 +1,37 @@
+# DAY 57 — PRACTICE
+
+Objective:
+Learn S3 basics, create a bucket and upload a file.
+
+Activities:
+1. Reviewed AWS billing and remaining credits.
+2. Opened the Amazon S3 console.
+3. Created bucket:
+   neoumar-s3-practice-2026-umar
+4. Selected Region ap-south-2 (Hyderabad).
+5. Kept ACLs disabled.
+6. Kept Block Public Access enabled.
+7. Kept bucket versioning disabled.
+8. Used SSE-S3 default encryption.
+9. Created local file s3-test.txt.
+10. Uploaded the file to S3.
+11. Verified the object appeared in the bucket.
+12. Inspected object details, key, URI and ARN.
+13. Opened the object and verified its text content.
+14. Reviewed automated S3 uploads and object replacement.
+
+Observations:
+- Uploaded object size: 27 bytes.
+- Storage class: S3 Standard.
+- Object key: s3-test.txt
+- S3 URI:
+  s3://neoumar-s3-practice-2026-umar/s3-test.txt
+- Bucket remains configured to block public access.
+- The object URL alone does not grant access.
+- Same-key uploads can replace existing contents when
+  versioning is disabled.
+
+Conclusion:
+Created an S3 bucket and uploaded and verified the first
+object. Learned basic object identification, access control
+and automated upload concepts.
