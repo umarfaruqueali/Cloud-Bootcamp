@@ -1,0 +1,18 @@
+# DAY 58 — NOTES
+S3 Bucket Security
+
+- Block Public Access helps prevent public exposure.
+- Keep all four BPA settings enabled for private buckets.
+- Bucket policies are JSON documents attached to buckets.
+- IAM policies attach to identities such as users and roles.
+- ACLs are disabled with Bucket owner enforced.
+- Policies can control access to buckets and objects.
+- Explicit Deny overrides Allow.
+- s3:GetObject reads objects; s3:PutObject uploads objects.
+- The Authenticated Users group is broader than one AWS account.
+
+Security configuration verified:
+- Block Public Access: ON
+- Bucket policy: None configured
+- Object Ownership: Bucket owner enforced
+- ACLs: Disabled

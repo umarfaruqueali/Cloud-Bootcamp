@@ -1,0 +1,24 @@
+# DAY 58 — PRACTICE
+
+Objective:
+Inspect S3 bucket security settings.
+
+Activities:
+1. Opened the existing S3 practice bucket.
+2. Verified Block Public Access was ON.
+3. Inspected the four individual BPA settings.
+4. Checked the bucket policy section.
+5. Confirmed no bucket policy was configured.
+6. Inspected Object Ownership.
+7. Confirmed Bucket owner enforced.
+8. Confirmed ACLs were disabled.
+9. Reviewed IAM policies, bucket policies and ACLs.
+
+Observations:
+- Public access protections remain enabled.
+- No custom bucket policy is configured.
+- Access is managed through policies rather than ACLs.
+
+Conclusion:
+Verified the existing bucket's security configuration
+without changing access settings or making objects public.
