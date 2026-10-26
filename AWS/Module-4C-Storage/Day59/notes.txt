@@ -1,0 +1,18 @@
+# DAY 59 — S3 VERSIONING
+
+Amazon S3 Versioning
+- Keeps multiple versions of an object under the same key.
+- Helps recover from accidental overwrites and deletions.
+- Each version has a version ID.
+- The latest version is returned by default.
+- Previous versions can be viewed and recovered.
+- Versioning can be enabled or suspended.
+- Suspending versioning preserves existing versions but
+  stops creating new versions for ordinary uploads.
+
+Important:
+- With versioning enabled, uploading to the same key creates
+  a new version rather than replacing the version history.
+- Older versions consume storage and may incur charges.
+- Lifecycle rules can manage or expire older versions.
+- Versioning is not a complete backup strategy.

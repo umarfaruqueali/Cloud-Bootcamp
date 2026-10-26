@@ -1,0 +1,35 @@
+# DAY 59 — PRACTICE
+
+Objective:
+Enable S3 Versioning and verify object recovery.
+
+Bucket:
+neoumar-s3-practice-2026-umar
+
+Region:
+ap-south-2 (Hyderabad)
+
+Activities:
+1. Opened the bucket's Properties tab.
+2. Enabled Bucket Versioning.
+3. Created and uploaded version-demo.txt with original content.
+4. Uploaded updated content using the same object key.
+5. Enabled Show versions in the Objects view.
+6. Verified that multiple versions appeared.
+7. Opened the earlier version and verified its content.
+8. Downloaded the earlier version.
+9. Re-uploaded the downloaded file after resolving a
+   temporary internet connection problem.
+10. Verified that the bucket showed three versions of
+    version-demo.txt.
+
+Observations:
+- Versioning is enabled.
+- The object has multiple version IDs.
+- The versions have different sizes and modification times.
+- The latest version is not necessarily the original content.
+- The original and updated content can both be retained.
+
+Conclusion:
+Successfully enabled and tested S3 Versioning and verified
+that earlier object content can be recovered.
