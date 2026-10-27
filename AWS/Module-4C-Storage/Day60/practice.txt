@@ -1,0 +1,41 @@
+DAY 60 - S3 LIFECYCLE RULES PRACTICE
+
+Objective:
+Understand automated S3 object transitions and Glacier
+storage behavior without creating unnecessary costs.
+
+Bucket:
+neoumar-s3-practice-2026-umar
+
+Actions Performed:
+1. Opened the S3 bucket Management tab.
+2. Verified that no lifecycle rules existed.
+3. Explored lifecycle rule configuration.
+4. Used the proposed rule name:
+   Day60-Glacier-Lifecycle-Practice
+5. Examined prefix filtering with:
+   lifecycle-demo/
+6. Selected the current-version transition action.
+7. Explored S3 Glacier Flexible Retrieval as the destination.
+8. Examined the days-after-object-creation setting.
+9. Reviewed the rule configuration and cost implications.
+10. Did not create or activate the lifecycle rule.
+
+Observations:
+- Lifecycle rules automate object storage management.
+- Prefix filters restrict which objects are affected.
+- Eligible objects may transition asynchronously.
+- Glacier Flexible Retrieval requires restoration before
+  normal downloading.
+- The minimum storage duration is 90 days.
+- Restoration and transition operations may incur charges.
+
+Result:
+Lifecycle rule configuration and transition behavior
+understood. No lifecycle rule was activated and no
+intentional Glacier transition was initiated.
+
+Conclusion:
+Choose storage classes according to access requirements,
+retrieval time, and cost. Validate rule filters and
+billing implications before activating lifecycle rules.

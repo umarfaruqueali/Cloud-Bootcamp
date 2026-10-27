@@ -1,0 +1,41 @@
+DAY 60 - S3 LIFECYCLE RULES
+
+1. Concept
+S3 Lifecycle rules automatically manage objects based on
+configured filters and time-based conditions.
+
+2. Main Actions
+- Transition: Move objects to another storage class.
+- Expiration: Expire objects according to lifecycle rules.
+- Noncurrent version transition: Move older versions to
+  another storage class.
+- Permanent deletion: Remove eligible noncurrent versions.
+
+3. Rule Configuration
+- Rule name identifies the rule.
+- Prefix filter limits affected object keys.
+- Transition action selects the destination storage class.
+- Days after object creation defines the eligibility age.
+
+4. Glacier Flexible Retrieval
+- Designed for archival data.
+- Objects generally require restoration before downloading.
+- Typical Standard retrieval takes 3-5 hours.
+- Minimum storage duration: 90 days.
+- Early deletion may incur remaining minimum-duration charges.
+
+5. Important Behavior
+- Rules can apply to qualifying existing and new objects.
+- Lifecycle processing is asynchronous.
+- Eligibility does not guarantee an exact execution time.
+- Glacier Instant Retrieval supports millisecond access.
+- Default lifecycle transition behavior generally excludes
+  objects smaller than 128 KB.
+
+MEMORY BOX
+Lifecycle = automated object management.
+Transition = change storage class.
+Expiration = expire objects.
+Flexible Retrieval = restore before download.
+Instant Retrieval = millisecond access.
+Always consider retrieval needs and lifecycle charges.

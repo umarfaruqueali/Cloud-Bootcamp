@@ -1,0 +1,10 @@
+DAY 60 - COMMANDS
+
+No terminal commands used.
+
+Work performed through AWS Management Console:
+- Opened the S3 bucket Management tab.
+- Inspected Lifecycle rules.
+- Configured a draft lifecycle rule for learning.
+- Inspected Glacier Flexible Retrieval settings.
+- Did not create or activate the rule.
