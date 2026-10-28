@@ -1,0 +1,41 @@
+DAY 61 — PRACTICE LOG
+
+Lab: Compare S3 Storage Classes
+
+Objective:
+Understand storage-class selection and verify an object's current storage class without creating additional AWS resources.
+
+Existing bucket:
+neoumar-s3-practice-2026-umar
+
+Region:
+ap-south-2 (Hyderabad)
+
+Actions performed:
+1. Opened the existing S3 bucket in the AWS Management Console.
+2. Located the object s3-test.txt.
+3. Inspected its Storage class field.
+4. Confirmed the storage class is S3 Standard.
+5. Compared Standard, Standard-IA, Glacier Instant Retrieval, Glacier Flexible Retrieval and Glacier Deep Archive conceptually.
+6. Reviewed retrieval requirements, minimum storage durations, retrieval charges and lifecycle transitions.
+
+Observations:
+- s3-test.txt uses S3 Standard.
+- Standard is suitable for frequently accessed objects.
+- Standard-IA and Glacier classes have different access and cost trade-offs.
+- Flexible Retrieval and Deep Archive require restoration before normal download.
+- Lifecycle rules can automate eligible storage-class transitions.
+- No storage-class change was made.
+- No lifecycle rule was created or activated.
+- No new AWS resources were created.
+
+Conclusion:
+The storage-class inspection was completed successfully.
+Storage classes should be selected according to access patterns, retrieval requirements and total cost, rather than storage price alone.
+
+Quiz results:
+- Knowledge check: 3/3.
+- Daily quiz: 10/10.
+- Certification-style quiz: 5/5.
+
+

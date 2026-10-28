@@ -1,0 +1,19 @@
+DAY 61 — S3 STORAGE CLASSE
+
+Concepts learned:
+- S3 storage classes optimize cost and access according to data usage patterns.
+- S3 Standard: frequently accessed data, millisecond access.
+- S3 Standard-IA: infrequent access, millisecond access, retrieval charges, 30-day minimum duration.
+- S3 Glacier Instant Retrieval: rare access, millisecond retrieval without restore, 90-day minimum duration.
+- S3 Glacier Flexible Retrieval: archived data requires restoration before normal download; 90-day minimum duration.
+- S3 Glacier Deep Archive: long-term archival, restore required, 180-day minimum duration.
+- S3 Lifecycle rules automate eligible object transitions and expiration.
+- Lifecycle processing is asynchronous.
+- Storage-class selection depends on storage cost, access frequency, retrieval latency, retrieval charges, minimum duration and restore requirements.
+- Early deletion or transition may incur remaining minimum-duration charges.
+
+Practical learning:
+- Inspected the Storage class field of s3-test.txt.
+- Confirmed that the object uses S3 Standard.
+
+
