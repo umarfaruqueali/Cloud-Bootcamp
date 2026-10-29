@@ -1,0 +1,15 @@
+# DAY 62 — COMMANDS USED #
+
+# Check operating system on the laptop's Ubuntu terminal
+cat /etc/os-release
+
+# Inspect files in the home directory
+ls
+ls -l
+ls -a
+
+# Check operating system on EC2
+cat /etc/os-release
+
+# Check whether the EFS mount helper is installed
+which mount.efs

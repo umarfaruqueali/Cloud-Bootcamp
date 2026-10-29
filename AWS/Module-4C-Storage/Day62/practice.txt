@@ -1,0 +1,49 @@
+# DAY 62 — AMAZON EFS PRACTICE #
+
+OBJECTIVE
+Understand Amazon EFS, explore its console configuration,
+inspect networking concepts and clean up the temporary resource.
+
+LAB ACTIONS
+1. Opened Amazon EFS in AWS Region ap-south-2 (Hyderabad).
+2. Reviewed the file system creation wizard.
+3. Created file system Neoumar-EFS.
+4. Reviewed its configuration:
+   - Performance mode: General Purpose
+   - Throughput mode: Elastic
+   - Encryption: Enabled
+   - Automatic backups: Disabled
+   - Availability: Regional
+   - Lifecycle transitions: IA after 30 days and
+     Archive after 90 days since last access
+5. Opened the EFS Network tab and explored its network setup.
+6. Reviewed the concept of mount targets and NFS connectivity.
+7. Decided not to mount EFS to EC2.
+8. Connected to the existing EC2 instance through SSH.
+9. Checked the operating system and mount helper availability.
+10. Observed that which mount.efs returned no path.
+11. Did not install packages, mount EFS or transfer data.
+12. Deleted Neoumar-EFS.
+13. Verified that the EFS console showed zero file systems.
+14. Checked that no EFS-related mount targets remained.
+15. Stopped the existing EC2 instance.
+
+OBSERVATIONS
+- EFS is managed shared file storage.
+- Mount targets provide network access to the file system.
+- NFS commonly uses TCP port 2049.
+- EFS and EC2 networking must be configured correctly
+  before a client can mount the file system.
+- A running EC2 instance can incur compute charges.
+- Stopping EC2 does not remove its EBS volumes.
+
+RESULT
+The EFS console exploration was completed without mounting
+the file system. The temporary EFS resource was deleted,
+and the existing EC2 instance was stopped.
+
+CONCLUSION
+EFS enables shared file access across compatible clients.
+Network reachability, security groups and mount configuration
+must be correct before mounting. Temporary cloud resources
+should be removed after hands-on practice to limit costs.

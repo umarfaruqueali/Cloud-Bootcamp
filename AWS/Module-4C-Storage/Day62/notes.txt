@@ -1,0 +1,84 @@
+# DAY 62 — AMAZON EFS #
+
+CONCEPT
+Amazon Elastic File System (EFS) is a managed,
+scalable shared file storage service for Linux workloads.
+Multiple compatible compute instances can access the
+same file system over a network.
+
+ANALOGY
+EFS is like a shared office network folder that multiple
+computers can access at the same time.
+
+EFS vs EBS vs S3
+- EFS: Shared file storage; accessed through a network.
+- EBS: Block storage, generally attached to EC2.
+- S3: Object storage for objects such as files and backups.
+
+EFS COMPONENTS
+1. File system:
+   Stores files and directories.
+
+2. Mount target:
+   Network entry point through which clients access EFS.
+   Multiple mount targets can connect clients in different
+   Availability Zones to the same Regional file system.
+
+3. NFS:
+   Network File System protocol used by Linux clients
+   to access shared files.
+
+4. Security groups:
+   Control network traffic to and from mount targets.
+   NFS commonly uses TCP port 2049.
+
+5. Encryption:
+   EFS supports encryption at rest and encryption in transit.
+
+AVAILABILITY
+- Regional EFS: Designed for availability and durability
+  across multiple Availability Zones.
+- One Zone EFS: Stores data in a single Availability Zone.
+
+PERFORMANCE AND THROUGHPUT
+- General Purpose: Recommended for most workloads.
+- Elastic throughput: Automatically scales throughput
+  according to workload demand.
+
+LIFECYCLE MANAGEMENT
+EFS can transition infrequently accessed data to
+lower-cost storage classes, depending on configuration.
+Lifecycle settings do not guarantee savings for an empty
+file system.
+
+BACKUPS AND SECURITY
+- Automatic backups can be enabled or disabled.
+- File system policies can control client access.
+- Use least-privilege network and access permissions.
+- Never expose NFS port 2049 to the entire internet.
+
+COST AND CLEANUP
+- Charges depend on storage, access, throughput and
+  applicable backup usage.
+- Free Tier eligibility depends on account terms.
+- Delete temporary resources after practice.
+- Stopped EC2 instances can still incur EBS storage costs.
+
+TODAY'S LAB
+- Created Neoumar-EFS in ap-south-2 (Hyderabad).
+- General Purpose performance; Elastic throughput.
+- Encryption enabled; automatic backups disabled.
+- Explored EFS network settings.
+- Did not mount EFS or transfer any files.
+- Deleted the temporary EFS file system.
+- Verified EFS file systems list was empty.
+- Verified no EFS-related mount targets remained.
+
+⭐ MEMORY BOX ⭐
+EFS = shared network file storage.
+EBS = block storage.
+S3 = object storage.
+NFS = network file access protocol.
+TCP 2049 = standard NFS port.
+Mount target = network entry point to EFS.
+Regional = multiple AZs; One Zone = one AZ.
