@@ -1,0 +1,43 @@
+
+# DAY 63 — S3 STATIC WEBSITE HOSTING
+
+1. STATIC WEBSITE HOSTING
+- Amazon S3 can host static websites without managing a server.
+- Static website: serves pre-built HTML, CSS, JavaScript and media files.
+- S3 does not execute server-side Java, Python or Node.js code.
+
+2. WEBSITE DOCUMENTS
+- index.html: Homepage served for the root website URL.
+- error.html: Custom error document for website errors (e.g. 404).
+
+3. S3 WEBSITE CONFIGURATION
+- Enable Static Website Hosting in bucket Properties.
+- Specify the index and error documents.
+- Upload website files as S3 objects.
+- Access the site using the S3 website endpoint.
+
+4. PUBLIC ACCESS AND SECURITY
+- Direct S3 website hosting requires publicly readable website objects.
+- Disable Block Public Access only for the dedicated website bucket.
+- Bucket policy grants s3:GetObject to Principal "*".
+- Never grant unnecessary permissions such as PutObject or DeleteObject.
+- Do not store private data in a public website bucket.
+
+5. EC2 vs S3 HOSTING
+- EC2: Virtual server; user manages OS and web server.
+- S3: Managed object storage; no server administration.
+- Both can serve static websites.
+- EC2 can additionally run backend application logic.
+
+6. IMPORTANT LIMITATIONS
+- S3 website endpoint supports HTTP, not HTTPS.
+- CloudFront can provide HTTPS and caching.
+- CloudFront OAC allows access to a private S3 origin.
+
+⭐ MEMORY BOX ⭐
+S3 = Static website hosting.
+EC2 = Virtual server and application hosting.
+index.html = Homepage.
+error.html = Custom error page.
+s3:GetObject = Read objects.
+S3 website endpoint = HTTP only.

@@ -1,0 +1,34 @@
+
+# DAY 63 — PRACTICE
+
+OBJECTIVE:
+Host a static HTML website using Amazon S3.
+
+AWS CONFIGURATION:
+- Region: ap-south-2 (Hyderabad)
+- Bucket: neoumar-static-site-2026
+- Static Website Hosting: Enabled
+- Index document: index.html
+- Error document: error.html
+
+HANDS-ON ACTIONS:
+1. Created a dedicated S3 bucket for website hosting.
+2. Enabled static website hosting.
+3. Uploaded index.html and error.html.
+4. Disabled Block Public Access on the dedicated website bucket.
+5. Added a bucket policy granting public s3:GetObject.
+6. Opened the S3 website endpoint.
+7. Verified the NeoUmar homepage.
+8. Tested an invalid URL and verified the custom 404 page.
+9. Saved screenshots of both successful tests.
+
+OBSERVATIONS:
+- S3 serves index.html for the root website URL.
+- S3 serves the configured error document for missing pages.
+- Direct S3 website hosting requires public object access.
+- The website endpoint uses HTTP.
+- No EC2 instance or web server installation was required.
+
+CONCLUSION:
+Successfully hosted and tested a publicly accessible static website using Amazon S3.
+
