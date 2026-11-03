@@ -1,0 +1,39 @@
+DAY 64 - HANDS-ON PRACTICE
+
+1. Verified AWS CLI configuration.
+   Region: ap-south-2
+
+2. Listed available S3 buckets.
+
+3. Created a local test file:
+   day64-upload-test.txt
+
+4. Uploaded the file using aws s3 cp.
+   Verified object in S3.
+
+5. Downloaded the object into downloads/.
+   Compared local and downloaded files using diff.
+
+6. Practised troubleshooting Linux directory navigation.
+   Corrected an accidental nested downloads directory.
+
+7. Created file1.txt and file2.txt.
+   Uploaded both using aws s3 sync.
+
+8. Modified file1.txt and repeated sync.
+   Observed only file1.txt being uploaded again.
+   Unchanged file2.txt was skipped.
+
+9. Downloaded both objects using aws s3 sync.
+   Verified restored files and their contents.
+
+10. Created a temporary S3 bucket using aws s3 mb.
+
+11. Uploaded delete-test.txt.
+    Deleted it using aws s3 rm.
+
+12. Deleted the empty temporary bucket using aws s3 rb.
+
+RESULT:
+Successfully practised S3 upload, download, synchronization,
+bucket creation, object deletion and bucket deletion.

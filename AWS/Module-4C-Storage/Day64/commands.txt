@@ -1,0 +1,38 @@
+aws configure get region
+aws s3 ls
+aws s3 ls s3://neoumar-s3-practice-2026-umar/
+
+cat day64-upload-test.txt
+mkdir downloads
+cd downloads
+cd ..
+ls
+mv downloads/downloads/day64-upload-test.txt downloads/
+rmdir downloads
+tree
+diff day64-upload-test.txt downloads/day64-upload-test.txt
+
+aws s3 cp day64-upload-test.txt s3://neoumar-s3-practice-2026-umar/
+aws s3 cp s3://neoumar-s3-practice-2026-umar/day64-upload-test.txt downloads/day64-upload-test.txt
+
+mkdir sync-practice
+cd sync-practice
+echo "First file- AWS S3 sync" > file1.txt
+echo "Second file - AWS s3 sync" > file2.txt
+aws s3 sync . s3://neoumar-s3-practice-2026-umar/day64-sync/
+
+echo "Updated 1st file - AWS S3 sync" >> file1.txt
+aws s3 sync . s3://neoumar-s3-practice-2026-umar/day64-sync/
+
+mkdir restored
+aws s3 sync s3://neoumar-s3-practice-2026-umar/day64-sync/ ./restored/
+ls restored/
+cat file1.txt
+
+aws s3 mb s3://neoumar-day64-mb-test-2026-umar --region ap-south-2
+
+echo "Temporary S3 deletion test" > delete-test.txt
+aws s3 cp delete-test.txt s3://neoumar-day64-mb-test-2026-umar/
+aws s3 ls s3://neoumar-day64-mb-test-2026-umar/
+aws s3 rm s3://neoumar-day64-mb-test-2026-umar/delete-test.txt
+aws s3 rb s3://neoumar-day64-mb-test-2026-umar

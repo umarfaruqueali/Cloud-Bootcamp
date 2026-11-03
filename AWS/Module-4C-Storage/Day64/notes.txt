@@ -1,0 +1,53 @@
+#DAY 64 - AWS CLI: S3 OPERATIONS
+
+1. AWS CLI
+AWS CLI allows us to manage AWS services through terminal commands.
+
+2. S3 COMMANDS
+
+aws configure get region
+Displays the configured default region.
+
+aws s3 ls
+Lists all accessible S3 buckets.
+
+aws s3 ls s3://bucket-name/
+Lists objects inside a bucket.
+
+aws s3 cp source destination
+Copies files between local system and S3.
+
+aws s3 sync source destination
+Synchronizes files between local system and S3.
+Uploads new or modified files.
+
+aws s3 mb s3://bucket-name
+Creates an S3 bucket.
+
+aws s3 rm s3://bucket-name/file
+Deletes an S3 object.
+
+aws s3 rb s3://bucket-name
+Deletes an empty S3 bucket.
+
+3. IMPORTANT CONCEPTS
+
+CP = Copy files.
+SYNC = Compare and synchronize.
+MB = Make bucket.
+RM = Remove object.
+RB = Remove bucket.
+
+S3 PREFIX:
+S3 uses object keys and prefixes to organize objects.
+A prefix such as day64-sync/ behaves like a folder.
+
+SYNC BEHAVIOUR:
+- New files are uploaded.
+- Modified files are uploaded again.
+- Unchanged files are skipped.
+- --delete removes destination objects absent from source.
+
+IMPORTANT:
+Never use --delete or --recursive carelessly.
+Check source and destination before deletion.
