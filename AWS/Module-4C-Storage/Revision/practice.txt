@@ -1,0 +1,54 @@
+# DAY 65 #
+Module 4C – Job Scenario Revision
+
+OBJECTIVE
+Revise AWS Storage services through production-style
+tickets, troubleshooting and architectural decisions.
+
+SCENARIO PRACTICE
+
+Ticket #1042 – Shared storage across AZs
+- Selected EFS for shared access.
+- Understood Regional EFS and NFS connectivity.
+
+Ticket #1043 – Database storage on EC2
+- Selected EBS for persistent block storage.
+- Reviewed volume retention after EC2 termination.
+
+Ticket #1044 – Large-scale file storage
+- Selected S3 with Lifecycle policies.
+- Reviewed storage classes and cost optimization.
+
+Ticket #1045 – Accidental deletion/overwrite
+- Selected S3 Versioning.
+- Reviewed previous versions and delete markers.
+
+Ticket #1046 – Public website security
+- Rejected disabling BPA on the main customer bucket.
+- Recommended a separate website bucket.
+- Reviewed CloudFront + OAC as a production approach.
+
+Ticket #1047 – Historical reports retention
+- Selected Lifecycle transition.
+- Evaluated retrieval requirements before selecting
+  Glacier Instant, Flexible Retrieval or Deep Archive.
+- Considered retrieval and retention costs.
+
+Ticket #1048 – Accidental public bucket exposure
+- Recommended enabling all four BPA settings.
+- Recommended removing the public bucket policy.
+- Reviewed ACLs, access points and Access Analyzer.
+- Recommended unauthenticated access verification.
+
+LEARNING OUTCOME
+
+- Differentiated EBS, EFS and S3.
+- Selected storage services based on workload requirements.
+- Understood S3 version recovery and lifecycle management.
+- Reviewed S3 security incident response.
+- Applied cost and retrieval considerations to archival storage.
+
+CONCLUSION
+
+Module 4C revision completed through job-based scenarios.
+No AWS resources were created, modified or deleted today.

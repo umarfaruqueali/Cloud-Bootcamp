@@ -1,0 +1,181 @@
+# DAY 65 #
+Module 4C – Storage Revision (Job Scenarios)
+
+CONCEPT
+
+Revision of AWS storage services through real-world
+production tickets and troubleshooting scenarios.
+
+1. EBS – Elastic Block Store
+- Persistent block storage for EC2.
+- Suitable for databases and OS disks.
+- Typically attached to one EC2 instance at a time.
+- Data can persist after EC2 termination if configured
+  to retain the volume.
+
+2. EFS – Elastic File System
+- Managed shared file storage.
+- Multiple EC2 instances can access shared files.
+- Supports NFS (TCP 2049).
+- Regional EFS can be accessed across Availability Zones.
+
+3. S3 – Simple Storage Service
+- Object storage for files, backups, images and documents.
+- Highly scalable and durable.
+- Organize objects using buckets and prefixes.
+
+4. S3 STORAGE CLASSES
+- Standard: Frequently accessed data.
+- Standard-IA: Infrequently accessed data.
+- Glacier Instant Retrieval: Rare access, immediate retrieval.
+- Glacier Flexible Retrieval: Retrieval with restoration delay.
+- Glacier Deep Archive: Long-term archival, longer retrieval.
+
+5. S3 VERSIONING
+- Maintains multiple versions of an object.
+- Helps recover overwritten or deleted files.
+- Deletion usually creates a delete marker.
+- Previous versions can be restored.
+- Stored versions incur storage costs.
+
+6. S3 LIFECYCLE
+- Automates object transitions and expiration.
+- Moves old data to suitable storage classes.
+- Select based on access frequency, retrieval time,
+  retention requirements and cost.
+
+7. S3 SECURITY
+- Block Public Access (BPA) protects against public exposure.
+- Four settings control public ACLs and policies.
+- Bucket policies define resource-level permissions.
+- Inspect ACLs, access points and policies.
+- IAM Access Analyzer helps identify external access.
+
+8. S3 STATIC WEBSITE
+- Hosts static HTML, CSS and JavaScript files.
+- Requires index and optional error documents.
+- S3 website endpoint supports HTTP.# DAY 65 #
+Module 4C – Storage Revision (Job Scenarios)
+
+CONCEPT
+
+Revision of AWS storage services through real-world
+production tickets and troubleshooting scenarios.
+
+1. EBS – Elastic Block Store
+- Persistent block storage for EC2.
+- Suitable for databases and OS disks.
+- Typically attached to one EC2 instance at a time.
+- Data can persist after EC2 termination if configured
+  to retain the volume.
+
+2. EFS – Elastic File System
+- Managed shared file storage.
+- Multiple EC2 instances can access shared files.
+- Supports NFS (TCP 2049).
+- Regional EFS can be accessed across Availability Zones.
+
+3. S3 – Simple Storage Service
+- Object storage for files, backups, images and documents.
+- Highly scalable and durable.
+- Organize objects using buckets and prefixes.
+
+4. S3 STORAGE CLASSES
+- Standard: Frequently accessed data.
+- Standard-IA: Infrequently accessed data.
+- Glacier Instant Retrieval: Rare access, immediate retrieval.
+- Glacier Flexible Retrieval: Retrieval with restoration delay.
+- Glacier Deep Archive: Long-term archival, longer retrieval.
+
+5. S3 VERSIONING
+- Maintains multiple versions of an object.
+- Helps recover overwritten or deleted files.
+- Deletion usually creates a delete marker.
+- Previous versions can be restored.
+- Stored versions incur storage costs.
+
+6. S3 LIFECYCLE
+- Automates object transitions and expiration.
+- Moves old data to suitable storage classes.
+- Select based on access frequency, retrieval time,
+  retention requirements and cost.
+
+7. S3 SECURITY
+- Block Public Access (BPA) protects against public exposure.
+- Four settings control public ACLs and policies.
+- Bucket policies define resource-level permissions.
+- Inspect ACLs, access points and policies.
+- IAM Access Analyzer helps identify external access.
+
+8. S3 STATIC WEBSITE
+- Hosts static HTML, CSS and JavaScript files.
+- Requires index and optional error documents.
+- S3 website endpoint supports HTTP.
+- CloudFront + OAC can provide HTTPS while keeping
+  the S3 bucket private.
+
+9. AWS CLI – S3
+- aws s3 cp: Copy/upload/download objects.
+- aws s3 sync: Synchronize directories and prefixes.
+- aws s3 ls: List buckets and objects.
+- aws s3 rm: Remove objects.
+- aws s3 mb: Create bucket.
+- aws s3 rb: Remove bucket.
+- --delete: Removes destination objects absent from source.
+
+IMPORTANT EXAMPLES
+
+EC2 shared files → EFS
+EC2 database storage → EBS
+Images and backups → S3
+Accidental overwrite → S3 Versioning
+Old archival data → Lifecycle transition
+Public exposure → Enable BPA + remove public policy
+
+⭐ MEMORY BOX ⭐
+
+EBS = Block storage
+EFS = Shared file storage
+S3  = Object storage
+
+Versioning = Recovery
+Lifecycle = Automatic storage management
+BPA = Public access protection
+CloudFront + OAC = Private S3 website delivery
+
+Always consider retrieval requirements and total storage
+cost before choosing an S3 storage class.
+- CloudFront + OAC can provide HTTPS while keeping
+  the S3 bucket private.
+
+9. AWS CLI – S3
+- aws s3 cp: Copy/upload/download objects.
+- aws s3 sync: Synchronize directories and prefixes.
+- aws s3 ls: List buckets and objects.
+- aws s3 rm: Remove objects.
+- aws s3 mb: Create bucket.
+- aws s3 rb: Remove bucket.
+- --delete: Removes destination objects absent from source.
+
+IMPORTANT EXAMPLES
+
+EC2 shared files → EFS
+EC2 database storage → EBS
+Images and backups → S3
+Accidental overwrite → S3 Versioning
+Old archival data → Lifecycle transition
+Public exposure → Enable BPA + remove public policy
+
+⭐ MEMORY BOX ⭐
+
+EBS = Block storage
+EFS = Shared file storage
+S3  = Object storage
+
+Versioning = Recovery
+Lifecycle = Automatic storage management
+BPA = Public access protection
+CloudFront + OAC = Private S3 website delivery
+
+Always consider retrieval requirements and total storage
+cost before choosing an S3 storage class.
