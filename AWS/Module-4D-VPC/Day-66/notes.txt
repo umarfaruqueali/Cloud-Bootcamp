@@ -1,0 +1,43 @@
+
+# DAY 66 - VPC BASICS #
+
+1. VPC (Virtual Private Cloud)
+- A logically isolated virtual network in AWS.
+- Provides control over IP ranges, subnets, routing and network connectivity.
+- Resources inside a VPC communicate according to network configuration and security rules.
+
+2. CIDR BLOCK
+- Defines the IPv4 address range of a VPC.
+- Example: 10.0.0.0/16
+- Provides 65,536 total IPv4 addresses in the range.
+- /16 represents the network prefix length.
+
+3. ROUTE TABLE
+- Controls where network traffic is directed.
+- Destination = Where traffic wants to go.
+- Target = Where AWS forwards the traffic next.
+- Every VPC has a main route table.
+
+4. LOCAL ROUTE
+- Automatically created by AWS.
+- Allows communication within the VPC CIDR range.
+- Example: 10.0.0.0/16 -> local
+
+5. INTERNET GATEWAY (IGW)
+- Connects a VPC to the internet.
+- Must be attached to the VPC.
+- A suitable route and public IP configuration are also needed for internet access.
+
+6. DEFAULT VPC vs CUSTOM VPC
+- Default VPC is automatically provided by AWS.
+- Custom VPC is created according to application requirements.
+- VPC-only creation does not automatically create subnets or an Internet Gateway.
+
+⭐ MEMORY BOX ⭐
+VPC = Isolated virtual network
+CIDR = IP address range
+Subnet = Smaller network inside a VPC
+Route Table = Traffic direction
+Destination = Where traffic goes
+Target = Next hop
+IGW = Internet connectivity

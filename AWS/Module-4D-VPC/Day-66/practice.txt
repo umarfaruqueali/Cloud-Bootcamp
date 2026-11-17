@@ -1,0 +1,55 @@
+
+# DAY 66 - PRACTICAL WORK #
+
+Objective:
+Understand VPC fundamentals and create a custom VPC using AWS Console.
+
+1. Inspected Default VPC
+- Region: ap-south-2 (Hyderabad)
+- Inspected VPC, subnets, route table and Internet Gateway.
+- Observed three subnets across three Availability Zones.
+- Identified the default route:
+  0.0.0.0/0 -> Internet Gateway
+- Identified the local route:
+  172.31.0.0/16 -> local
+
+2. Created Custom VPC
+
+Name: cloud-bootcamp-vpc
+VPC ID: vpc-0d292b89cf34ffecc
+Region: ap-south-2
+IPv4 CIDR: 10.0.0.0/16
+IPv6: Disabled
+Tenancy: Default
+VPC encryption control: None
+
+3. Inspected VPC Configuration
+- VPC state: Available
+- DNS resolution: Enabled
+- DNS hostnames: Disabled
+- Default VPC: No
+- Subnets: 0
+- Route tables: 1
+- Internet Gateways: 0
+
+4. Inspected Main Route Table
+
+Route Table ID:
+rtb-055a58ab055f0b81d
+
+Route:
+Destination: 10.0.0.0/16
+Target: local
+Status: Active
+
+5. Observations
+- AWS automatically creates a main route table.
+- AWS automatically adds a local route for the VPC CIDR.
+- Creating a VPC only does not create subnets or an Internet Gateway.
+- A route table decides the next hop; an Internet Gateway provides VPC internet connectivity.
+
+Conclusion:
+Successfully created and inspected a custom VPC.
+Understood basic VPC structure, CIDR addressing, local routing and the role of an Internet Gateway.
+
+No additional paid networking resources were created.
