@@ -1,0 +1,54 @@
+
+DAY 67 - PRACTICAL LAB
+CIDR & SUBNET CREATION
+
+OBJECTIVE:
+Create one public-designated subnet and one private-designated subnet inside the existing custom VPC.
+
+VPC DETAILS:
+Name: cloud-bootcamp-vpc
+VPC ID: vpc-0d292b89cf34ffecc
+CIDR: 10.0.0.0/16
+Region: ap-south-2 (Hyderabad)
+
+SUBNET 1 - PUBLIC DESIGNATED
+
+Name: public-subnet-1
+Subnet ID: subnet-09dc591ea8b942722
+CIDR: 10.0.1.0/24
+Availability Zone: ap-south-2a
+State: Available
+Available IPv4 addresses: 251
+Auto-assign public IPv4: No
+
+SUBNET 2 - PRIVATE DESIGNATED
+
+Name: private-subnet-1
+Subnet ID: subnet-087f774f75b46d4ba
+CIDR: 10.0.2.0/24
+Availability Zone: ap-south-2b
+State: Available
+Available IPv4 addresses: 251
+Auto-assign public IPv4: No
+
+ROUTE TABLE:
+Main route table: rtb-055a58ab055f0b81d
+Both subnets currently use the main route table.
+Existing route:
+10.0.0.0/16 -> local
+
+OBSERVATIONS:
+1. Both subnets were successfully created.
+2. Both belong to the same custom VPC.
+3. Each subnet has a different non-overlapping /24 CIDR block.
+4. The subnets are located in different Availability Zones.
+5. AWS reserves 5 IPv4 addresses in each subnet.
+6. No Internet Gateway is attached to this VPC yet.
+7. Neither subnet currently has a direct internet route.
+8. Subnet names do not automatically provide public or private connectivity.
+
+FINAL CONCLUSION:
+Successfully divided the 10.0.0.0/16 VPC address space into two /24 subnets.
+
+Public and private subnet routing will be configured in subsequent lessons.
+All practical work was performed through the AWS Console.

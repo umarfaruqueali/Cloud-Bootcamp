@@ -1,0 +1,65 @@
+
+DAY 67 - CIDR & SUBNETS
+
+1. CIDR
+CIDR = Classless Inter-Domain Routing.
+It defines the size of an IP network using prefix notation.
+
+Example: 10.0.0.0/16
+- IPv4 address = 32 bits
+- Network bits = 16
+- Host bits = 16
+- Total IP addresses = 2^16 = 65,536
+
+2. CIDR BLOCKS
+- /16 = 65,536 addresses
+- /20 = 4,096 addresses
+- /24 = 256 addresses
+- /25 = 128 addresses
+- /26 = 64 addresses
+- /28 = 16 addresses
+
+Larger prefix number = smaller network.
+
+3. SUBNETTING
+Subnetting divides a larger network into smaller networks.
+
+Parent VPC: 10.0.0.0/16
+
+Subnet 1: 10.0.1.0/24
+Subnet 2: 10.0.2.0/24
+
+Both subnet CIDR blocks must be non-overlapping.
+
+4. AWS SUBNET IP RESERVATION
+AWS reserves 5 IPv4 addresses in each subnet:
+- First address: Network address
+- Second address: VPC router
+- Third address: DNS
+- Fourth address: Future use
+- Last address: Network broadcast address
+
+A /24 has 256 total addresses and 251 available addresses in AWS.
+
+5. PUBLIC VS PRIVATE SUBNETS
+Public subnet:
+Intended to have a route to an Internet Gateway.
+
+Private subnet:
+Does not have a direct route to an Internet Gateway.
+
+A subnet's name alone does not determine whether it is public or private.
+Routing configuration determines its internet connectivity.
+
+6. AVAILABILITY ZONES
+Subnets are created inside one Availability Zone.
+Different subnets can belong to different AZs in the same Region.
+
+7. MEMORY BOX
+- CIDR defines network size.
+- IPv4 contains 32 bits.
+- /16 contains 65,536 total addresses.
+- /24 contains 256 total addresses.
+- AWS reserves 5 IPv4 addresses per subnet.
+- Subnets within the same VPC cannot overlap.
+- Public/private status depends on routing, not naming.
