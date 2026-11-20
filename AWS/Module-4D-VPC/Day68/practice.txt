@@ -1,0 +1,78 @@
+
+# DAY 68 - PRACTICAL LAB
+
+Objective:
+Create separate route tables and explicitly associate them with public and private subnets.
+
+1. Existing VPC
+
+Name: cloud-bootcamp-vpc
+VPC ID: vpc-0d292b89cf34ffecc
+CIDR: 10.0.0.0/16
+Region: ap-south-2
+
+2. Existing Subnets
+
+Public subnet:
+Name: public-subnet-1
+Subnet ID: subnet-09dc591ea8b942722
+CIDR: 10.0.1.0/24
+Availability Zone: ap-south-2a
+
+Private subnet:
+Name: private-subnet-1
+Subnet ID: subnet-087f774f75b46d4ba
+CIDR: 10.0.2.0/24
+Availability Zone: ap-south-2b
+
+3. Existing Main Route Table
+
+Route table ID:
+rtb-055a58ab055f0b81d
+
+Route:
+10.0.0.0/16 -> local
+
+Initially, both subnets used this main route table through implicit associations.
+
+4. Created Public Route Table
+
+Name: public-rt
+Route table ID: rtb-0ade4e89739b7a1f0
+
+Route:
+10.0.0.0/16 -> local
+
+Explicit association:
+public-subnet-1
+subnet-09dc591ea8b942722
+
+5. Created Private Route Table
+
+Name: private-rt
+Route table ID: rtb-0e6cec8cc0c739f42
+
+Route:
+10.0.0.0/16 -> local
+
+Explicit association:
+private-subnet-1
+subnet-087f774f75b46d4ba
+
+6. Final Observations
+
+- Created two dedicated route tables.
+- Public subnet explicitly associated with public-rt.
+- Private subnet explicitly associated with private-rt.
+- Both route tables contain the local route.
+- No Internet Gateway route was configured.
+- No NAT Gateway was created.
+- No EC2 instances or paid networking services were launched.
+
+Conclusion:
+
+Successfully configured separate route tables and explicit subnet associations for the custom VPC.
+
+The two subnets can now have independent routing configurations.
+
+Internet connectivity will be configured and studied in Day 69.

@@ -1,0 +1,61 @@
+
+# DAY 68 - ROUTE TABLES
+
+1. What is a Route Table?
+A route table is a collection of routing rules (routes) that determines where network traffic is directed.
+
+Each route contains:
+- Destination: The target network or IP range.
+- Target: Where AWS sends matching traffic.
+
+2. Important Routes
+
+Local Route:
+10.0.0.0/16 -> local
+
+- Automatically created with a VPC.
+- Allows communication within the VPC.
+- Cannot be removed.
+
+Default Internet Route:
+0.0.0.0/0 -> Internet Gateway
+
+- Matches all IPv4 destinations.
+- Used to direct internet-bound traffic towards an IGW.
+- Requires an attached IGW and other network configuration.
+
+3. Main Route Table
+- AWS automatically creates a main route table for every VPC.
+- Subnets without explicit associations use the main route table.
+- Each VPC has its own main route table.
+
+4. Explicit Subnet Association
+- Manually associates a subnet with a specific route table.
+- A subnet can have only one route table association at a time.
+- Allows different subnets to use different routing rules.
+
+5. Longest Prefix Match
+When multiple routes match a destination, AWS selects the most specific route.
+
+Example:
+10.0.0.0/16
+10.0.1.0/24
+
+For destination 10.0.1.25, /24 wins because it is more specific.
+
+6. Important AWS Concepts
+- A route table does not itself provide internet connectivity.
+- Public subnet designation alone does not make a subnet internet-accessible.
+- An IGW route is needed for direct internet routing.
+- Security Groups and NACLs also control traffic.
+
+⭐ MEMORY BOX ⭐
+
+Route Table = Destination + Target
+
+Main association = Automatic fallback.
+Explicit association = Manually selected route table.
+
+Longest Prefix Match = Most specific matching route wins.
+
+A subnet uses one route table at a time.
