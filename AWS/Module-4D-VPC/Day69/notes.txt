@@ -1,0 +1,56 @@
+
+# DAY 69 - INTERNET GATEWAY (IGW)
+
+1. What is an Internet Gateway?
+An Internet Gateway (IGW) is an AWS VPC component that enables communication between resources in a VPC and the public internet.
+
+2. Important Characteristics
+- One IGW can be attached to one VPC at a time.
+- A VPC can have only one attached IGW at a time.
+- IGW supports IPv4 and IPv6 internet connectivity.
+- IGW performs network address translation for instances using public IPv4 addresses.
+- An IGW does not automatically make every subnet public.
+
+3. How to Make a Subnet Public
+Three important requirements:
+- Attach an IGW to the VPC.
+- Add a default route to the subnet's route table.
+- Provide resources with public IP addressing and appropriate security rules.
+
+4. Important Route
+
+0.0.0.0/0 -> Internet Gateway
+
+- 0.0.0.0/0 represents all IPv4 destinations.
+- This is a default route.
+- Internet-bound traffic is directed towards the IGW.
+
+5. Public vs Private Subnet
+
+Public Subnet:
+- Has a route to an Internet Gateway.
+- Resources need public IP addressing for direct IPv4 internet access.
+
+Private Subnet:
+- Has no direct route to an Internet Gateway.
+- Can use NAT Gateway for outbound internet connectivity.
+
+6. Important Difference
+
+IGW:
+Allows direct internet connectivity for appropriately configured public resources.
+
+NAT Gateway:
+Allows private subnet resources to initiate outbound internet connections without accepting unsolicited inbound connections.
+
+⭐ MEMORY BOX ⭐
+
+IGW = VPC to Internet connectivity.
+
+0.0.0.0/0 = All IPv4 destinations.
+
+Public subnet = Route to IGW.
+
+Private subnet = No direct IGW route.
+
+IGW attachment alone does not guarantee internet access.

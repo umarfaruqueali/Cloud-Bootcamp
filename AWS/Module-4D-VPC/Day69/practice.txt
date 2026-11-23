@@ -1,0 +1,71 @@
+
+# DAY 69 - PRACTICAL LAB
+
+Objective:
+Create and attach an Internet Gateway and configure internet routing for the public subnet.
+
+1. Existing VPC
+
+Name: cloud-bootcamp-vpc
+VPC ID: vpc-0d292b89cf34ffecc
+CIDR: 10.0.0.0/16
+Region: ap-south-2
+
+2. Created Internet Gateway
+
+Name: cloud-bootcamp-igw
+IGW ID: igw-00c3ed1fc464d2a71
+
+Initial State: Detached
+
+Final State: Attached
+
+Attached VPC:
+vpc-0d292b89cf34ffecc
+
+3. Public Route Table
+
+Name: public-rt
+Route Table ID: rtb-0ade4e89739b7a1f0
+
+Subnet:
+10.0.1.0/24
+
+Routes:
+
+10.0.0.0/16 -> local
+0.0.0.0/0 -> igw-00c3ed1fc464d2a71
+
+Both routes showed Active status.
+
+4. Private Route Table
+
+Name: private-rt
+Route Table ID: rtb-0e6cec8cc0c739f42
+
+Subnet:
+10.0.2.0/24
+
+Route:
+
+10.0.0.0/16 -> local
+
+No direct Internet Gateway route was added.
+
+5. Final Observations
+
+- Created an Internet Gateway.
+- Successfully attached it to the custom VPC.
+- Added the default IPv4 internet route to public-rt.
+- Verified both public route table routes were Active.
+- Verified private-rt contains only the local route.
+- No NAT Gateway was created.
+- No EC2 instance was launched.
+
+Conclusion:
+
+Successfully configured Internet Gateway connectivity and routing for the public subnet.
+
+Private subnet routing remained unchanged.
+
+End-to-end internet connectivity from an EC2 instance was not tested because no EC2 instance was launched.
