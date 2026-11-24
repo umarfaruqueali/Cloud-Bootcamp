@@ -1,0 +1,50 @@
+# DAY 70 - SECURITY GROUPS #
+
+1. CONCEPT
+A Security Group (SG) is a virtual firewall
+that controls inbound and outbound traffic
+for AWS resources such as EC2 instances.
+
+2. INBOUND RULES
+Control incoming traffic to a resource.
+
+Examples:
+- SSH  : Port 22
+- HTTP : Port 80
+- HTTPS: Port 443
+
+3. OUTBOUND RULES
+Control outgoing traffic from a resource.
+
+Default outbound rule:
+- All traffic allowed to IPv4 destinations.
+
+4. IMPORTANT CHARACTERISTICS
+- Security Groups are stateful.
+- Allow rules only; no deny rules.
+- Rules apply at the network interface level.
+- Multiple security groups can be attached
+  to one EC2 network interface.
+- Rules from attached security groups combine.
+
+5. SECURITY BEST PRACTICES
+- Restrict SSH (22) to your own IP.
+- Allow HTTP (80) publicly for public websites.
+- Avoid unnecessary open ports.
+- Follow the principle of least privilege.
+- Use separate SGs for web and database servers.
+
+6. SECURITY GROUP REFERENCING
+A database SG can allow database traffic
+only from the web-server SG.
+
+Example:
+Web Server SG -> Database Server SG
+Only authorized web servers can connect.
+
+⭐ MEMORY BOX ⭐
+Security Group = Instance-level firewall.
+Inbound = Incoming traffic.
+Outbound = Outgoing traffic.
+Stateful = Return traffic automatically allowed.
+Least Privilege = Allow only necessary access.

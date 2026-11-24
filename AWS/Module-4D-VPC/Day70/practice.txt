@@ -1,0 +1,69 @@
+# DAY 70 - HANDS-ON PRACTICE #
+
+OBJECTIVE:
+Create and configure a Security Group
+for a web server.
+
+1. ENVIRONMENT
+AWS Region: Asia Pacific (Hyderabad)
+VPC: cloud-bootcamp-vpc
+VPC ID: vpc-0d292b89cf34ffecc
+
+2. SECURITY GROUP CREATED
+
+Name: web-server-sg
+Security Group ID: sg-05ce667f97e4f4cad
+
+Description:
+Allow SSH from my IP and HTTP from internet.
+
+3. INBOUND RULES
+
+Rule 1:
+Type: SSH
+Protocol: TCP
+Port: 22
+Source: My IP (/32)
+
+Rule 2:
+Type: HTTP
+Protocol: TCP
+Port: 80
+Source: Anywhere-IPv4 (0.0.0.0/0)
+
+4. OUTBOUND RULES
+
+One outbound rule:
+Type: All traffic
+IP Version: IPv4
+Destination: 0.0.0.0/0
+
+5. OBSERVATIONS
+
+- Security Group acts as a virtual firewall.
+- SSH access was restricted to my IP.
+- HTTP access was allowed publicly.
+- Default outbound rule allows all IPv4 traffic.
+- Security Groups are stateful.
+- Multiple Security Groups can be attached
+  to an EC2 network interface.
+
+6. JOB SCENARIO
+
+Requirement:
+A company has a public web server and
+a private database server.
+
+Solution:
+- Create separate Security Groups.
+- Web SG allows HTTP from the internet.
+- SSH is restricted to administrator IP.
+- Database SG allows database traffic
+  only from the Web Server SG.
+
+CONCLUSION:
+Successfully created and inspected a
+Security Group and understood inbound,
+outbound, stateful rules, and SG referencing.
+
+No EC2 instance was launched in this lab.
