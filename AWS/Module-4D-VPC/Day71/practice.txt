@@ -1,0 +1,58 @@
+
+# DAY 71 - HANDS-ON PRACTICE
+
+1. OBJECTIVE
+Inspect existing Network ACLs and compare them with Security Groups.
+
+2. AWS ENVIRONMENT
+Region: ap-south-2 (Hyderabad)
+VPC: cloud-bootcamp-vpc
+VPC CIDR: 10.0.0.0/16
+
+3. NETWORK ACL INSPECTION
+Custom VPC NACL:
+acl-05e3fc4d30c1fb151
+
+Default: Yes
+
+Associated subnets: 2
+
+Observed inbound rules:
+- Rule 100: Allow all IPv4 traffic (0.0.0.0/0)
+- Rule *: Deny unmatched traffic
+
+Observed outbound rules:
+- Rule 100: Allow all IPv4 traffic (0.0.0.0/0)
+- Rule *: Deny unmatched traffic
+
+4. SECURITY GROUP INSPECTION
+Name: web-server-sg
+ID: sg-05ce667f97e4f4cad
+
+Inbound rules:
+- HTTP TCP 80: 0.0.0.0/0
+- SSH TCP 22: My IP /32
+
+Outbound:
+- Default allow-all rule.
+
+5. OBSERVATIONS
+- Both VPCs have their own default NACL.
+- Default NACL currently allows all IPv4 inbound and outbound traffic.
+- NACL operates at subnet level.
+- Security Group operates at instance/network-interface level.
+- NACL is stateless; Security Group is stateful.
+- Both security layers must allow traffic.
+- NACL evaluates numbered rules in ascending order.
+- First matching rule determines the action.
+
+6. PRACTICAL LEARNING
+An inbound HTTP request can reach the server while its response is blocked by an outbound NACL rule.
+
+NACL return traffic must explicitly allow the required ephemeral destination port.
+
+7. CONCLUSION
+Understood NACL rule evaluation, inbound/outbound filtering, stateless traffic behaviour, and the differences between NACLs and Security Groups.
+
+No AWS configuration was modified.
+No new AWS resources were created.

@@ -1,0 +1,61 @@
+
+# DAY 71 - NETWORK ACLs (NACLs)
+
+1. CONCEPT
+- Network ACL = subnet-level firewall in AWS.
+- Controls inbound and outbound traffic.
+- Each subnet is associated with one NACL at a time.
+- NACL is stateless: it does not track connections.
+
+2. TYPES / COMPONENTS
+- Default NACL: allows all inbound and outbound traffic by default.
+- Custom NACL: starts with deny-all inbound and outbound rules.
+- Inbound rules: control incoming traffic.
+- Outbound rules: control outgoing traffic.
+- Rule numbers: determine evaluation priority.
+- Allow and Deny actions are supported.
+- Rule *: final catch-all rule.
+
+3. RULE EVALUATION
+- Rules are evaluated from lowest number to highest.
+- First matching rule wins.
+- Example:
+  Rule 100: ALLOW HTTP
+  Rule 110: DENY specific IP
+  If rule 100 matches first, rule 110 is never evaluated.
+
+4. STATELESS BEHAVIOUR
+- NACL checks request and response traffic independently.
+- Allowing inbound traffic does not automatically allow outbound response traffic.
+- Ephemeral ports may be needed for return traffic.
+- Security Groups are stateful and automatically allow response traffic for tracked connections.
+
+5. SECURITY GROUP vs NACL
+Security Group:
+- Instance / ENI level
+- Stateful
+- Allow rules only
+- No rule numbers
+
+NACL:
+- Subnet level
+- Stateless
+- Allow and Deny rules
+- Numbered rules
+
+6. IMPORTANT EXAMPLE
+HTTP request:
+Client:50000 -> Server:80
+
+HTTP response:
+Server:80 -> Client:50000
+
+NACL must allow:
+- Inbound destination port 80
+- Outbound destination ephemeral port 50000
+
+7. MEMORY BOX
+- SG = Stateful + Instance level + Allow only
+- NACL = Stateless + Subnet level + Allow/Deny
+- First matching NACL rule wins.
+- Both NACL and SG must permit traffic.
